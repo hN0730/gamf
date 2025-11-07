@@ -1,7 +1,7 @@
 # 🎵 ACC Music Festa 2025 Website
 
 광주 ACC 뮤직페스타 공식 웹페이지입니다.  
-**HTML**, **CSS**, **JavaScript**로 제작되었으며,  
+**HTML**, **CSS**, **JavaScript** 로 제작되었으며,  
 픽셀아트 감성의 노을 테마를 중심으로 디자인되었습니다.
 
 ---
