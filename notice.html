@@ -152,13 +152,13 @@
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const widget = document.getElementById("floatingWidget");
-            let targetY = window.scrollY + 300; // 스크롤 기준 위치
+            let targetY = window.scrollY + 300; 
             let currentY = targetY;
-            const speed = 0.1; // 속도 조절 (0.1~0.3 정도가 자연스러움)
+            const speed = 0.1; 
 
             function updateWidget() {
-                targetY = window.scrollY + window.innerHeight - 200; // 뷰포트 하단 근처 유지
-                currentY += (targetY - currentY) * speed; // 보간 (lerp)
+                targetY = window.scrollY + window.innerHeight - 200; 
+                currentY += (targetY - currentY) * speed; 
                 widget.style.top = `${currentY}px`;
                 requestAnimationFrame(updateWidget);
             }
@@ -168,6 +168,7 @@
     </script>
 </body>
 </html>
+
 
 
 
