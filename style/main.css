@@ -242,9 +242,22 @@
   text-align: center;
 }
 
+.table td:nth-child(2){
+  text-align: left;
+  padding-left: 2rem;
+}
+
+.table th:nth-child(1),
+.table td:nth-child(1),
+.table th:nth-child(3),
+.table td:nth-child(3){
+  text-align: center;
+}
+
 .table tbody tr {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   text-align: center;
+  transition: background 0.3s ease;
 }
 
 .table tbody tr:hover {
@@ -391,4 +404,5 @@
   .title {
     font-size: 4rem;
   }
+
 }
