@@ -10,8 +10,6 @@
 
 📂 website
 
-├── html/ (페이지별 HTML 파일)
-
 ├── style/ (CSS 스타일 파일)
 
 ├── js/ (기능 스크립트)
@@ -22,6 +20,19 @@
 
 └── index.html (메인 페이지)
 
+└── notice.html (축제 공지 페이지)
+
+└── festivalmap.html (행사장 장소 안내 페이지)
+
+└── lineup.html (아티스트 라인업 페이지)
+
+└── timetable.html (시간별 공연 안내 페이지)
+
+└── ticket.html (티켓 안내 페이지)
+
+└── earlyticket.html (얼리티켓 안내 페이지)
+
+└── gallery.html (사진 페이지)
 
 ---
 
