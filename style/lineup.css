@@ -1,0 +1,229 @@
+@font-face {
+    font-family: DNFBitBitv2;
+    src: url(/font/DNFBitBitv2.ttf);
+}
+
+@font-face {
+    font-family: elicedigitalbaeum_regular;
+    src: url(/font/EliceDigitalBaeum_Regular.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #FFE7BF;
+    font-family: 'prtendard';
+}
+
+.header {
+    height: 13rem;
+    background: rgba(0, 0, 0, 0.83);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    width: 280px;
+    height: auto;
+}
+
+.menu-wrapper {
+    position: relative;
+    background: #333;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+    position: relative;
+    z-index: 10;
+}
+
+.main-menu {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    list-style: none;
+}
+
+.nav-item {
+    font-weight: 700;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: whitesmoke;
+    transition: color 0.3s;
+}
+
+.nav-item:hover {
+    color: #ff8800;
+}
+
+.sub-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: all 0.4s ease;
+    z-index: 5;
+}
+
+.menu-wrapper:hover .sub-nav {
+    max-height: 500px;
+    opacity: 1;
+    padding: 2rem 0;
+}
+
+.sub-menu {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    align-items: start;
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    transition: opacity 0.3s ease;
+}
+
+.sub-menu-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.sub-menu-group a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+    white-space: nowrap;
+}
+
+.sub-menu-group a:hover {
+    color: #ff8800;
+}
+
+.sub-menu-placeholder {
+    opacity: 0;
+    pointer-events: none;
+    height: 0;
+}
+
+.notice {
+    background: linear-gradient(to bottom, #f0cd92, #da8868de);
+    min-height: 100vh;
+    padding: 100px 0;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.en-title {
+    font-family: "orbitron";
+    font-size: 4rem;
+    font-weight: 900;
+    color: #4b4b4b;
+    margin-bottom: 4rem;
+    margin-right: 6rem;
+    letter-spacing: 1px;
+}
+
+.kr-title {
+    font-family: 'orbitron';
+    font-size: 3rem;
+    font-weight: 800;
+    color: #2c2c2c;
+}
+
+.subtitle {
+    font-family: 'elicedigitalbaeum_regular';
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #333;
+    margin-bottom: 5rem;
+}
+
+#floatingWidget {
+    position: absolute;
+    right: 40px;
+    top: 300px;
+    width: 80px;
+    background: white;
+    border-radius: 50px;
+    padding: 16px 0;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    z-index: 1000;
+    transition: transform 0.25s ease-out;
+}
+
+.chat-icon {
+    width: 48px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.chat-icon:hover {
+    transform: scale(1.1);
+}
+
+
+.footer {
+    background: #281d33de;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-logo {
+    margin-top: 2rem;
+    width: 180px;
+    height: auto;
+}
+
+.social {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.social a {
+    transition: opacity 0.3s;
+}
+
+.social a:hover {
+    opacity: 0.8;
+}
+
+.social img {
+    width: 50px;
+    height: auto;
+}
+
+.footer p {
+    font-family: "elicedigitalbaeum_regular";
+    color: whitesmoke;
+    margin-bottom: 4rem;
+}
