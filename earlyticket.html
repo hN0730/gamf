@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earlyticket - 광주 ACC뮤직페스타</title>
+    <link rel="icon" href="images/icon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&family=Libre+Barcode+39+Extended+Text&family=Orbitron:wght@400..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style/earlyticket.css">
+</head>
+
+<body>
+    <header class="header">
+        <a href="./index.html">
+            <img src="https://api.builder.io/api/v1/image/assets/TEMP/5a57b55d432386da29cbea621e4567c229063947?width=712"
+                alt="ACC Music Festa Logo" class="logo">
+        </a>
+    </header>
+
+    <div class="menu-wrapper">
+        <nav class="main-nav">
+            <ul class="main-menu">
+                <li class="nav-item">INFORMATION</li>
+                <li class="nav-item">ARTIST</li>
+                <li class="nav-item">TICKETS</li>
+                <li class="nav-item"><a href="gallery.html">GALLERY</a></li>
+            </ul>
+        </nav>
+
+        <div class="sub-nav">
+            <div class="sub-menu">
+                <div class="sub-menu-group">
+                    <a href="notice.html">NOTICE</a>
+                    <a href="festivalmap.html">FESTIVAL MAP</a>
+                </div>
+                <div class="sub-menu-group">
+                    <a href="lineup.html">LINE-UP</a>
+                    <a href="timetable.html">TIMETABLE</a>
+                </div>
+                <div class="sub-menu-group">
+                    <a href="ticket예매안내.html">TICKET 예매안내</a>
+                    <a href="earlyticket.html">EARLY TICKET</a>
+                </div>
+                <div class="sub-menu-group sub-menu-placeholder"></div>
+            </div>
+        </div>
+    </div>
+
+    <section class="notice">
+        <div class="container">
+            <h1 class="en-title">🎫 EARLY TICKET</h1>
+            <h2 class="kr-title">2025 ACC 뮤직 페스타 <hr> 얼리버드 티켓을 확인해주세요 !</h2>
+            <p class="subtitle">음악이 시작되는 그 순간, 가장 먼저 입장할 수 있는 기회를 놓치지마세요 !</p>
+
+    <div id="floatingWidget">
+        <a href="https://pf.kakao.com/_example" target="_blank">
+            <img src="images/kkt.png" alt="카카오톡" class="chat-icon">
+        </a>
+        <a href="mailto:info@example.com">
+            <img src="images/문의.png" alt="문의하기" class="chat-icon">
+        </a>
+    </div>
+
+    <footer class="footer">
+        <img src="https://api.builder.io/api/v1/image/assets/TEMP/8248f9d894a61d4991c0afbcc09c9ec0b247c1e0?width=430"
+            alt="로고" class="footer-logo">
+
+        <div class="social">
+            <a href="#"><img
+                    src="https://api.builder.io/api/v1/image/assets/TEMP/d7cb078b2dfb6d1a3c2fec9b77e735671f1074ca?width=120"
+                    alt="카카오톡"></a>
+            <a href="#"><img
+                    src="https://api.builder.io/api/v1/image/assets/TEMP/31d8320cd8bef9203226e246bd52d47077ea3fda?width=120"
+                    alt="트위터"></a>
+            <a href="#"><img
+                    src="https://api.builder.io/api/v1/image/assets/TEMP/32fb02b216e6937002bd207e3080bef0b005db79?width=116"
+                    alt="인스타그램"></a>
+        </div>
+
+            <p>© 2025 Gwangju ACC Music Festa. All Rights Reserved.</p>
+
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const widget = document.getElementById("floatingWidget");
+            let targetY = window.scrollY + 300; 
+            let currentY = targetY;
+            const speed = 0.1; 
+
+            function updateWidget() {
+                targetY = window.scrollY + window.innerHeight - 200; 
+                currentY += (targetY - currentY) * speed; 
+                widget.style.top = `${currentY}px`;
+                requestAnimationFrame(updateWidget);
+            }
+
+            requestAnimationFrame(updateWidget);
+        });
+    </script>
+</body>
+</html>
