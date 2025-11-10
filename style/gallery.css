@@ -302,12 +302,12 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+     gap: 1.5rem;
 }
 
 .footer-logo {
     margin-top: 2rem;
-    width: 180px;
+    width: 200px;
     height: auto;
 }
 
@@ -335,4 +335,5 @@ body {
     color: whitesmoke;
     margin-bottom: 4rem;
 }
+
 
