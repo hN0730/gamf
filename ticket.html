@@ -88,27 +88,31 @@
             <img src="images/문의.png" alt="문의하기" class="chat-icon">
         </a>
     </div>
-
-    <footer class="footer">
-        <img src="https://api.builder.io/api/v1/image/assets/TEMP/8248f9d894a61d4991c0afbcc09c9ec0b247c1e0?width=430"
-            alt="로고" class="footer-logo">
-
-        <div class="social">
-            <a href="#"><img
-                    src="https://api.builder.io/api/v1/image/assets/TEMP/d7cb078b2dfb6d1a3c2fec9b77e735671f1074ca?width=120"
-                    alt="카카오톡"></a>
-            <a href="#"><img
-                    src="https://api.builder.io/api/v1/image/assets/TEMP/31d8320cd8bef9203226e246bd52d47077ea3fda?width=120"
-                    alt="트위터"></a>
-            <a href="#"><img
-                    src="https://api.builder.io/api/v1/image/assets/TEMP/32fb02b216e6937002bd207e3080bef0b005db79?width=116"
-                    alt="인스타그램"></a>
-        </div>
-
+        
         <p>© 2025 Gwangju ACC Music Festa. All Rights Reserved.</p>
+        
     </footer>
+
+        <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const widget = document.getElementById("floatingWidget");
+            let targetY = window.scrollY + 300; 
+            let currentY = targetY;
+            const speed = 0.1; 
+
+            function updateWidget() {
+                targetY = window.scrollY + window.innerHeight - 200;
+                currentY += (targetY - currentY) * speed; 
+                widget.style.top = `${currentY}px`;
+                requestAnimationFrame(updateWidget);
+            }
+
+            requestAnimationFrame(updateWidget);
+        });
+    </script>
 </body>
 
 </html>
+
 
 
