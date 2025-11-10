@@ -4,7 +4,7 @@
 }
 
 @font-face {
-    font-family: elicedigitalbaeum_regular;
+    font-family: EliceDigitalBaeum_Regular;
     src: url(/font/EliceDigitalBaeum_Regular.ttf);
 }
 
@@ -142,7 +142,7 @@ body {
 .en-title {
     font-family: "Orbitron", sans-serif;
     font-weight: 900;
-    font-size: 3rem;
+    font-size: 4rem;
     color: #3b3b3b;
     transition: transform 0.4s ease, filter 0.4s ease;
     cursor: pointer;
@@ -162,7 +162,7 @@ body {
 }
 
 .subtitle {
-    font-family: "elicedigitalbaeum_regular";
+    font-family: "EliceDigitalBaeum_Regular", sans-serif;
     font-size: 1.5rem;
     font-weight: 400;
     color: #444;
@@ -356,7 +356,8 @@ body {
 }
 
 .footer p {
-    font-family: "elicedigitalbaeum_regular";
+    font-family: "EliceDigitalBaeum_Regular", sans-serif;
     color: whitesmoke;
     margin-bottom: 4rem;
 }
+
