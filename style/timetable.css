@@ -27,6 +27,11 @@ body {
     justify-content: center;
 }
 
+.timetable {
+    min-height: 100vh;
+    padding: 80px 0;
+}
+
 .logo {
     width: 280px;
     height: auto;
@@ -123,78 +128,130 @@ body {
     height: 0;
 }
 
-.map-section {
+.timetable-section {
     min-height: 100vh;
-    padding: 100px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+    padding: 80px 0;
+    text-align: center;
 }
 
 .container {
     max-width: 1000px;
-    width: 90%;
     margin: 0 auto;
-    text-align: center;
 }
 
 .en-title {
-    font-family: "orbitron";
-    font-size: 4rem;
+    font-family: "Orbitron", sans-serif;
     font-weight: 900;
-    color: #4b4b4b;
-    margin-bottom: 4rem;
-    margin-right: 6rem;
-    letter-spacing: 1px;
+    font-size: 3rem;
+    color: #3b3b3b;
+    transition: transform 0.4s ease, filter 0.4s ease;
+    cursor: pointer;
+}
+
+.en-title:hover {
+    transform: translateY(-6px) scale(1.03);
+    filter: drop-shadow(0 0 12px rgba(255, 204, 100, 0.8));
 }
 
 .kr-title {
-    font-family: 'orbitron';
+    font-family: "Orbitron", sans-serif;
     font-size: 3rem;
+    color: #2e2e2e;
+    margin: 1rem 0;
     font-weight: 800;
-    color: #2c2c2c;
 }
 
 .subtitle {
-    font-family: 'elicedigitalbaeum_regular';
+    font-family: "elicedigitalbaeum_regular";
     font-size: 1.5rem;
     font-weight: 400;
-    color: #333;
-    margin-bottom: 5rem;
+    color: #444;
+    margin-bottom: 4rem;
 }
 
-.timetable {
+.day-tabs {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.tab-btn {
+    border: none;
+    border-radius: 50px;
+    padding: 0.8rem 2rem;
+    font-weight: 800;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    background: #f6f6f6;
+    color: #222;
+}
+
+.tab-btn.active {
+    background: #ff5e81;
+    color: #111;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.tab-btn:hover {
+    background: #c45eff;
+    transform: translateY(-2px);
+}
+
+.day {
+    display: flex;
     justify-content: center;
 }
 
+.hidden {
+    display: none;
+}
+
+.timetable-img {
+    width: 100%;
+    max-width: 900px;
+    border-radius: 25px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timetable-img:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+
 @media (max-width: 1024px) {
+    .timetable-img {
+        width: 85%;
+        max-width: 700px;
+    }
+
     .en-title {
         font-size: 3rem;
     }
 
     .kr-title {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 
     .subtitle {
-        font-size: 1.1rem;
-        margin-bottom: 3rem;
+        font-size: 1rem;
+        margin-bottom: 2rem;
     }
 
-    .map-image,
-    .map iframe {
-        width: 90%;
-        height: 420px;
+    .tab-btn {
+        padding: 0.7rem 1.8rem;
+        font-size: 1rem;
     }
 }
 
 @media (max-width: 768px) {
-    .map-section {
-        padding: 70px 0;
+    .timetable-img {
+        width: 90%;
+        max-width: 600px;
     }
 
     .en-title {
@@ -202,24 +259,19 @@ body {
     }
 
     .kr-title {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
 
-    .subtitle {
-        font-size: 1rem;
-        margin-bottom: 2.5rem;
-    }
-
-    .map-image,
-    .map iframe {
-        width: 95%;
-        height: 360px;
+    .tab-btn {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.95rem;
     }
 }
 
 @media (max-width: 480px) {
-    .map-section {
-        padding: 50px 0;
+    .timetable-img {
+        width: 95%;
+        max-width: 400px;
     }
 
     .en-title {
@@ -227,23 +279,17 @@ body {
     }
 
     .kr-title {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 
     .subtitle {
         font-size: 0.9rem;
-        margin-bottom: 2rem;
+        margin-bottom: 1.8rem;
     }
 
-    .map-image {
-        width: 95%;
-        height: auto;
-        margin-bottom: 30px;
-    }
-
-    .map iframe {
-        width: 95%;
-        height: 280px;
+    .tab-btn {
+        padding: 0.5rem 1.2rem;
+        font-size: 0.85rem;
     }
 }
 
