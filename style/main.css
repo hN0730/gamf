@@ -4,7 +4,7 @@
 }
 @font-face {
     font-family: EliceDigitalBaeum_Regular;
-    src: url(font/EliceDigitalBaeum_Regular.ttf);
+    src: url('../font/EliceDigitalBaeum_Regular.ttf') format('truetype');
 }
 
 * {
@@ -412,6 +412,7 @@
   }
 
 }
+
 
 
 
