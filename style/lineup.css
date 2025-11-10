@@ -332,6 +332,7 @@ body {
     width: 90%;
     max-width: 320px;
   }
+}
     
 #floatingWidget {
     position: absolute;
@@ -400,6 +401,7 @@ body {
     color: whitesmoke;
     margin-bottom: 4rem;
 }
+
 
 
 
