@@ -4,7 +4,7 @@
 }
 
 @font-face {
-    font-family: elicedigitalbaeum_regular;
+    font-family: EliceDigitalBaeum_Regular;
     src: url(font/EliceDigitalBaeum_Regular.ttf);
 }
 
@@ -159,7 +159,7 @@ body {
 }
 
 .subtitle {
-    font-family: 'elicedigitalbaeum_regular';
+    font-family: 'EliceDigitalBaeum_Regular', sans-serif;
     font-size: 1.5rem;
     font-weight: 400;
     color: #333;
@@ -338,10 +338,11 @@ body {
 }
 
 .footer p {
-    font-family: "elicedigitalbaeum_regular";
+    font-family: 'EliceDigitalBaeum_Regular', sans-serif;
     color: whitesmoke;
     margin-bottom: 4rem;
 }
+
 
 
 
