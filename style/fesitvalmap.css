@@ -1,11 +1,11 @@
 @font-face {
     font-family: DNFBitBitv2;
-    src: url(/font/DNFBitBitv2.ttf);
+    src: url('../font/DNFBitBitv2.ttf') format('turetype');
 }
 
 @font-face {
     font-family: elicedigitalbaeum_regular;
-    src: url(/font/EliceDigitalBaeum_Regular.ttf);
+    src: url('../font/EliceDigitalBaeum_Regular.ttf') format('truetype');
 }
 
 * {
@@ -341,6 +341,7 @@ body {
     color: whitesmoke;
     margin-bottom: 4rem;
 }
+
 
 
 
