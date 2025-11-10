@@ -274,6 +274,7 @@ body {
         width: 95%;
         max-width: 400px;
     }
+    
     .day-tabs {
         flex-direction: column;
         align-items: center;
@@ -293,9 +294,10 @@ body {
     }
 
     .tab-btn {
-        padding: 0.5rem 1.2rem;
-        font-size: 0.85rem;
-    }
+    width: 70%;
+    padding: 0.7rem 0;
+    font-size: 0.9rem;
+  }
 }
 
 #floatingWidget {
@@ -365,6 +367,7 @@ body {
     color: whitesmoke;
     margin-bottom: 4rem;
 }
+
 
 
 
