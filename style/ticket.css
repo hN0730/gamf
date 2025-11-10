@@ -1,11 +1,11 @@
 @font-face {
     font-family: DNFBitBitv2;
-    src: url('../font/DNFBitBitv2.ttf') format('turetype');
+    src: url(/font/DNFBitBitv2.ttf);
 }
 
 @font-face {
     font-family: EliceDigitalBaeum_Regular;
-    src: url('../font/EliceDigitalBaeum_Regular.ttf') format('turetype');
+    src: url(/font/EliceDigitalBaeum_Regular.ttf);
 }
 
 * {
@@ -142,10 +142,11 @@ body {
 .en-title {
     font-family: "Orbitron", sans-serif;
     font-weight: 900;
-    font-size: 3rem;
+    font-size: 3.5rem;
     color: #3b3b3b;
     transition: transform 0.4s ease, filter 0.4s ease;
     cursor: pointer;
+    margin-right:70px;
 }
 
 .en-title:hover {
@@ -155,25 +156,34 @@ body {
 
 .kr-title {
     font-family: "Orbitron", sans-serif;
-    font-size: 3rem;
-    color: #2e2e2e;
+    font-size: 2.5rem;
+    color: #222;
     margin: 1rem 0;
     font-weight: 800;
 }
 
 .subtitle {
-    font-family: "elicedigitalbaeum_regular";
+    font-family: "EliceDigitalBaeum_Regular", sans-serif;
     font-size: 1.5rem;
     font-weight: 400;
     color: #444;
     margin-bottom: 4rem;
 }
 
+.ticket-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
 .ticket-img img {
-    width: 85%;
-    max-width: 900px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  transform: translateX(20px); 
 }
 
 @media (max-width: 1024px) {
@@ -228,9 +238,9 @@ body {
 
 #floatingWidget {
     position: absolute;
-    right: 40px;
+    right: 10px;
     top: 300px;
-    width: 80px;
+    width: 70px;
     background: white;
     border-radius: 50px;
     padding: 16px 0;
@@ -260,12 +270,13 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    justify-content: center;
+    gap: 1.5rem;
 }
 
 .footer-logo {
     margin-top: 2rem;
-    width: 180px;
+    width: 200px;
     height: auto;
 }
 
@@ -293,5 +304,6 @@ body {
     color: whitesmoke;
     margin-bottom: 4rem;
 }
+
 
 
