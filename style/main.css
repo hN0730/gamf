@@ -1,10 +1,10 @@
 @font-face {
     font-family: DNFBitBitv2;
-    src: url(/font/DNFBitBitv2.ttf);
+    src: url(font/DNFBitBitv2.ttf);
 }
 @font-face {
-    font-family: elicedigitalbaeum_regular;
-    src: url(/font/EliceDigitalBaeum_Regular.ttf);
+    font-family: EliceDigitalBaeum_Regular;
+    src: url(font/EliceDigitalBaeum_Regular.ttf);
 }
 
 * {
@@ -373,6 +373,11 @@
   height: auto;
 }
 
+.footer p{
+    font-family: 'EliceDigitalBaeum_Regular', sans-serif;
+    color: whitesmoke;
+}
+
 @media (min-width: 768px){
   .logo{
     width: 356px;
@@ -406,3 +411,6 @@
   }
 
 }
+
+
+
