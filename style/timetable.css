@@ -296,9 +296,9 @@ body {
 
 #floatingWidget {
     position: absolute;
-    right: 40px;
+    right: 10px;
     top: 300px;
-    width: 80px;
+    width: 70px;
     background: white;
     border-radius: 50px;
     padding: 16px 0;
@@ -361,6 +361,7 @@ body {
     color: whitesmoke;
     margin-bottom: 4rem;
 }
+
 
 
 
