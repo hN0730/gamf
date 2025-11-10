@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Line up - 광주 ACC뮤직페스타</title>
+    <title>Lineup - 광주 ACC뮤직페스타</title>
     <link rel="icon" href="images/icon.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -53,35 +53,43 @@
     </div>
 
     <section class="lineup">
-    <div class="container">
-    <h1 class="en-title">🎤 LINE-UP</h1>
-    <h2 class="kr-title">최고의 뮤지션들이 <br> ACC 뮤직 페스타에 찾아옵니다!</h2>
-    <p class="subtitle">2025 ACC 뮤직페스타 아티스트 라인업을 공개합니다.</p>
+        <div class="container">
 
-    <img src="images/sat.png" class="day-tag sat-tag" alt="SAT" />
-    <div class="day1">
-        <img src="images/가을 페스티벌_1일차 10cm.png" class="card" alt="10cm" />
-        <img src="images/가을 페스티벌_1일차 akmu.png" class="card" alt="AKMU" />
-        <img src="images/가을 페스티벌_1일차 카더가든.png" class="card" alt="카더가든" />
-        <img src="images/가을 페스티벌_1일차 잔나비.png" class="card" alt="잔나비" />
-        <img src="images/가을 페스티벌_1일차 검정치마.png" class="card" alt="검정치마" />
-        <img src="images/가을 페스티벌_1일차 이무진.png" class="card" alt="이무진" />
-        <img src="images/가을 페스티벌_1일차 킥플립.png" class="card" alt="킥플립" />
-    </div>
+            <div class="lineup-header">
+                <h1 class="en-title">🎤 LINE-UP</h1>
+                <h2 class="kr-title">최고의 뮤지션들이 <br>ACC 뮤직 페스타에 찾아옵니다!</h2>
+                <p class="subtitle">2025 ACC 뮤직페스타 아티스트 라인업을 공개합니다.</p>
+            </div>
 
-    <img src="images/sun.png" class="day-tag sun-tag" alt="SUN" />
-    <div class="day2">
-        <img src="images/가을 페스티벌_2일차 볼빨간 사춘기.png" class="card" alt="볼빨간 사춘기" />
-        <img src="images/가을 페스티벌_2일차 에픽하이.png" class="card" alt="에픽하이" />
-        <img src="images/가을 페스티벌_2일차 한로로.png" class="card" alt="한로로" />
-        <img src="images/가을 페스티벌_2일차 정세운.png" class="card" alt="정세운" />
-        <img src="images/가을 페스티벌_2일차 웨이브투얼스.png" class="card" alt="웨이브투얼스" />
-        <img src="images/가을 페스티벌_2일차 우즈.png" class="card" alt="우즈" />
-        <img src="images/가을 페스티벌_2일차 zb1.png" class="card" alt="zb1" />
-    </div>
-    </div>
+            <div class="day-tabs">
+                <button class="tab-btn active" data-day="day1">DAY 1</button>
+                <button class="tab-btn" data-day="day2">DAY 2</button>
+            </div>
+
+            <!-- DAY 1 -->
+            <div class="day day1">
+                <img src="images/가을 페스티벌_1일차 10cm.png" class="card" alt="10cm">
+                <img src="images/가을 페스티벌_1일차 akmu.png" class="card" alt="AKMU">
+                <img src="images/가을 페스티벌_1일차 카더가든.png" class="card" alt="카더가든">
+                <img src="images/가을 페스티벌_1일차 잔나비.png" class="card" alt="잔나비">
+                <img src="images/가을 페스티벌_1일차 검정치마.png" class="card" alt="검정치마">
+                <img src="images/가을 페스티벌_1일차 이무진.png" class="card" alt="이무진">
+                <img src="images/가을 페스티벌_1일차 킥플립.png" class="card" alt="킥플립">
+            </div>
+
+            <!-- DAY 2 -->
+            <div class="day day2 hidden">
+                <img src="images/가을 페스티벌_2일차 볼빨간 사춘기.png" class="card" alt="볼빨간사춘기">
+                <img src="images/가을 페스티벌_2일차 에픽하이.png" class="card" alt="에픽하이">
+                <img src="images/가을 페스티벌_2일차 한로로.png" class="card" alt="한로로">
+                <img src="images/가을 페스티벌_2일차 정세운.png" class="card" alt="정세운">
+                <img src="images/가을 페스티벌_2일차 웨이브투얼스.png" class="card" alt="웨이브투어스">
+                <img src="images/가을 페스티벌_2일차 우즈.png" class="card" alt="우즈">
+                <img src="images/가을 페스티벌_2일차 zb1.png" class="card" alt="ZB1">
+            </div>
+        </div>
     </section>
-    
+
     <div id="floatingWidget">
         <a href="https://pf.kakao.com/_example" target="_blank">
             <img src="images/kkt.png" alt="카카오톡" class="chat-icon">
@@ -106,30 +114,45 @@
                     src="https://api.builder.io/api/v1/image/assets/TEMP/32fb02b216e6937002bd207e3080bef0b005db79?width=116"
                     alt="인스타그램"></a>
         </div>
-
-            <p>© 2025 Gwangju ACC Music Festa. All Rights Reserved.</p>
-
+        <p>© 2025 Gwangju ACC Music Festa. All Rights Reserved.</p>
     </footer>
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
+            const tabs = document.querySelectorAll(".tab-btn");
+            const days = document.querySelectorAll(".day");
+
+            tabs.forEach(tab => {
+                tab.addEventListener("click", () => {
+                    tabs.forEach(t => t.classList.remove("active"));
+                    tab.classList.add("active");
+
+                    const target = tab.dataset.day;
+                    days.forEach(day => {
+                        day.classList.add("hidden");
+                        if (day.classList.contains(target)) day.classList.remove("hidden");
+                    });
+                });
+            });
+
             const widget = document.getElementById("floatingWidget");
-            let targetY = window.scrollY + 300; 
+            let targetY = window.scrollY + 300;
             let currentY = targetY;
-            const speed = 0.1; 
+            const speed = 0.1;
 
             function updateWidget() {
-                targetY = window.scrollY + window.innerHeight - 200; 
-                currentY += (targetY - currentY) * speed; 
+                targetY = window.scrollY + window.innerHeight - 200;
+                currentY += (targetY - currentY) * speed;
                 widget.style.top = `${currentY}px`;
                 requestAnimationFrame(updateWidget);
             }
-
             requestAnimationFrame(updateWidget);
         });
     </script>
 </body>
+
 </html>
+
 
 
 
