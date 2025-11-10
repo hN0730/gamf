@@ -130,6 +130,19 @@ body {
     height: 0;
 }
 
+.lineup::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 420px;
+  background: url("images/lineup-bg-notes.png") center/contain no-repeat,
+              radial-gradient(circle at center, rgba(255,255,255,0.25), transparent 70%);
+  pointer-events: none;
+  opacity: 0.5;
+}
+
 .container {
     max-width: 1100px;
     margin: 0 auto;
@@ -287,6 +300,7 @@ body {
     color: whitesmoke;
     margin-bottom: 4rem;
 }
+
 
 
 
