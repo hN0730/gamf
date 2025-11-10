@@ -52,19 +52,29 @@
         </div>
     </div>
 
-    <section class="notice">
+    <section class="timetable-section">
         <div class="container">
-            <h1 class="en-title">🎤 TIMETABLE</h1>
-            <h2 class="kr-title">한 순간도 놓칠 수 없는 ACC 뮤직 페스타의 <br> 타임테이블을 확인해주세요 !</h2>
-            <p class="subtitle">2025 ACC 뮤직 페스타 타임테이블을 공개합니다.</p>
 
-            
-        <div class="timetable">
-            <img src="images/가을 페스티벌_타임테이블.jpg" alt="1일차 타임테이블" class="day1_timetable">
-            <img src="images/가을 페스티벌_2일차 타임테이블.jpg" alt="2일차 타임테이블" class="day2_timetable">
+            <div class="timetable-header">
+                <h1 class="en-title">🎶 TIMETABLE</h1>
+                <h2 class="kr-title">한순간도 놓칠 수 없는 <br> ACC 뮤직 페스타의 타임테이블을 확인하세요!</h2>
+                <p class="subtitle">2025 ACC 뮤직 페스타의 공연 순서를 미리 만나보세요.</p>
+            </div>
+
+            <div class="day-tabs">
+                <button class="tab-btn active" data-day="day1">DAY 1</button>
+                <button class="tab-btn" data-day="day2">DAY 2</button>
+            </div>
+
+            <div class="day day1">
+                <img src="images/가을 페스티벌_타임테이블.jpg" alt="1일차 타임테이블" class="timetable-img">
+            </div>
+
+            <div class="day day2 hidden">
+                <img src="images/가을 페스티벌_2일차 타임테이블.jpg" alt="2일차 타임테이블" class="timetable-img">
+            </div>
         </div>
     </section>
-
 
     <div id="floatingWidget">
         <a href="https://pf.kakao.com/_example" target="_blank">
@@ -91,29 +101,46 @@
                     alt="인스타그램"></a>
         </div>
 
-            <p>© 2025 Gwangju ACC Music Festa. All Rights Reserved.</p>
+        <p>© 2025 Gwangju ACC Music Festa. All Rights Reserved.</p>
 
     </footer>
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
+            const tabs = document.querySelectorAll(".tab-btn");
+            const days = document.querySelectorAll(".day");
+
+            tabs.forEach(tab => {
+                tab.addEventListener("click", () => {
+                    tabs.forEach(t => t.classList.remove("active"));
+                    tab.classList.add("active");
+
+                    const target = tab.dataset.day;
+                    days.forEach(day => {
+                        day.classList.add("hidden");
+                        if (day.classList.contains(target)) day.classList.remove("hidden");
+                    });
+                });
+            });
+
             const widget = document.getElementById("floatingWidget");
-            let targetY = window.scrollY + 300; 
+            let targetY = window.scrollY + 300;
             let currentY = targetY;
-            const speed = 0.1; 
+            const speed = 0.1;
 
             function updateWidget() {
-                targetY = window.scrollY + window.innerHeight - 200; 
-                currentY += (targetY - currentY) * speed; 
+                targetY = window.scrollY + window.innerHeight - 200;
+                currentY += (targetY - currentY) * speed;
                 widget.style.top = `${currentY}px`;
                 requestAnimationFrame(updateWidget);
             }
-
             requestAnimationFrame(updateWidget);
         });
     </script>
 </body>
+
 </html>
+
 
 
 
