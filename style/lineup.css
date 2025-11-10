@@ -158,7 +158,7 @@ body {
 }
 
 .subtitle {
-    font-family: "EliceDigitalBaeum_Regular",sans-serif;
+    font-family: "EliceDigitalBaeum_Regular", sans-serif;
     font-size: 1.5rem;
     font-weight: 400;
     color: #444;
@@ -202,14 +202,13 @@ body {
 
 .day {
     display: grid;
-    grid-template-columns: repeat(2, minmax(480px, 1fr));
+    grid-template-columns: repeat(2, minmax(360px, 1fr));
     gap: 30px;
     justify-items: center;
 }
 
 .card {
     width: 100%;
-    border-radius: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
 }
@@ -218,25 +217,122 @@ body {
     transform: translateY(-6px);
 }
 
-@media (max-width: 900px) {
-    .day {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
+@media (max-width: 1024px) {
+  .en-title {
+    font-size: 3rem;
+  }
+
+  .kr-title {
+    font-size: 1.6rem;
+    line-height: 1.4;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    margin-bottom: 2.2rem;
+  }
+
+  .day-tabs {
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .tab-btn {
+    padding: 0.7rem 1.8rem;
+    font-size: 1rem;
+  }
+
+  .day {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+  }
+
+  .card {
+    max-width: 280px;
+  }
 }
 
-@media (max-width: 600px) {
-    .day {
-        grid-template-columns: 1fr;
-    }
+@media (max-width: 768px) {
+  .en-title {
+    font-size: 2.4rem;
+  }
 
-    .tab-btn {
-        padding: 0.6rem 1.5rem;
-        font-size: 0.9rem;
-    }
+  .kr-title {
+    font-size: 1.3rem;
+    margin: 0.8rem 0;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
+
+  .day-tabs {
+    gap: 0.6rem;
+    margin-bottom: 1.8rem;
+  }
+
+  .tab-btn {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .day {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 260px;
+  }
+
+  .footer-logo {
+    width: 150px;
+  }
+
+  .social img {
+    width: 40px;
+  }
 }
 
+@media (max-width: 480px) {
+  .en-title {
+    font-size: 1.8rem;
+  }
 
+  .kr-title {
+    font-size: 1.1rem;
+    line-height: 1.3;
+  }
+
+  .subtitle {
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .day-tabs {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .tab-btn {
+    width: 70%;
+    padding: 0.7rem 0;
+    font-size: 0.9rem;
+  }
+
+  .day {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 320px;
+  }
+    
 #floatingWidget {
     position: absolute;
     right: 40px;
@@ -300,10 +396,11 @@ body {
 }
 
 .footer p {
-    font-family: "elicedigitalbaeum_regular";
+    font-family: "EliceDigitalBaeum_Regular", sans-serif;
     color: whitesmoke;
     margin-bottom: 4rem;
 }
+
 
 
 
