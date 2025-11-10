@@ -15,8 +15,10 @@
 }
 
 body {
-    background: #FFE7BF;
-    font-family: 'Pretendard', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    background: linear-gradient(to bottom, #f0cd92, #da8868de);
+    font-family: 'Pretendard', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 .header {
@@ -27,11 +29,9 @@ body {
     justify-content: center;
 }
 
-
 .lineup {
-    background: linear-gradient(to bottom, #f0cd92, #da8868de);
     min-height: 100vh;
-    padding: 96px 0 120px;
+    padding: 80px 0;
 }
 
 .logo {
@@ -130,108 +130,155 @@ body {
     height: 0;
 }
 
-.lineup::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 420px;
-  background: url("images/lineup-bg-notes.png") center/contain no-repeat,
-              radial-gradient(circle at center, rgba(255,255,255,0.25), transparent 70%);
-  pointer-events: none;
-  opacity: 0.5;
-}
-
 .container {
-    max-width: 1100px;
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 0 16px;
     text-align: center;
 }
 
 .en-title {
     font-family: "Orbitron", sans-serif;
     font-weight: 900;
-    font-size: clamp(32px, 5vw, 64px);
-    color: #4b4b4b;
-    letter-spacing: 1px;
-    margin-bottom: 24px;
+    font-size: clamp(40px, 5vw, 72px);
+    color: #3b3b3b;
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.en-title:hover {
+    transform: translateY(-6px) scale(1.03);
+    filter: drop-shadow(0 0 12px rgba(255, 204, 100, 0.8));
+}
+
+.kr-title {
+    font-family: "elicedigitalbaeum_regular", sans-serif;
+    font-size: 1.8rem;
+    color: #2e2e2e;
+    margin: 1rem 0;
+}
+
+.subtitle {
+    font-family: "elicedigitalbaeum_regular", sans-serif;
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 2.5rem;
+}
+
+body {
+    background: linear-gradient(to bottom, #f0cd92, #da8868de);
+    font-family: 'Pretendard', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.lineup {
+    min-height: 100vh;
+    padding: 80px 0;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.en-title {
+    font-family: "Orbitron", sans-serif;
+    font-weight: 900;
+    font-size: clamp(40px, 5vw, 72px);
+    color: #3b3b3b;
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.en-title:hover {
+    transform: translateY(-6px) scale(1.03);
+    filter: drop-shadow(0 0 12px rgba(255, 204, 100, 0.8));
 }
 
 .kr-title {
     font-family: "Orbitron", sans-serif;
+    font-size: 3rem;
+    color: #2e2e2e;
+    margin: 1rem 0;
     font-weight: 800;
-    font-size: clamp(22px, 3.2vw, 36px);
-    color: #2c2c2c;
-    line-height: 1.35;
-    margin-bottom: 8px;
 }
 
 .subtitle {
-    font-family: "elicedigitalbaeum_regular";
     font-size: 1.5rem;
-    font-weight:400;
-    color: #333;
-    margin-bottom: 5rem;
+    font-weight: 400;
+    color: #444;
+    margin-bottom: 4rem;
 }
 
-.day-tag {
-    display: block;
-    width: 200px;
-    margin: 32px auto 20px;
+.day-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
 }
 
-.day1 {
+.tab-btn {
+    border: none;
+    border-radius: 50px;
+    padding: 0.8rem 2rem;
+    font-weight: 800;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    background: #f6f6f6;
+    color: #222;
+}
+
+.tab-btn.active {
+    background: #ee7aaa;
+    color: #111;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.tab-btn:hover {
+    background: #da7dff;
+    transform: translateY(-2px);
+}
+
+.hidden {
+    display: none;
+}
+
+.day {
     display: grid;
-    grid-template-columns: repeat(2, minmax(240px, 1fr));
-    gap: 50px;
+    grid-template-columns: repeat(2, minmax(480px, 1fr));
+    gap: 30px;
     justify-items: center;
-    margin-bottom: 56px;
-}
-
-.day2 {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(240px, 1fr));
-    gap: 50px;
-    justify-items: center;
-    margin-bottom: 56px;
 }
 
 .card {
-    display: block;
     width: 100%;
-    max-width: 500px;
-    height: auto;
-    border-radius: 22px;
-    transition: transform .18s ease, box-shadow .18s ease;
-    cursor: pointer;
+    border-radius: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-15px);
+    transform: translateY(-6px);
 }
 
-@media (max-width: 640px) {
-    .day1 {
-        grid-template-columns: 1fr;
-        gap: 18px;
-    }
-
-    .day2 {
-        grid-template-columns: 1fr;
-        gap: 18px;
-    }
-
-    .day-tag {
-        width: 160px;
-        margin: 24px auto 14px;
-    }
-
-    .container {
-        padding: 0 12px;
+@media (max-width: 900px) {
+    .day {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
     }
 }
+
+@media (max-width: 600px) {
+    .day {
+        grid-template-columns: 1fr;
+    }
+
+    .tab-btn {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
 
 #floatingWidget {
     position: absolute;
@@ -300,7 +347,6 @@ body {
     color: whitesmoke;
     margin-bottom: 4rem;
 }
-
 
 
 
