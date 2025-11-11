@@ -1,11 +1,10 @@
 @font-face {
     font-family: Righteous-Regular;
-    src: url(/font/Righteous-Regular.ttf);
+    src: url('../font/Righteous-Regular.ttf') format('truetype');
 }
-
 @font-face {
     font-family: elicedigitalbaeum_regular;
-    src: url(/font/EliceDigitalBaeum_Regular.ttf);
+    src: url('../font/EliceDigitalBaeum_Regular.ttf') format('truetype');
 }
 
 * {
@@ -289,6 +288,7 @@ body {
     color: whitesmoke;
     margin-bottom: 4rem;
 }
+
 
 
 
