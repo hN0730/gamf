@@ -142,10 +142,13 @@ body {
 .en-title {
     font-family: "Righteous", sans-serif;
     font-weight: 700;
-    font-size: 3rem;
+    font-size: 4rem;
     color: #3b3b3b;
     transition: transform 0.4s ease, filter 0.4s ease;
     cursor: pointer;
+    margin-bottom: 4rem;
+    margin-right: 6rem;
+    letter-spacing: 1px;
 }
 
 .en-title:hover {
@@ -155,10 +158,9 @@ body {
 
 .kr-title {
     font-family: "elicedigitalbaeum_regular", sans-serif;
-    font-size: 2.4rem;
+    font-size: 3rem;
     font-weight: 800;
     color: #2e2e2e;
-    margin: 2rem 0 0 0;
 }
 
 .subtitle {
@@ -166,7 +168,7 @@ body {
     font-size: 1.5rem;
     font-weight: 400;
     color: #2e2e2e;
-    margin: 1.5rem 0 3rem 0;
+    margin-bottom: 5rem;
 }
 
 .map {
@@ -340,6 +342,7 @@ body {
     color: whitesmoke;
     margin-bottom: 4rem;
 }
+
 
 
 
