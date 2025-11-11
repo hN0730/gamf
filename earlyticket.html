@@ -4,15 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Earlyticket - 광주 ACC뮤직페스타</title>
+    <title>Early ticket - 광주 ACC뮤직페스타</title>
     <link rel="icon" href="images/icon.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&family=Libre+Barcode+39+Extended+Text&family=Orbitron:wght@400..900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&family=Orbitron:wght@400..900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style/earlyticket.css">
+    <link rel="stylesheet" href="style/ticket.css">
 </head>
 
 <body>
@@ -52,20 +52,17 @@
         </div>
     </div>
 
-    <section class="notice">
+    <section class="early ticket">
         <div class="container">
-            <h1 class="en-title">🎫 EARLY TICKET</h1>
-            <h2 class="kr-title">2025 ACC 뮤직 페스타 <br> 얼리버드 티켓을 확인해주세요 !</h2>
-            <p class="subtitle">음악이 시작되는 그 순간, 가장 먼저 입장할 수 있는 기회를 놓치지마세요 !</p>
+            <h1 class="en-title">🎫 Early TICKET</h1>
+            <h2 class="kr-title">2025 ACC 뮤직 페스타 얼리버드 티켓을 확인해주세요 !</h2>
+            <p class="subtitle">음악이 시작되는 그 순간 🎈 가장 먼저 입장할 수 있는 기회를 놓치지마세요 !</p>
 
-    <div id="floatingWidget">
-        <a href="https://pf.kakao.com/_example" target="_blank">
-            <img src="images/kkt.png" alt="카카오톡" class="chat-icon">
-        </a>
-        <a href="mailto:info@example.com">
-            <img src="images/문의.png" alt="문의하기" class="chat-icon">
-        </a>
-    </div>
+            <div class="ticket-img">
+                <img src="images/early ticket 안내.png" alt="얼리티켓 안내문">
+            </div>
+        </div>
+    </section>
 
     <footer class="footer">
         <img src="https://api.builder.io/api/v1/image/assets/TEMP/8248f9d894a61d4991c0afbcc09c9ec0b247c1e0?width=430"
@@ -83,10 +80,19 @@
                     alt="인스타그램"></a>
         </div>
 
-            <p>© 2025 Gwangju ACC Music Festa. All Rights Reserved.</p>
+            <div id="floatingWidget">
+        <a href="https://pf.kakao.com/_example" target="_blank">
+            <img src="images/kkt.png" alt="카카오톡" class="chat-icon">
+        </a>
+        <a href="mailto:info@example.com">
+            <img src="images/문의.png" alt="문의하기" class="chat-icon">
+        </a>
+    </div>
 
+        <p>© 2025 Gwangju ACC Music Festa. All Rights Reserved.</p>
     </footer>
 
+    
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const widget = document.getElementById("floatingWidget");
@@ -95,7 +101,7 @@
             const speed = 0.1; 
 
             function updateWidget() {
-                targetY = window.scrollY + window.innerHeight - 200; 
+                targetY = window.scrollY + window.innerHeight - 200;
                 currentY += (targetY - currentY) * speed; 
                 widget.style.top = `${currentY}px`;
                 requestAnimationFrame(updateWidget);
@@ -105,6 +111,8 @@
         });
     </script>
 </body>
+
 </html>
+
 
 
