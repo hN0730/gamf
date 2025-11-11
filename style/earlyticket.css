@@ -128,7 +128,7 @@ body {
     height: 0;
 }
 
-.early ticket {
+.earlyticket {
     min-height: 100vh;
     padding: 100px 0;
     text-align: center;
@@ -169,14 +169,14 @@ body {
     margin-bottom: 4rem;
 }
 
-.early ticket-img {
+.earlyticket-img {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
 }
 
-.early ticket-img img {
+.earlyticket-img img {
   display: block;
   margin: 0 auto;
   width: 100%;
@@ -302,6 +302,7 @@ body {
     color: whitesmoke;
     margin-bottom: 4rem;
 }
+
 
 
 
