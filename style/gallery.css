@@ -1,6 +1,6 @@
 @font-face {
-    font-family: DNFBitBitv2;
-    src: url(/font/DNFBitBitv2.ttf);
+    font-family: Righteous-Regular;
+    src: url(/font/Righteous-Regular.ttf);
 }
 
 @font-face {
@@ -140,7 +140,7 @@ body {
 }
 
 .en-title {
-    font-family: "orbitron";
+    font-family: "Righteous-Regular";
     font-size: 4rem;
     font-weight: 900;
     color: #4b4b4b;
@@ -335,5 +335,6 @@ body {
     color: whitesmoke;
     margin-bottom: 4rem;
 }
+
 
 
