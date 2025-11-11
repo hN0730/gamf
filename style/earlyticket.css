@@ -1,6 +1,6 @@
 @font-face {
-    font-family: DNFBitBitv2;
-    src: url(/font/DNFBitBitv2.ttf);
+    font-family: Righteous-Regular;
+    src: url(/font/Righteous-Regular.ttf);
 }
 
 @font-face {
@@ -140,8 +140,8 @@ body {
 }
 
 .en-title {
-    font-family: "Orbitron", sans-serif;
-    font-weight: 900;
+    font-family: "Righteous-Regular", sans-serif;
+    font-weight: 700;
     font-size: 3rem;
     color: #3b3b3b;
     transition: transform 0.4s ease, filter 0.4s ease;
@@ -154,35 +154,35 @@ body {
 }
 
 .kr-title {
-    font-family: "Orbitron", sans-serif;
-    font-size: 2.5rem;
-    color: #222;
-    margin: 1rem 0;
+    font-family: "elicedigitalbaeum_regular", sans-serif;
+    font-size: 2.4rem;
     font-weight: 800;
+    color: #2e2e2e;
+    margin: 2rem 0 0 0;
 }
 
 .subtitle {
     font-family: "elicedigitalbaeum_regular";
     font-size: 1.5rem;
     font-weight: 400;
-    color: #444;
-    margin-bottom: 4rem;
+    color: #2e2e2e;
+    margin: 1.5rem 0 3rem 0;
 }
 
 .earlyticket-img {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 .earlyticket-img img {
-  display: block;
-  margin: 0 auto;
-  width: 100%;
-  max-width: 900px;
-  height: auto;
-  transform: translateX(20px); 
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    transform: translateX(20px);
 }
 
 @media (max-width: 1024px) {
@@ -269,7 +269,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-     gap: 1.5rem;
+    gap: 1.5rem;
 }
 
 .footer-logo {
@@ -302,7 +302,6 @@ body {
     color: whitesmoke;
     margin-bottom: 4rem;
 }
-
 
 
 
