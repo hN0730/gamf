@@ -380,39 +380,35 @@
     margin-bottom: 4rem;
 }
 
-@media (min-width: 768px){
+@media (max-width: 768px){
   .logo{
-    width: 356px;
+    width: 180px;
   }
   
   .number {
-    font-size: 10rem;
+    font-size: 1.3rem;
   }
   
   .label {
-    font-size: 2.5rem;
+    font-size: 1.3rem;
   }
   
   .colon {
-    font-size: 10rem;
+    font-size: 1.3rem;
   }
   
   .date {
-    font-size: 6rem;
+    font-size: 2.5rem;
+  }
+
+  .number {
+    font-size: 2.5rem;
   }
   
-  .lineup-grid,
-  .gallery-grid {
+  .lineup-grid{
     grid-template-columns: repeat(2, 1fr);
   }
-}
 
-@media (min-width: 1024px) {
-  .title {
-    font-size: 4rem;
-  }
-
-}
 
 
 
