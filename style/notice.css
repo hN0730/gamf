@@ -1,6 +1,6 @@
 @font-face {
     font-family: Righteous-Regular;
-    src: url(/font/Righteous-Regular.ttf);
+    src: url('../font/Righteous-Regular.ttf') format('truetype');
 }
 
 @font-face {
@@ -343,6 +343,7 @@ body {
     color: whitesmoke;
     margin-bottom: 4rem;
 }
+
 
 
 
