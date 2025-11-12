@@ -56,28 +56,28 @@
     <img src="images/가을 페스티벌.png" alt="배경" class="hero-img">
 
     <div class="timer">
-      <div class="time-box">
-        <div class="number">12</div>
-        <div class="label">days</div>
-      </div>
-      <div class="colon">:</div>
-      <div class="time-box">
-        <div class="number">14</div>
-        <div class="label">Hours</div>
-      </div>
-      <div class="colon">:</div>
-      <div class="time-box">
-        <div class="number">56</div>
-        <div class="label">Minutes</div>
-      </div>
-      <div class="colon">:</div>
-      <div class="time-box">
-        <div class="number">11</div>
-        <div class="label">Seconds</div>
-      </div>
-    </div>
+  <div class="time-box">
+    <div class="number" id="days">12</div>
+    <div class="label">days</div>
+  </div>
+  <div class="colon">:</div>
+  <div class="time-box">
+    <div class="number" id="hours">14</div>
+    <div class="label">Hours</div>
+  </div>
+  <div class="colon">:</div>
+  <div class="time-box">
+    <div class="number" id="minutes">56</div>
+    <div class="label">Minutes</div>
+  </div>
+  <div class="colon">:</div>
+  <div class="time-box">
+    <div class="number" id="seconds">11</div>
+    <div class="label">Seconds</div>
+  </div>
+</div>
 
-    <div class="date">11.08~11.09 GWANGJU ACC</div>
+    <div class="date">11.15~11.16 GWANGJU ACC</div>
   </section>
 
   <section class="video-section">
@@ -187,34 +187,47 @@
 
   </footer>
 
-  <script>
-  const countdownDate = new Date("Nov 8, 2025 00:00:00").getTime();
-    
-  const countdown = setInterval(function() {
-    const now = new Date().getTime();
-    const distance = countdownDate - now; 
+ <script>
+(function () {
+  
+  const target = new Date("2025-11-15T00:00:00+09:00").getTime();
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24)); 
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)); 
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)); 
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000); 
+  
+  const $d = document.getElementById("days");
+  const $h = document.getElementById("hours");
+  const $m = document.getElementById("minutes");
+  const $s = document.getElementById("seconds");
 
-    document.getElementById("days").innerHTML = days;
-    document.getElementById("hours").innerHTML = hours;
-    document.getElementById("minutes").innerHTML = minutes;
-    document.getElementById("seconds").innerHTML = seconds;
+  function pad2(n){ return String(n).padStart(2,"0"); }
 
-    if (distance < 0) {
-      clearInterval(countdown);
-      document.getElementById("countdown-timer").innerHTML = "EXPIRED";
-    }
-  }, 1000);
+  function tick() {
+    const now = Date.now();
+    let diff = Math.max(0, target - now); 
+
+    const days = Math.floor(diff / (1000*60*60*24));
+    diff %= (1000*60*60*24);
+    const hours = Math.floor(diff / (1000*60*60));
+    diff %= (1000*60*60);
+    const minutes = Math.floor(diff / (1000*60));
+    diff %= (1000*60);
+    const seconds = Math.floor(diff / 1000);
+
+    $d.textContent = days;
+    $h.textContent = pad2(hours);
+    $m.textContent = pad2(minutes);
+    $s.textContent = pad2(seconds);
+  }
+
+  tick();
+  setInterval(tick, 1000);
+})();
 </script>
   
 </body>
 
 
 </html>
+
 
 
 
