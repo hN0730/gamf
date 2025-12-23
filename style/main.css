@@ -380,6 +380,149 @@
     margin-bottom: 4rem;
 }
 
+/* --- 모바일 반응형 최적화 (768px 이하) --- */
+@media (max-width: 768px) {
+  /* 1. 헤더 및 로고 */
+  .header {
+    height: 8rem; /* 헤더 높이 축소 */
+  }
+  .logo {
+    width: 150px;
+  }
+
+  /* 2. 햄버거 메뉴 2단 구성 */
+  .main-menu {
+    grid-template-columns: repeat(2, 1fr); /* 2열 배치 */
+    gap: 1rem 0;
+    padding: 1rem 0;
+  }
+  .nav-item {
+    font-size: 1.2rem;
+  }
+  
+  /* 서브메뉴도 2단으로 대응 */
+  .sub-menu {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem 0;
+  }
+  .sub-menu-group a {
+    font-size: 1rem;
+  }
+    /* 햄버거 버튼 스타일 (기본적으로는 숨김) */
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  z-index: 100;
+}
+
+.menu-toggle span {
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  transition: all 0.3s;
+}
+
+    .menu-wrapper {
+    display: none; /* 기본적으로 메뉴 숨김 */
+  }
+
+  /* 메뉴가 열렸을 때 (JS로 클래스 부여 예정) */
+  .menu-wrapper.active {
+    display: block;
+    position: fixed;
+    top: 8rem; /* 헤더 높이에 맞춤 */
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 8rem);
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 99;
+    overflow-y: auto;
+  }
+
+  /* 모바일에서 서브메뉴가 항상 보이거나 클릭 가능하도록 조정 */
+  .sub-nav {
+    position: static;
+    max-height: none;
+    opacity: 1;
+    background: transparent;
+  }
+}
+  /* 3. Hero / D-Day 섹션 높이 축소 */
+  .hero {
+    height: 500px; /* 기존 1000px에서 절반으로 축소 */
+    padding: 1rem;
+  }
+  .timer {
+    gap: 0.8rem;
+  }
+  .number {
+    font-size: 3rem; /* 모바일에서 숫자 크기 최적화 */
+  }
+  .label {
+    font-size: 1rem;
+  }
+  .colon {
+    font-size: 2.5rem;
+  }
+  .date {
+    font-size: 2.2rem;
+    margin-top: 1rem;
+  }
+
+  /* 4. 영상 섹션 (비율 최적화) */
+  .video-section {
+    padding: 40px 10px;
+  }
+  .video-wrapper {
+    height: 250px; /* 모바일에서 영상 높이 고정 (16:9 비율 느낌) */
+  }
+
+  /* 5. NOTICE 표 폰트 축소 */
+  .notice {
+    padding: 3rem 1rem;
+  }
+  .title {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+  }
+  .table th, 
+  .table td {
+    padding: 0.8rem 0.5rem; /* 간격 축소 */
+    font-size: 13px; /* 폰트 크기 축소 */
+  }
+  .table td:nth-child(2) {
+    padding-left: 0.5rem; /* 제목 들여쓰기 조정 */
+  }
+
+  /* 6. 라인업 및 지도/플레이리스트 */
+  .lineup-grid {
+    grid-template-columns: 1fr; /* 모바일은 1열이 더 보기 편함 */
+  }
+  .map-playlist-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .playlist-section iframe {
+    height: 500px !important; /* 플레이리스트 높이 조절 */
+  }
+
+  /* 7. 푸터 */
+  .footer-logo {
+    width: 140px;
+  }
+  .social img {
+    width: 40px;
+  }
+}
+
 
 
 
