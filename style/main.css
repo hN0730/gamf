@@ -394,7 +394,7 @@
         right: -100% !important; /* 기본 숨김 */
         width: 80% !important;
         height: 100vh !important;
-        background: #111 !important;
+background-color: #333 !important;
         z-index: 9999 !important;
         display: flex !important;
         flex-direction: column !important;
@@ -430,7 +430,7 @@
    2. PC 전용 (769px 이상만 적용)
    ========================================= */
 @media screen and (min-width: 769px) {
-    .menu-wrapper { position: relative !important; right: 0 !important; width: 100% !important; height: auto !important; display: block !important; }
+    .menu-wrapper { position: relative !important; right: 0 !important; width: 100% !important; height: auto !important; background-color: #333 !important; display: block !important; }
     .nav-item { display: inline-block !important; margin-right: 20px; }
     
     /* 타이머 크기 웅장하게 복구 */
@@ -444,6 +444,7 @@
     
     #hamburger-menu { display: none !important; } /* PC에선 햄버거 삭제 */
 }
+
 
 
 
