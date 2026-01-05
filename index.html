@@ -219,19 +219,40 @@
   setInterval(tick, 1000);
 })();
 
-  const hamburger = document.getElementById('hamburger-menu');
-  const menu = document.querySelector('.main-menu');
+const hamburger = document.getElementById('hamburger-menu');
+const mainMenu = document.querySelector('.main-menu');
+const subNav = document.querySelector('.sub-nav');
+const navItems = document.querySelectorAll('.nav-item[data-menu]');
+const subGroups = document.querySelectorAll('.sub-menu-group');
 
-  hamburger.addEventListener('click', () => {
-    menu.classList.toggle('show');
+hamburger.addEventListener('click', () => {
+  mainMenu.classList.toggle('show');
+  subNav.classList.remove('show');
+  subGroups.forEach(g => g.classList.remove('active'));
+});
+
+navItems.forEach(item => {
+  item.addEventListener('click', () => {
+    const target = item.dataset.menu;
+
+    subNav.classList.add('show');
+
+    subGroups.forEach(group => {
+      group.classList.toggle(
+        'active',
+        group.id === target
+      );
+    });
   });
-
+});
 </script>
+
   
 </body>
 
 
 </html>
+
 
 
 
