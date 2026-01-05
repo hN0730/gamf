@@ -22,43 +22,7 @@
         alt="ACC Music Festa Logo" class="logo">
     </a>
   </header>
-
-  <!-- 모바일 햄버거 버튼 -->
-<div class="hamburger" id="hamburger-menu">
-  <span></span>
-  <span></span>
-  <span></span>
-</div>
-
-<!-- 모바일 메뉴 -->
-<nav class="mobile-nav" id="mobile-nav">
-  <ul class="mobile-menu">
-    <li>
-      INFORMATION
-      <ul class="mobile-submenu">
-        <li><a href="notice.html">NOTICE</a></li>
-        <li><a href="festivalmap.html">FESTIVAL MAP</a></li>
-      </ul>
-    </li>
-    <li>
-      ARTIST
-      <ul class="mobile-submenu">
-        <li><a href="lineup.html">LINE-UP</a></li>
-        <li><a href="timetable.html">TIMETABLE</a></li>
-      </ul>
-    </li>
-    <li>
-      TICKETS
-      <ul class="mobile-submenu">
-        <li><a href="ticket.html">TICKET 예매안내</a></li>
-        <li><a href="earlyticket.html">EARLY TICKET</a></li>
-      </ul>
-    </li>
-    <li><a href="gallery.html">GALLERY</a></li>
-  </ul>
-</nav>
-
-
+  
   <div class="menu-wrapper"> 
     <nav class="main-nav"> 
       <ul class="main-menu"> 
@@ -262,21 +226,6 @@
   setInterval(tick, 1000);
 })();
 
-   const hamburger = document.getElementById('hamburger-menu');
-const mobileNav = document.getElementById('mobile-nav');
-
-hamburger.addEventListener('click', () => {
-  mobileNav.style.display = mobileNav.style.display === 'block' ? 'none' : 'block';
-});
-
-document.querySelectorAll('.mobile-menu > li').forEach(item => {
-  item.addEventListener('click', (e) => {
-    if(item.querySelector('.mobile-submenu')){
-      e.stopPropagation();
-      item.classList.toggle('open');
-    }
-  });
-});
 
 </script>
 
@@ -286,6 +235,7 @@ document.querySelectorAll('.mobile-menu > li').forEach(item => {
 
 
 </html>
+
 
 
 
