@@ -448,15 +448,49 @@
 }
 
     .main-menu { display: flex; flex-direction: column; gap: 20px; text-align: left; padding: 0 30px; }
-  .nav-item { font-size: 1.5rem; border-bottom: 1px solid #444; padding-bottom: 10px; }
+.nav-item {
+        color: whitesmoke !important; /* 기본 색상 강제 적용 */
+        font-size: 1.5rem;
+        padding: 15px 0;
+        cursor: pointer;
+        width: 100%;
+        text-align: left;
+        transition: color 0.3s;
+    }
+
+.nav-item:hover, .nav-item.active-title {
+        color: #ff8800 !important;
+    }
    .main-nav { padding: 1rem 0; }
 
    /* 서브메뉴 제어 스타일 */
-    .sub-nav { position: relative; opacity: 1; max-height: none; background: transparent; padding-left: 20px; }
-  .sub-menu-group { display: block; margin-top: 10px; }
-  .sub-menu-group a { font-size: 1.1rem; color: #ff8800; display: block; margin: 8px 0; }
+    .sub-nav {
+        display: none; /* 기본적으로 숨김 */
+        background: #222;
+        width: 100%;
+        padding-left: 20px;
+    }
+
+    /* 클래스가 추가되면 보이게 함 */
+    .sub-nav.show {
+        display: block !important;
+        max-height: none;
+        opacity: 1;
+    }
+ .sub-menu-group {
+        display: flex !important; /* 모바일에서는 그룹별로 보이기 */
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 0;
+    }
+
+    .sub-menu-group a {
+        color: #bbb;
+        font-size: 1.2rem;
+        text-decoration: none;
+    }
 }
-    
+
   /* Hero 영역 높이 최적화 */
     .hero { 
         height: auto; 
@@ -507,6 +541,7 @@
     .number { font-size: 2.5rem; }
     .date { font-size: 1.8rem; }
 }
+
 
 
 
