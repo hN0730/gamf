@@ -197,72 +197,45 @@
 
  <script>
 (function () {
-    // 1. 타이머 설정 (날짜가 지나면 0으로 고정)
+    // 1. 타이머: 현재 시점보다 과거면 무조건 00:00:00:00 고정
     const target = new Date("2025-11-22T00:00:00+09:00").getTime();
     
     function tick() {
         const now = Date.now();
         let diff = target - now;
         
+        const $d = document.getElementById("days");
+        const $h = document.getElementById("hours");
+        const $m = document.getElementById("minutes");
+        const $s = document.getElementById("seconds");
+
         if (diff <= 0) {
-            document.getElementById("days").textContent = "0";
-            document.getElementById("hours").textContent = "00";
-            document.getElementById("minutes").textContent = "00";
-            document.getElementById("seconds").textContent = "00";
+            $d.textContent = "0";
+            $h.textContent = "00";
+            $m.textContent = "00";
+            $s.textContent = "00";
             return;
         }
 
-        const days = Math.floor(diff / (1000*60*60*24));
-        const hours = Math.floor((diff / (1000*60*60)) % 24);
-        const minutes = Math.floor((diff / (1000*60)) % 60);
-        const seconds = Math.floor((diff / 1000) % 60);
-
-        document.getElementById("days").textContent = days;
-        document.getElementById("hours").textContent = String(hours).padStart(2, "0");
-        document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
-        document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
+        $d.textContent = Math.floor(diff / (1000*60*60*24));
+        $h.textContent = String(Math.floor((diff / (1000*60*60)) % 24)).padStart(2, "0");
+        $m.textContent = String(Math.floor((diff / (1000*60)) % 60)).padStart(2, "0");
+        $s.textContent = String(Math.floor((diff / 1000) % 60)).padStart(2, "0");
     }
     setInterval(tick, 1000);
     tick();
 
-    // 2. 메뉴 관련 로직 (DOM 로드 후 실행)
+    // 2. 햄버거 메뉴 기능
     document.addEventListener('DOMContentLoaded', () => {
         const hamburger = document.getElementById('hamburger-menu');
         const menuWrapper = document.querySelector('.menu-wrapper');
-        const navItems = document.querySelectorAll('.nav-item');
-        const subNav = document.querySelector('.sub-nav');
 
-        if (hamburger && menuWrapper) {
-            hamburger.addEventListener('click', (e) => {
-                e.stopPropagation(); // 이벤트 전파 방지
+        if (hamburger) {
+            hamburger.onclick = function() {
                 menuWrapper.classList.toggle('open');
-                hamburger.classList.toggle('active');
-            });
+                this.classList.toggle('active');
+            };
         }
-
-        navItems.forEach((item) => {
-            item.addEventListener('click', (e) => {
-                if (window.innerWidth <= 768) {
-                    // a 태그 클릭 시에는 토글 방지
-                    if(e.target.tagName === 'A') return;
-
-                    navItems.forEach(i => i.classList.remove('active-item'));
-                    item.classList.add('active-item');
-
-                    if (subNav) {
-                        subNav.classList.toggle('show');
-                    }
-                }
-            });
-        });
-        
-        // 메뉴 바깥 클릭 시 닫기 (선택 사항)
-        document.addEventListener('click', () => {
-            if (menuWrapper.classList.contains('open')) {
-                menuWrapper.classList.remove('open');
-                hamburger.classList.remove('active');
-            }
-        });
     });
 })();
 </script>
@@ -273,6 +246,7 @@
 
 
 </html>
+
 
 
 
