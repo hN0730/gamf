@@ -208,38 +208,37 @@
                                $h.textContent = pad2(hours); $m.textContent = pad2(minutes); $s.textContent = pad2(seconds); } 
               tick(); setInterval(tick, 1000); })();
    
-window.addEventListener('load', function() {
-    const btn = document.getElementById('hamburger-menu');
-    const menu = document.querySelector('.menu-wrapper');
+document.addEventListener('DOMContentLoaded', () => {
+    const navItems = document.querySelectorAll('.nav-item');
+    const subNav = document.querySelector('.sub-nav');
+    const subGroups = document.querySelectorAll('.sub-menu-group');
 
-    if (btn && menu) {
-        btn.onclick = function(e) {
-            e.preventDefault();
-            e.stopPropagation(); // 버튼 클릭 시 이벤트가 다른 데로 안 새게 함
-            
-            menu.classList.toggle('open');
-            this.classList.toggle('active'); // ☰ 를 X로 바꿈
-        };
-    }
-});
-// 기존 햄버거 열기 코드 아래에 추가하세요
-const navItems = document.querySelectorAll('.nav-item');
-const subGroups = document.querySelectorAll('.sub-menu-group');
-const subNavContainer = document.querySelector('.sub-nav');
+    navItems.forEach((item, index) => {
+        item.addEventListener('click', () => {
+            // 모바일 너비에서만 작동
+            if (window.innerWidth <= 768) {
+                const targetGroup = subGroups[index];
 
-navItems.forEach((item, index) => {
-    item.addEventListener('click', () => {
-        // 1. 일단 모든 서브 그룹 숨기기
-        subGroups.forEach(group => group.style.display = 'none');
-        
-        // 2. sub-nav 컨테이너 보이기
-        subNavContainer.classList.add('active');
-
-        // 3. 클릭한 메뉴 순서에 맞는 서브 그룹만 보여주기
-        // (예: INFORMATION이 0번이면 NOTICE 그룹을 보여줌)
-        if (subGroups[index]) {
-            subGroups[index].style.display = 'flex';
-        }
+                // 1. 이미 열려있는 메뉴를 다시 클릭하면 닫기
+                if (targetGroup && targetGroup.classList.contains('active')) {
+                    subNav.classList.remove('active');
+                    targetGroup.classList.remove('active');
+                } 
+                // 2. 새로운 메뉴 클릭 시
+                else {
+                    // 모든 기존 active 제거
+                    subGroups.forEach(g => g.classList.remove('active'));
+                    
+                    if (targetGroup && !targetGroup.classList.contains('sub-menu-placeholder')) {
+                        subNav.classList.add('active');
+                        targetGroup.classList.add('active');
+                    } else {
+                        // 하위 메뉴가 없는 경우(GALLERY 등) 닫기
+                        subNav.classList.remove('active');
+                    }
+                }
+            }
+        });
     });
 });
 
@@ -251,6 +250,7 @@ navItems.forEach((item, index) => {
 
 
 </html>
+
 
 
 
