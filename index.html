@@ -18,7 +18,7 @@
 <body>
  <header class="header">
   <a href="./index.html">
-    <img src="..." alt="ACC Music Festa Logo" class="logo">
+    <img src="https://api.builder.io/api/v1/image/assets/TEMP/5a57b55d432386da29cbea621e4567c229063947?width=712" alt="ACC Music Festa Logo" class="logo">
   </a>
   <div id="hamburger-menu" class="mobile-only">
     <span></span>
@@ -197,57 +197,49 @@
 
  <script>
 (function () {
-  
-  const target = new Date("2025-11-22T00:00:00+09:00").getTime();
+    // 1. 타이머 설정 (날짜가 지나면 0으로 고정)
+    const target = new Date("2025-11-22T00:00:00+09:00").getTime();
+    
+    function tick() {
+        const now = Date.now();
+        let diff = target - now;
+        
+        // 날짜가 지났으면(diff <= 0) 모두 0으로 설정
+        if (diff <= 0) {
+            document.getElementById("days").textContent = "0";
+            document.getElementById("hours").textContent = "00";
+            document.getElementById("minutes").textContent = "00";
+            document.getElementById("seconds").textContent = "00";
+            return;
+        }
 
-  
-  const $d = document.getElementById("days");
-  const $h = document.getElementById("hours");
-  const $m = document.getElementById("minutes");
-  const $s = document.getElementById("seconds");
+        const days = Math.floor(diff / (1000*60*60*24));
+        diff %= (1000*60*60*24);
+        const hours = Math.floor(diff / (1000*60*60));
+        diff %= (1000*60*60);
+        const minutes = Math.floor(diff / (1000*60));
+        diff %= (1000*60);
+        const seconds = Math.floor(diff / 1000);
 
-  function pad2(n){ return String(n).padStart(2,"0"); }
+        document.getElementById("days").textContent = days;
+        document.getElementById("hours").textContent = String(hours).padStart(2, "0");
+        document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
+        document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
+    }
+    setInterval(tick, 1000);
+    tick();
 
-  function tick() {
-    const now = Date.now();
-    let diff = Math.max(0, target - now); 
-
-    const days = Math.floor(diff / (1000*60*60*24));
-    diff %= (1000*60*60*24);
-    const hours = Math.floor(diff / (1000*60*60));
-    diff %= (1000*60*60);
-    const minutes = Math.floor(diff / (1000*60));
-    diff %= (1000*60);
-    const seconds = Math.floor(diff / 1000);
-
-    $d.textContent = days;
-    $h.textContent = pad2(hours);
-    $m.textContent = pad2(minutes);
-    $s.textContent = pad2(seconds);
-  }
-
-  tick();
-  setInterval(tick, 1000);
-})();
-
- const hamburger = document.getElementById('hamburger-menu');
+    // 2. 햄버거 메뉴 제어 (클릭 시 열기/닫기)
+    // HTML이 다 그려진 후 실행되도록 이벤트 리스너 안에 넣습니다.
+    const hamburger = document.getElementById('hamburger-menu');
     const menuWrapper = document.querySelector('.menu-wrapper');
 
-    if (hamburger) { // 버튼이 존재할 때만 작동
-        hamburger.addEventListener('click', () => {
-            menuWrapper.classList.toggle('open'); // 메뉴 열기/닫기
-            hamburger.classList.toggle('active'); // 버튼 X 모양 변신
+    if (hamburger && menuWrapper) {
+        hamburger.addEventListener('click', function() {
+            menuWrapper.classList.toggle('open');
+            this.classList.toggle('active'); // 'X' 모양 변신용
         });
     }
-    
-    // 추가 팁: 메뉴 안의 링크를 클릭하면 메뉴창이 닫히도록 설정
-    const navLinks = document.querySelectorAll('.nav-item a, .sub-menu-group a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            menuWrapper.classList.remove('open');
-            hamburger.classList.remove('active');
-        });
-    });
 })();
 </script>
 
@@ -257,6 +249,7 @@
 
 
 </html>
+
 
 
 
