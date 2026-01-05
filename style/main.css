@@ -409,38 +409,27 @@
 
 /* 2. 모바일 (768px 이하) */
 @media (max-width: 768px) {
-   #hamburger-menu {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
+    .header { height: 70px !important; padding: 0 15px; justify-content: space-between; }
+    .logo { width: 140px !important; }
+    
+ #hamburger-menu { 
+        display: flex !important; 
+        flex-direction: column; 
+        gap: 5px; 
+        cursor: pointer; 
+        z-index: 1001; 
+    }
+    #hamburger-menu span { width: 25px; height: 3px; background: white; transition: 0.3s; }
+
+.main-menu { display: flex !important; flex-direction: column; gap: 10px; text-align: left; }
+    .nav-item { 
+        font-size: 1.3rem !important; 
+        color: white !important; 
+        padding: 15px 0; 
+        border-bottom: 1px solid #333;
         cursor: pointer;
-        z-index: 1001; /* 로고보다 앞에 오게 */
-        position: absolute;
-        right: 20px;
     }
-
-    #hamburger-menu span {
-        width: 30px;
-        height: 3px;
-        background: white;
-        transition: 0.3s;
-    }
-
-    .menu-wrapper {
-        position: fixed;
-        top: 0;
-        right: -100%; /* 숨김 */
-        width: 80%; /* 화면의 80% 차지 */
-        height: 100vh;
-        background: rgba(0, 0, 0, 0.95);
-        z-index: 1000;
-        transition: right 0.4s ease; /* 슥 나타나는 효과 */
-        display: block !important; /* 햄버거 모드에선 항상 블록 상태 */
-    }
-  
-.menu-wrapper.open {
-        right: 0;
-    }
+    .nav-item:active, .nav-item.active-item { color: #ff8800 !important; }
 
     #hamburger-menu.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
     #hamburger-menu.active span:nth-child(2) { opacity: 0; }
@@ -458,56 +447,30 @@
         transition: color 0.3s;
     }
 
-.nav-item:hover, .nav-item.active-title {
-        color: #ff8800 !important;
-    }
-   .main-nav { padding: 1rem 0; }
 
    /* 서브메뉴 제어 스타일 */
-    .sub-nav {
-        display: none; /* 기본적으로 숨김 */
-        background: #222;
-        width: 100%;
-        padding-left: 20px;
+ .sub-nav { 
+        position: static !important; 
+        max-height: none !important; 
+        opacity: 1 !important; 
+        display: none; /* 기본 숨김 */
+        background: transparent !important; 
+        padding: 10px 0 10px 15px;
     }
+    .sub-nav.show { display: block !important; } /* 클릭 시 노출 */
 
-    /* 클래스가 추가되면 보이게 함 */
-    .sub-nav.show {
-        display: block !important;
-        max-height: none;
-        opacity: 1;
-    }
- .sub-menu-group {
-        display: flex !important; /* 모바일에서는 그룹별로 보이기 */
-        flex-direction: column;
-        gap: 10px;
-        padding: 10px 0;
-    }
-
-    .sub-menu-group a {
-        color: #bbb;
-        font-size: 1.2rem;
-        text-decoration: none;
-    }
-}
+    .sub-menu { display: flex !important; flex-direction: column; gap: 15px; }
+    .sub-menu-group { display: flex !important; flex-direction: column; gap: 8px; }
+    .sub-menu-group a { font-size: 1.1rem !important; color: #ff8800 !important; }
 
   /* Hero 영역 높이 최적화 */
-    .hero { 
-        height: auto; 
-        min-height: 450px; 
-        padding: 3rem 1rem; 
-    }
-
-    /* 타이머: 2줄 레이아웃 (잘림 방지) */
-    .timer {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-    }
+.hero { height: 400px !important; padding: 2rem 1rem !important; }
+    .timer { transform: scale(0.8); } /* 타이머가 너무 크면 크기 조절 */
+    .date { font-size: 1.5rem !important; margin-top: 1rem; }
+}
     .colon { display: none; } /* 줄바꿈 시 콜론 숨김 */
     .number { font-size: 3.5rem; }
     .label { font-size: 0.9rem; }
-    .date { font-size: 1.8rem; text-align: center; }
 
     /* 공지사항 테이블 (가로 스크롤 방지용 모바일 뷰) */
   .table th, .table td { font-size: 13px; padding: 10px 5px; }
@@ -541,6 +504,7 @@
     .number { font-size: 2.5rem; }
     .date { font-size: 1.8rem; }
 }
+
 
 
 
