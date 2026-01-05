@@ -222,21 +222,27 @@ window.addEventListener('load', function() {
         };
     }
 });
-
-   // 기존 스크립트의 menu.classList.toggle('open') 아래에 추가
+// 기존 햄버거 열기 코드 아래에 추가하세요
 const navItems = document.querySelectorAll('.nav-item');
 const subGroups = document.querySelectorAll('.sub-menu-group');
+const subNavContainer = document.querySelector('.sub-nav');
 
 navItems.forEach((item, index) => {
-    item.onclick = function() {
-        // 모든 서브그룹 일단 숨기기
-        subGroups.forEach(g => g.style.display = 'none');
-        // 클릭한 메뉴의 순서에 맞는 서브그룹만 보여주기
-        if(subGroups[index]) {
+    item.addEventListener('click', () => {
+        // 1. 일단 모든 서브 그룹 숨기기
+        subGroups.forEach(group => group.style.display = 'none');
+        
+        // 2. sub-nav 컨테이너 보이기
+        subNavContainer.classList.add('active');
+
+        // 3. 클릭한 메뉴 순서에 맞는 서브 그룹만 보여주기
+        // (예: INFORMATION이 0번이면 NOTICE 그룹을 보여줌)
+        if (subGroups[index]) {
             subGroups[index].style.display = 'flex';
         }
-    };
+    });
 });
+
 </script>
 
 
@@ -245,6 +251,7 @@ navItems.forEach((item, index) => {
 
 
 </html>
+
 
 
 
