@@ -410,35 +410,57 @@
     .header { height: 8rem; }
     .logo { width: 180px; }
     
-    .nav-item { font-size: 1.2rem; }
-    .main-nav { padding: 1.2rem 0; }
+   .main-nav { padding: 1rem 0; }
+    .main-menu {
+        grid-template-columns: repeat(2, 1fr); /* 2열 배치 */
+        gap: 10px;
+    }
+    .nav-item { font-size: 1.1rem; padding: 5px; }
     
     /* 서브메뉴 가독성 개선 (모바일에서는 세로 배치) */
+   .sub-nav { position: static; opacity: 1; max-height: none; background: #222; }
+    .menu-wrapper:hover .sub-nav { padding: 1rem 0; }
     .sub-menu {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr; /* 모바일은 한 줄씩 세로로 */
         gap: 1.5rem;
+        padding-left: 20px;
     }
-    .sub-menu-group a { font-size: 1.1rem; }
-
+    .sub-menu-group { align-items: flex-start; }
+    .sub-menu-group a { font-size: 1rem; }
+    
     /* 히로 섹션 & 타이머 */
-    .hero { height: 600px; }
-    .timer { gap: 0.8rem; }
-    .number { font-size: 3.5rem; }
-    .colon { font-size: 3rem; }
-    .label { font-size: 0.9rem; }
-    .date { font-size: 2.2rem; letter-spacing: 1px; }
+    .hero { 
+        height: auto; /* 높이 고정 해제 */
+        padding: 4rem 1rem; /* 위아래 여백으로 높이 조절 */
+        min-height: 400px; 
+    }
+    
+    .timer {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2x2 격자로 배치 (숫자 한줄 글자 한줄 효과) */
+        gap: 20px;
+        justify-items: center;
+    }
+    .colon { display: none; } /* 줄바꿈 시 콜론은 가독성을 위해 숨김 */
+    
+    .number { font-size: 3.5rem; } /* 숫자 크기 적정화 */
+    .label { font-size: 1rem; margin-top: 0; }
+    .date { 
+        font-size: 2rem; 
+        margin-top: 2rem;
+        word-break: break-all; 
+        text-align: center;
+    }
 
     /* 공지사항 테이블 (가로 스크롤 방지용 모바일 뷰) */
-    .table th, .table td {
-        padding: 0.8rem 0.5rem;
-        font-size: 14px;
-    }
+  .table th, .table td { font-size: 13px; padding: 10px 5px; }
+}
     .table td:nth-child(2) { padding-left: 0.5rem; }
     .title { font-size: 2.2rem; margin-bottom: 2rem; }
 
     /* 비디오 섹션 패딩 감소 */
     .video-section { padding: 40px 15px; }
-    .video-wrapper { height: 300px; }
+   .video-wrapper { height: 250px; }
 
     /* 라인업 이미지 */
     .lineup-img { border-radius: 15px; }
@@ -462,6 +484,7 @@
     .number { font-size: 2.5rem; }
     .date { font-size: 1.8rem; }
 }
+
 
 
 
