@@ -383,67 +383,52 @@
 #hamburger-menu { display: none; cursor: pointer; flex-direction: column; gap: 5px; z-index: 100; }
 #hamburger-menu span { width: 30px; height: 3px; background: white; transition: 0.3s; }
 
-/* --- 모바일 긴급 복구 최종본 --- */
-@media screen and (max-width: 768px) {
-    /* [1] 가로 스크롤 강제 삭제 */
-    html, body {
-        overflow-x: hidden !important;
-        width: 100% !important;
-        position: relative;
+/* --- 모바일 반응형 (768px 이하) --- */
+@media (max-width: 768px) {
+    /* Hero 영역 높이 최적화 */
+    .hero { 
+        height: auto; 
+        min-height: 450px; 
+        padding: 3rem 1rem; 
     }
 
-    /* [2] 지도, 플레이리스트, 이미지 절대 화면 안넘게 */
-    section, div, img, iframe {
-        max-width: 100% !important;
-        box-sizing: border-box !important;
+    /* 타이머: 2줄 레이아웃 (잘림 방지) */
+    .timer {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
     }
-    
-    /* [3] 메뉴창 위치 및 배경 수정 */
-    .menu-wrapper {
-        position: fixed !important;
-        top: 0 !important;
-        right: -100% !important; /* 평소엔 숨김 */
-        width: 80% !important;
-        height: 100vh !important;
-        background: #111 !important;
-        z-index: 10000 !important;
-        display: block !important; /* flex 지우고 block으로 변경 */
-        padding: 80px 20px !important;
-        transition: right 0.3s ease;
-    }
-    .menu-wrapper.open {
-        right: 0 !important;
-    }
+    .colon { display: none; } /* 줄바꿈 시 콜론 숨김 */
+    .number { font-size: 3.5rem; }
+    .label { font-size: 0.9rem; }
+    .date { font-size: 1.8rem; text-align: center; }
 
-    /* [4] 1차 메뉴(Information 등) 가독성 */
-    .nav-item {
-        display: block !important;
-        width: 100% !important;
-        padding: 15px 0 !important;
-        font-size: 1.5rem !important;
-        color: white !important;
-        border-bottom: 1px solid #333;
-    }
-
-    /* [5] 2차 메뉴(Notice 등) 쏟아짐 방지 - 우선 세로로 나열 */
+    /* 서브메뉴 제어 스타일 */
     .sub-nav {
-        position: static !important;
-        display: block !important;
-        background: transparent !important;
-        padding: 0 !important;
+        position: static; /* Hero를 덮지 않고 아래로 밀어냄 */
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        background: #222;
     }
-    .sub-menu {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 20px !important;
-        margin-top: 20px !important;
+    /* active 클래스가 붙으면 펼쳐짐 */
+    .sub-nav.active {
+        max-height: 500px;
+        opacity: 1;
+        padding: 1rem 0;
     }
+
+    /* 모바일에서는 기본적으로 하위 그룹 숨김 */
     .sub-menu-group {
+        display: none !important; 
+        width: 100%;
+    }
+    /* active 클래스가 붙은 그룹만 표시 */
+    .sub-menu-group.active {
         display: flex !important;
-        flex-direction: column !important;
-        margin-bottom: 15px !important;
-        border-left: 2px solid #ff8800 !important;
-        padding-left: 15px !important;
+        flex-direction: column;
+        align-items: center;
     }
 }
 /* =========================================
@@ -464,6 +449,7 @@
     
     #hamburger-menu { display: none !important; } /* PC에선 햄버거 삭제 */
 }
+
 
 
 
