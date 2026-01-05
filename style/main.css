@@ -409,21 +409,43 @@
 
 /* 2. 모바일 (768px 이하) */
 @media (max-width: 768px) {
-    #hamburger-menu { display: flex; position: absolute; right: 20px; }
-    /* 헤더 및 메뉴 */
-    .header { height: 8rem; }
-    .logo { width: 180px; }
+   #hamburger-menu {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        z-index: 1001; /* 로고보다 앞에 오게 */
+        position: absolute;
+        right: 20px;
+    }
+
+    #hamburger-menu span {
+        width: 30px;
+        height: 3px;
+        background: white;
+        transition: 0.3s;
+    }
 
     .menu-wrapper {
-    position: fixed; top: 0; right: -100%; /* 화면 밖 */
-    width: 70%; height: 100vh;
-    background: rgba(0, 0, 0, 0.95);
-    z-index: 99; transition: 0.4s;
-    display: flex; flex-direction: column; padding-top: 80px;
-  }
+        position: fixed;
+        top: 0;
+        right: -100%; /* 숨김 */
+        width: 80%; /* 화면의 80% 차지 */
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.95);
+        z-index: 1000;
+        transition: right 0.4s ease; /* 슥 나타나는 효과 */
+        display: block !important; /* 햄버거 모드에선 항상 블록 상태 */
+    }
   
-  /* 햄버거 클릭 시 메뉴가 슥 나타남 */
-  .menu-wrapper.open { right: 0; }
+.menu-wrapper.open {
+        right: 0;
+    }
+
+    #hamburger-menu.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    #hamburger-menu.active span:nth-child(2) { opacity: 0; }
+    #hamburger-menu.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+}
 
     .main-menu { display: flex; flex-direction: column; gap: 20px; text-align: left; padding: 0 30px; }
   .nav-item { font-size: 1.5rem; border-bottom: 1px solid #444; padding-bottom: 10px; }
@@ -485,6 +507,7 @@
     .number { font-size: 2.5rem; }
     .date { font-size: 1.8rem; }
 }
+
 
 
 
