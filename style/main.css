@@ -380,26 +380,36 @@
     margin-bottom: 4rem;
 }
 
+html, body {
+  background: #25193C;
+}
+
+.menu-wrapper {
+  position: relative;
+}
+
+.hamburger {
+  display: none;
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  font-size: 2.5rem;
+  color: white;
+  background: none;
+  border: none;
+  z-index: 1000;
+}
+
 @media (max-width: 1024px) {
 
-  /* 햄버거 표시 */
   .hamburger {
     display: block;
-  }
-
-  /* 메뉴 구조 변경 */
-  .main-nav {
-    padding: 1rem 0;
   }
 
   .main-menu {
     display: none;
     grid-template-columns: 1fr;
-    background: rgba(0,0,0,0.95);
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
+    background: #111;
   }
 
   .main-menu.show {
@@ -409,114 +419,98 @@
   .nav-item {
     padding: 1.2rem 0;
     font-size: 1.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
   }
 
-  /* ❌ hover 메뉴 비활성화 */
+  /* hover 완전 제거 */
   .menu-wrapper:hover .sub-nav {
-    max-height: 0;
-    opacity: 0;
-    padding: 0;
+    all: unset;
   }
 
-  /* 서브메뉴 클릭형 */
   .sub-nav {
-    position: static;
-    max-height: none;
-    opacity: 1;
-    background: #111;
+    display: none;
+    background: #000;
+  }
+
+  .sub-nav.show {
+    display: block;
   }
 
   .sub-menu {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
-    padding: 1.5rem 0;
-  }
-}
-
-@media (max-width: 1024px) {
-
-  .hero {
-    height: auto;
-    min-height: 100vh;
-    padding: 4rem 1rem;
+    padding: 1rem 0;
   }
 
-  .hero-img {
-    position: absolute;
-    object-fit: cover;
-    object-position: center;
+  .sub-menu-group {
+    display: none;
+    gap: 1rem;
+  }
+
+  .sub-menu-group.active {
+    display: flex;
   }
 }
 
 @media (max-width: 640px) {
 
+  .hero {
+    height: auto;
+    min-height: 100vh;
+    padding: 5rem 1rem;
+  }
+
   .timer {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.8rem;
   }
 
   .time-box {
     width: 45%;
   }
 
-  .number {
-    font-size: 3rem;
-  }
-
   .colon {
     display: none;
   }
 
-  .label {
-    font-size: 1rem;
+  .number {
+    font-size: 3rem;
   }
 
   .date {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     text-align: center;
-    margin-top: 2rem;
+    line-height: 1.2;
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 640px) {
 
-  .container {
-    padding: 0 1rem;
+  .video-section {
+    padding: 1.5rem 0;
+  }
+
+  .video-section .container {
+    min-width: 100%;
   }
 
   .video-wrapper {
-    height: 360px;
-  }
-
-  .table {
-    font-size: 14px;
-  }
-
-  .map-playlist-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .playlist-section iframe {
-    height: 420px;
+    height: 220px;
   }
 }
 
-/* ========================= */
-/* 🍔 햄버거 버튼 */
-/* ========================= */
-.hamburger {
-  display: none;
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  font-size: 2.5rem;
-  color: white;
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 999;
+@media (max-width: 640px) {
+
+  .table th,
+  .table td {
+    padding: 0.6rem;
+    font-size: 13px;
+  }
+
+  .table td:nth-child(2) {
+    padding-left: 1rem;
+  }
 }
+
 
 
 
