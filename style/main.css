@@ -383,60 +383,69 @@
 #hamburger-menu { display: none; cursor: pointer; flex-direction: column; gap: 5px; z-index: 100; }
 #hamburger-menu span { width: 30px; height: 3px; background: white; transition: 0.3s; }
 
+/* --- 모바일 긴급 복구 최종본 --- */
 @media screen and (max-width: 768px) {
-    /* [박멸] 가로 스크롤 & 흰 배경 */
-    html, body { overflow-x: hidden !important; width: 100vw !important; position: relative; }
-
-    /* [해결] 지도, 플레이리스트, 모든 이미지 강제 진압 */
-    .map-section, .playlist-section, .container, section {
+    /* [1] 가로 스크롤 강제 삭제 */
+    html, body {
+        overflow-x: hidden !important;
         width: 100% !important;
-        max-width: 100vw !important;
-        overflow: hidden !important;
-        padding: 0 10px !important;
-    }
-    img, iframe, .spotify-embed { 
-        max-width: 100% !important; 
-        height: auto !important; 
+        position: relative;
     }
 
-    /* [해결] 메뉴창 난리난 것 정돈 */
+    /* [2] 지도, 플레이리스트, 이미지 절대 화면 안넘게 */
+    section, div, img, iframe {
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* [3] 메뉴창 위치 및 배경 수정 */
     .menu-wrapper {
-        width: 70% !important; /* 화면을 너무 많이 안 가리게 */
-        background: #1a1a1a !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        padding-top: 100px !important;
+        position: fixed !important;
+        top: 0 !important;
+        right: -100% !important; /* 평소엔 숨김 */
+        width: 80% !important;
+        height: 100vh !important;
+        background: #111 !important;
+        z-index: 10000 !important;
+        display: block !important; /* flex 지우고 block으로 변경 */
+        padding: 80px 20px !important;
+        transition: right 0.3s ease;
+    }
+    .menu-wrapper.open {
+        right: 0 !important;
     }
 
+    /* [4] 1차 메뉴(Information 등) 가독성 */
     .nav-item {
+        display: block !important;
         width: 100% !important;
-        text-align: center !important;
-        padding: 20px 0 !important;
+        padding: 15px 0 !important;
         font-size: 1.5rem !important;
+        color: white !important;
         border-bottom: 1px solid #333;
     }
 
-    /* 2차 메뉴 주머니(sub-nav)는 일단 숨김 (클릭 시 노출) */
+    /* [5] 2차 메뉴(Notice 등) 쏟아짐 방지 - 우선 세로로 나열 */
     .sub-nav {
-        display: none; 
-        width: 100% !important;
-        background: #000 !important;
+        position: static !important;
+        display: block !important;
+        background: transparent !important;
+        padding: 0 !important;
     }
-    .sub-nav.active { display: block !important; }
-
+    .sub-menu {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+        margin-top: 20px !important;
+    }
     .sub-menu-group {
         display: flex !important;
         flex-direction: column !important;
-        padding: 15px 0 !important;
-    }
-    .sub-menu-group a {
-        color: #ff8800 !important;
-        font-size: 1.1rem !important;
-        margin: 10px 0 !important;
+        margin-bottom: 15px !important;
+        border-left: 2px solid #ff8800 !important;
+        padding-left: 15px !important;
     }
 }
-
 /* =========================================
    2. PC 전용 (769px 이상만 적용)
    ========================================= */
@@ -455,6 +464,7 @@
     
     #hamburger-menu { display: none !important; } /* PC에선 햄버거 삭제 */
 }
+
 
 
 
