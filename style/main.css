@@ -384,7 +384,7 @@
   display: none;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 767px) {
 
   /* PC 메뉴 숨김 */
   .menu-wrapper {
@@ -452,6 +452,7 @@
     text-decoration: none;
   }
 }
+
 
 
 
