@@ -380,54 +380,92 @@
     margin-bottom: 4rem;
 }
 
-/* ===================== */
-/* 📱 Mobile (≤ 640px) */
-/* ===================== */
-@media (max-width: 640px) {
+@media (max-width: 1024px) {
 
-  /* 헤더 */
-  .header {
-    height: 8rem;
+  /* 햄버거 표시 */
+  .hamburger {
+    display: block;
   }
 
-  .logo {
-    width: 180px;
+  /* 메뉴 구조 변경 */
+  .main-nav {
+    padding: 1rem 0;
   }
 
-  /* 메뉴 */
   .main-menu {
+    display: none;
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    background: rgba(0,0,0,0.95);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+  }
+
+  .main-menu.show {
+    display: grid;
   }
 
   .nav-item {
-    font-size: 1.4rem;
+    padding: 1.2rem 0;
+    font-size: 1.5rem;
+  }
+
+  /* ❌ hover 메뉴 비활성화 */
+  .menu-wrapper:hover .sub-nav {
+    max-height: 0;
+    opacity: 0;
+    padding: 0;
+  }
+
+  /* 서브메뉴 클릭형 */
+  .sub-nav {
+    position: static;
+    max-height: none;
+    opacity: 1;
+    background: #111;
   }
 
   .sub-menu {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
   }
+}
 
-  .sub-menu-group a {
-    font-size: 1.2rem;
-  }
+@media (max-width: 1024px) {
 
-  /* 히어로 */
   .hero {
-    height: 700px;
+    height: auto;
+    min-height: 100vh;
+    padding: 4rem 1rem;
   }
+
+  .hero-img {
+    position: absolute;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+@media (max-width: 640px) {
 
   .timer {
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 0.8rem;
   }
 
+  .time-box {
+    width: 45%;
+  }
+
   .number {
-    font-size: 3.5rem;
+    font-size: 3rem;
   }
 
   .colon {
-    font-size: 3.5rem;
+    display: none;
   }
 
   .label {
@@ -435,111 +473,50 @@
   }
 
   .date {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     text-align: center;
+    margin-top: 2rem;
   }
+}
 
-  /* 영상 */
-  .video-section {
-    padding: 2rem 1rem;
+@media (max-width: 1024px) {
+
+  .container {
+    padding: 0 1rem;
   }
 
   .video-wrapper {
-    height: 220px;
+    height: 360px;
   }
 
-  /* 테이블 */
-  .table th,
-  .table td {
+  .table {
     font-size: 14px;
-    padding: 0.8rem;
   }
 
-  /* 라인업 */
-  .lineup-img {
-    border-radius: 15px;
-  }
-
-  /* 지도 & 플레이리스트 */
-  .map-playlist-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .playlist-section iframe {
-    height: 400px;
-  }
-
-  /* 푸터 */
-  .footer-logo {
-    width: 150px;
-  }
-
-  .social img {
-    width: 36px;
-  }
-
-  .footer p {
-    font-size: 0.8rem;
-    text-align: center;
-  }
-}
-
-/* ===================== */
-/* 📱 Tablet (641px ~ 1024px) */
-/* ===================== */
-@media (min-width: 641px) and (max-width: 1024px) {
-
-  /* 메뉴 */
-  .nav-item {
-    font-size: 1.5rem;
-  }
-
-  .sub-menu-group a {
-    font-size: 1.3rem;
-  }
-
-  /* 히어로 */
-  .hero {
-    height: 850px;
-  }
-
-  .number {
-    font-size: 5rem;
-  }
-
-  .colon {
-    font-size: 5rem;
-  }
-
-  .label {
-    font-size: 1.3rem;
-  }
-
-  .date {
-    font-size: 3.5rem;
-  }
-
-  /* 영상 */
-  .video-wrapper {
-    height: 500px;
-  }
-
-  /* 지도 & 플레이리스트 */
   .map-playlist-grid {
     grid-template-columns: 1fr;
   }
 
   .playlist-section iframe {
-    height: 600px;
-  }
-
-  /* 푸터 */
-  .footer-logo {
-    width: 180px;
+    height: 420px;
   }
 }
 
+/* ========================= */
+/* 🍔 햄버거 버튼 */
+/* ========================= */
+.hamburger {
+  display: none;
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 2.5rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 999;
+}
 
 
 
