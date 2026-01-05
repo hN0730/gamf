@@ -428,43 +428,63 @@
         display: block !important;
         padding: 100px 30px !important;
     }
-    /* 클래스 추가 시 나타남 */
-    .menu-wrapper.open { 
-        right: 0 !important; 
+    /* 메뉴창 내부를 세로로 차곡차곡 쌓기 */
+    .menu-wrapper.open {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        overflow-y: auto !important;
     }
 
-    /* 4. 메뉴 리스트 정렬 */
-    .main-menu { 
-        display: flex !important; 
-        flex-direction: column !important; 
-        text-align: left !important; 
-        gap: 15px !important; 
-    }
-    .nav-item { 
-        font-size: 1.5rem !important; 
-        border-bottom: 1px solid #333; 
-        padding-bottom: 10px;
-    }
-
-    /* 5. 2차 메뉴 (sub-nav) 무조건 보이게 설정 */
-    .sub-nav { 
-        position: static !important; 
-        max-height: none !important; 
-        opacity: 1 !important; 
-        display: block !important; /* 모바일에서는 제목 누를 필요 없이 바로 보이게 함 */
+    /* 1차 메뉴와 2차 메뉴를 감싸는 모든 nav 리셋 */
+    .main-nav, .sub-nav {
+        position: static !important; /* absolute 해제 */
+        width: 100% !important;
+        display: block !important;
+        opacity: 1 !important;
+        max-height: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
         background: transparent !important;
-        padding: 10px 0 0 20px !important;
+        transform: none !important;
     }
-    .sub-menu { 
-        display: flex !important; 
-        flex-direction: column !important; 
-        gap: 10px !important; 
+
+    /* 1차 메뉴 리스트 */
+    .main-menu {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0 !important; /* 간격을 직접 조절하기 위해 0 */
+        width: 100% !important;
     }
-    .sub-menu-group a { 
-        font-size: 1.1rem !important; 
-        color: #ff8800 !important; 
+
+    /* 2차 메뉴를 1차 메뉴 아래에 배치 */
+    .sub-nav {
+        margin-top: 10px !important;
+        padding-left: 15px !important; /* 들여쓰기로 구분 */
+        border-left: 2px solid #ff8800 !important; /* 메뉴 구분선 */
+        margin-bottom: 30px !important;
+    }
+
+    .sub-menu {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+        text-align: left !important;
+    }
+
+    .sub-menu-group {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 10px !important;
+    }
+
+    .sub-menu-group a {
+        font-size: 1.1rem !important;
+        color: #ff8800 !important;
         display: block !important;
     }
+}
 
     /* 6. 영상 크기 복구 (작아진 문제 해결) */
     .video-section { padding: 40px 0 !important; }
@@ -486,6 +506,7 @@
     .number { font-size: 2.2rem !important; }
     .date { font-size: 1.3rem !important; }
 }
+
 
 
 
