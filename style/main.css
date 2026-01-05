@@ -383,55 +383,66 @@
 #hamburger-menu { display: none; cursor: pointer; flex-direction: column; gap: 5px; z-index: 100; }
 #hamburger-menu span { width: 30px; height: 3px; background: white; transition: 0.3s; }
 
-/* --- 모바일 (768px 이하) --- */
+/* =========================================
+   1. 모바일 전용 (768px 이하만 적용)
+   ========================================= */
 @media screen and (max-width: 768px) {
-    /* 1. 메뉴창 강제 고정 */
+    /* 햄버거 메뉴창 - 버튼으로만 열리고 닫힘 */
     .menu-wrapper {
         position: fixed !important;
         top: 0 !important;
-        right: -100% !important; /* 무조건 숨김 시작 */
+        right: -100% !important; /* 기본 숨김 */
         width: 80% !important;
         height: 100vh !important;
-        z-index: 9999 !important; /* 어떤 것보다 위 */
+        background: #111 !important;
+        z-index: 9999 !important;
         display: flex !important;
         flex-direction: column !important;
         padding: 100px 20px !important;
-        transition: all 0.3s ease !important;
-        visibility: hidden; /* 안 열렸을 땐 아예 안 보이게 */
+        transition: right 0.3s ease-in-out !important;
     }
-    .menu-wrapper.open { 
-        right: 0 !important; 
-        visibility: visible !important;
-    }
+    .menu-wrapper.open { right: 0 !important; }
 
-    /* 2차 메뉴가 도망가지 못하게 static 고정 */
-    .main-nav, .sub-nav { 
-        position: static !important; 
-        display: block !important; 
-        opacity: 1 !important; 
+    /* 메뉴 내부 리스트 (1, 2차 통합 정렬) */
+    .main-nav, .sub-nav, .main-menu, .sub-menu {
+        position: static !important;
+        display: block !important;
         width: 100% !important;
+        opacity: 1 !important;
+        transform: none !important;
     }
+    .nav-item { font-size: 1.4rem !important; color: #fff !important; padding: 15px 0 !important; border-bottom: 1px solid #333 !important; }
+    .sub-menu-group a { color: #ff8800 !important; font-size: 1.1rem !important; display: block !important; margin: 10px 0 !important; }
 
-    /* 2. 타이머 크기 지랄 방지 (화면 너비에 맞춤) */
-    .hero { height: auto !important; padding: 50px 10px !important; }
-    .timer { gap: 5px !important; justify-content: center !important; }
-    .number { font-size: 10vw !important; } /* 화면 폭의 10% 크기로 고정 */
-    .label { font-size: 12px !important; }
-    .date { font-size: 24px !important; margin-top: 20px !important; }
+    /* 타이머 숫자 지랄 방지 - 화면 너비에 맞춤 */
+    .hero { height: auto !important; min-height: 350px !important; padding: 40px 10px !important; }
+    .timer { gap: 5px !important; justify-content: center !important; display: flex !important; }
+    .number { font-size: 9vw !important; line-height: 1 !important; } /* 숫자가 화면을 안 삐져나가게 함 */
+    .label { font-size: 10px !important; }
+    .date { font-size: 18px !important; margin-top: 15px !important; } /* 날짜 크기 강제 축소 */
 
-    /* 3. 영상 크기 (12프로 등 모든 모바일 공통) */
-    .video-section .container { min-width: 100% !important; padding: 0 !important; }
-    .video-wrapper { height: 210px !important; }
+    /* 영상 크기 복구 (12프로 화면 꽉 차게) */
+    .video-section .container { min-width: 100% !important; padding: 0 !important; margin: 0 !important; }
+    .video-wrapper { height: 56.25vw !important; width: 100% !important; } /* 16:9 비율로 가로 꽉 차게 */
 }
 
-/* --- PC (769px 이상) --- */
+/* =========================================
+   2. PC 전용 (769px 이상만 적용)
+   ========================================= */
 @media screen and (min-width: 769px) {
-    .menu-wrapper { right: 0 !important; visibility: visible !important; position: relative !important; width: auto !important; height: auto !important;}
+    .menu-wrapper { position: relative !important; right: 0 !important; width: 100% !important; height: auto !important; background: transparent !important; display: block !important; }
+    .nav-item { display: inline-block !important; margin-right: 20px; }
+    
+    /* 타이머 크기 웅장하게 복구 */
     .number { font-size: 8rem !important; }
     .date { font-size: 5rem !important; }
+    .hero { height: 800px !important; }
+
+    /* 영상 크기 웅장하게 복구 */
     .video-section .container { min-width: 65% !important; }
     .video-wrapper { height: 600px !important; }
-    #hamburger-menu { display: none !important; } /* PC에선 햄버거 숨김 */
+    
+    #hamburger-menu { display: none !important; } /* PC에선 햄버거 삭제 */
 }
 
 
