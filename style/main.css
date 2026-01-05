@@ -380,78 +380,36 @@
     margin-bottom: 4rem;
 }
 
-.mobile-nav {
-  display: none;
+@media (max-width: 767px) {
+
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  .video-section .container {
+    min-width: unset;
+    width: 100%;
+  }
 }
 
 @media (max-width: 767px) {
 
-  /* PC 메뉴 숨김 */
   .menu-wrapper {
     display: none;
   }
 
-  /* 모바일 메뉴 표시 */
   .mobile-nav {
     display: block;
-    background: #111;
-    color: white;
-    position: relative;
-  }
-
-  #mobile-hamburger {
-    font-size: 2.5rem;
-    padding: 1rem;
-    background: none;
-    border: none;
-    color: white;
-  }
-
-  .mobile-main {
-    display: none;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .mobile-main.show {
-    display: block;
-  }
-
-  .mobile-btn {
-    width: 100%;
-    padding: 1.2rem;
-    font-size: 1.4rem;
-    background: none;
-    border: none;
-    color: white;
-    text-align: left;
-  }
-
-  .mobile-sub {
-    display: none;
-    background: #000;
-    padding-left: 1.5rem;
-  }
-
-  .mobile-sub a {
-    display: block;
-    padding: 0.8rem 0;
-    color: #ccc;
-    text-decoration: none;
-  }
-
-  .mobile-sub.show {
-    display: block;
-  }
-
-  .mobile-link {
-    display: block;
-    padding: 1.2rem;
-    color: white;
-    text-decoration: none;
   }
 }
+
+
 
 
 
