@@ -229,34 +229,34 @@
     setInterval(tick, 1000);
     tick();
 
-    // 2. 햄버거 메뉴 제어 (클릭 시 열기/닫기)
-    // HTML이 다 그려진 후 실행되도록 이벤트 리스너 안에 넣습니다.
+    document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.getElementById('hamburger-menu');
     const menuWrapper = document.querySelector('.menu-wrapper');
-  const navItems = document.querySelectorAll('.nav-item');
-const subNav = document.querySelector('.sub-nav');
+    const navItems = document.querySelectorAll('.nav-item');
+    const subNav = document.querySelector('.sub-nav');
 
-    if (hamburger && menuWrapper) {
-        hamburger.addEventListener('click', function() {
+    // 1. 햄버거 메뉴 열기/닫기
+    if (hamburger) {
+        hamburger.addEventListener('click', () => {
             menuWrapper.classList.toggle('open');
-            this.classList.toggle('active'); // 'X' 모양 변신용
+            hamburger.classList.toggle('active');
         });
     }
-})();
 
-   navItems.forEach((item) => {
-    item.addEventListener('click', function(e) {
-        // 모바일일 때만 작동
-        if (window.innerWidth <= 768) {
-            // 모든 제목 색상 초기화 후 클릭한 것만 강조
-            navItems.forEach(nav => nav.classList.remove('active-title'));
-            this.classList.add('active-title');
+    // 2. 모바일에서 1차 메뉴 클릭 시 2차 메뉴 토글
+    navItems.forEach((item) => {
+        item.addEventListener('click', () => {
+            if (window.innerWidth <= 768) {
+                // 클릭한 메뉴 강조색 추가
+                navItems.forEach(i => i.classList.remove('active-item'));
+                item.classList.add('active-item');
 
-            // 2차 메뉴창 열기
-            if (subNav) {
-                subNav.classList.toggle('show');
+                // 2차 메뉴 보이기/숨기기
+                if (subNav) {
+                    subNav.classList.toggle('show');
+                }
             }
-        }
+        });
     });
 });
 </script>
@@ -267,6 +267,7 @@ const subNav = document.querySelector('.sub-nav');
 
 
 </html>
+
 
 
 
