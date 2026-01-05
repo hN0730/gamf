@@ -380,16 +380,22 @@
     margin-bottom: 4rem;
 }
 
+/* --- 데스크톱 스타일 (기존 유지) --- */
+.sub-menu-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
 /* --- 모바일 반응형 (768px 이하) --- */
 @media (max-width: 768px) {
-    /* Hero 영역 높이 최적화 */
-    .hero { 
+    /* 1. Hero 및 타이머 최적화 */
+ .hero { 
         height: auto; 
         min-height: 450px; 
         padding: 3rem 1rem; 
     }
-
-    /* 타이머: 2줄 레이아웃 (잘림 방지) */
     .timer {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -399,9 +405,9 @@
     .number { font-size: 3.5rem; }
     .label { font-size: 0.9rem; }
     .date { font-size: 1.8rem; text-align: center; }
-
-    /* 서브메뉴 제어 스타일 */
-    .sub-nav {
+    
+    /* 2. 메뉴 제어 */
+   .sub-nav {
         position: static; /* Hero를 덮지 않고 아래로 밀어냄 */
         max-height: 0;
         opacity: 0;
@@ -409,20 +415,20 @@
         transition: all 0.3s ease;
         background: #222;
     }
-    /* active 클래스가 붙으면 펼쳐짐 */
-    .sub-nav.active {
+    
+ .sub-nav.active {
         max-height: 500px;
         opacity: 1;
         padding: 1rem 0;
     }
 
-    /* 모바일에서는 기본적으로 하위 그룹 숨김 */
-    .sub-menu-group {
+    /* 모바일에서는 기본적으로 모든 그룹을 숨김 */
+.sub-menu-group {
         display: none !important; 
         width: 100%;
     }
-    /* active 클래스가 붙은 그룹만 표시 */
-    .sub-menu-group.active {
+    /* JS로 active 클래스가 붙은 그룹만 보여줌 */
+.sub-menu-group.active {
         display: flex !important;
         flex-direction: column;
         align-items: center;
