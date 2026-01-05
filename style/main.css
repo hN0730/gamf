@@ -383,126 +383,57 @@
 #hamburger-menu { display: none; cursor: pointer; flex-direction: column; gap: 5px; z-index: 100; }
 #hamburger-menu span { width: 30px; height: 3px; background: white; transition: 0.3s; }
 
-/* --- 반응형 최적화 시작 --- */
-
-@media (max-width: 1024px) {
-    .container { max-width: 95%; }
-    .number { font-size: 5rem; }
-    .colon { font-size: 5rem; }
-    .label { font-size: 1.2rem; }
-    .date { font-size: 3.5rem; }
-    .video-wrapper { height: 500px; }
-    .map-playlist-grid { grid-template-columns: 1fr; gap: 2rem; }
-}
-
-/* --- 모바일 반응형 (768px 이하) 완전히 새로 고침 --- */
-@media (max-width: 768px) {
-    /* 1. 헤더 및 로고 (이미지 깨짐 방지) */
-    .header { 
-        height: 70px !important; 
-        padding: 0 20px !important; 
-        display: flex !important; 
-        justify-content: space-between !important; 
-        align-items: center !important; 
-    }
-    .logo { width: 140px !important; height: auto !important; }
-
-    /* 2. 햄버거 메뉴 버튼 보이기 */
-    #hamburger-menu { 
-        display: flex !important; 
-        flex-direction: column; 
-        gap: 5px; 
-        z-index: 1100; /* 최상단 */
-    }
-
-    /* 3. 메뉴창 위치 강제 고정 (안 열리는 문제 해결) */
+/* --- 모바일 (768px 이하) --- */
+@media screen and (max-width: 768px) {
+    /* 1. 메뉴창 강제 고정 */
     .menu-wrapper {
         position: fixed !important;
         top: 0 !important;
-        right: -100% !important; /* 평소엔 숨김 */
+        right: -100% !important; /* 무조건 숨김 시작 */
         width: 80% !important;
         height: 100vh !important;
-        background: #111 !important; /* 더 짙은 배경으로 가독성 확보 */
-        z-index: 2000 !important;
-        transition: right 0.3s ease !important;
-        display: flex !important; /* 내부 요소들을 세로로 정렬 */
+        background: #111 !important;
+        z-index: 9999 !important; /* 어떤 것보다 위 */
+        display: flex !important;
         flex-direction: column !important;
-        padding: 80px 25px !important;
-        overflow-y: auto !important; /* 메뉴가 많을 경우 스크롤 */
+        padding: 100px 20px !important;
+        transition: all 0.3s ease !important;
+        visibility: hidden; /* 안 열렸을 땐 아예 안 보이게 */
     }
-
-    .menu-wrapper.open {
-        right: 0 !important;
-    }
-
-    /* 2. 1차 메뉴와 2차 메뉴의 absolute 속성 완전 제거 */
-    .main-nav, .sub-nav, .main-menu, .sub-menu {
-        position: static !important; 
-        display: block !important;
-        width: 100% !important;
-        opacity: 1 !important;
-        max-height: none !important;
-        padding: 0 !important;
-        margin: 0 !important;
-        transform: none !important;
+    .menu-wrapper.open { 
+        right: 0 !important; 
         visibility: visible !important;
     }
 
-    /* 1차 메뉴 항목 */
-    .main-menu {
-        margin-bottom: 20px !important; /* 1차 메뉴 뭉치와 2차 메뉴 사이 간격 */
+    /* 2차 메뉴가 도망가지 못하게 static 고정 */
+    .main-nav, .sub-nav { 
+        position: static !important; 
+        display: block !important; 
+        opacity: 1 !important; 
+        width: 100% !important;
     }
 
-    .nav-item {
-        font-size: 1.4rem !important;
-        color: #fff !important;
-        padding: 15px 0 !important;
-        border-bottom: 1px solid #333 !important;
-        list-style: none !important;
-    }
+    /* 2. 타이머 크기 지랄 방지 (화면 너비에 맞춤) */
+    .hero { height: auto !important; padding: 50px 10px !important; }
+    .timer { gap: 5px !important; justify-content: center !important; }
+    .number { font-size: 10vw !important; } /* 화면 폭의 10% 크기로 고정 */
+    .label { font-size: 12px !important; }
+    .date { font-size: 24px !important; margin-top: 20px !important; }
 
-    /* 3. 2차 메뉴 (하단 오렌지색 링크들) */
-    .sub-menu {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 25px !important; /* 그룹 간 간격 */
-        margin-top: 10px !important;
-    }
-
-    .sub-menu-group {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 12px !important; /* 링크 간 간격 */
-    }
-
-    .sub-menu-group a {
-        font-size: 1.1rem !important;
-        color: #ff8800 !important; /* 오렌지색 강조 */
-        text-decoration: none !important;
-        font-weight: 500 !important;
-    }
-
-    /* 6. 영상 크기 복구 (작아진 문제 해결) */
-    .video-section { padding: 40px 0 !important; }
+    /* 3. 영상 크기 (12프로 등 모든 모바일 공통) */
     .video-section .container { min-width: 100% !important; padding: 0 !important; }
-    .video-wrapper { 
-        height: 250px !important; /* 모바일 적정 높이 */
-        width: 100% !important; 
-    }
-
-    /* 7. 타이머 레이아웃 (줄바꿈 방지) */
-    .hero { height: auto !important; min-height: 450px !important; padding: 20px 10px !important; }
-    .timer { gap: 0.5rem !important; transform: scale(0.9); }
-    .number { font-size: 3rem !important; }
-    .colon { font-size: 2rem !important; }
+    .video-wrapper { height: 210px !important; }
 }
 
-/* 3. 초소형 모바일 (480px 이하) */
-@media (max-width: 480px) {
-    .number { font-size: 2.2rem !important; }
-    .date { font-size: 1.3rem !important; }
+/* --- PC (769px 이상) --- */
+@media screen and (min-width: 769px) {
+    .menu-wrapper { right: 0 !important; visibility: visible !important; position: relative !important; width: auto !important; height: auto !important; background: transparent !important; }
+    .number { font-size: 8rem !important; }
+    .date { font-size: 5rem !important; }
+    .video-section .container { min-width: 65% !important; }
+    .video-wrapper { height: 600px !important; }
+    #hamburger-menu { display: none !important; } /* PC에선 햄버거 숨김 */
 }
-
 
 
 
