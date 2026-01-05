@@ -417,40 +417,52 @@
     }
     .nav-item { font-size: 1.1rem; padding: 5px; }
     
-    /* 서브메뉴 가독성 개선 (모바일에서는 세로 배치) */
-   .sub-nav { position: static; opacity: 1; max-height: none; background: #222; }
-    .menu-wrapper:hover .sub-nav { padding: 1rem 0; }
-    .sub-menu {
-        grid-template-columns: 1fr; /* 모바일은 한 줄씩 세로로 */
-        gap: 1.5rem;
-        padding-left: 20px;
+   /* 서브메뉴 제어 스타일 */
+    .sub-nav {
+        position: static; /* Hero를 덮지 않고 아래로 밀어냄 */
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        background: #222;
     }
-    .sub-menu-group { align-items: flex-start; }
-    .sub-menu-group a { font-size: 1rem; }
+  /* active 클래스가 붙으면 펼쳐짐 */
+    .sub-nav.active {
+        max-height: 500px;
+        opacity: 1;
+        padding: 1rem 0;
+    }
+
+    /* 모바일에서는 기본적으로 하위 그룹 숨김 */
+    .sub-menu-group {
+        display: none !important; 
+        width: 100%;
+    }
+    /* active 클래스가 붙은 그룹만 표시 */
+    .sub-menu-group.active {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+    }
+}
     
-    /* 히로 섹션 & 타이머 */
+  /* Hero 영역 높이 최적화 */
     .hero { 
-        height: auto; /* 높이 고정 해제 */
-        padding: 4rem 1rem; /* 위아래 여백으로 높이 조절 */
-        min-height: 400px; 
+        height: auto; 
+        min-height: 450px; 
+        padding: 3rem 1rem; 
     }
-    
+
+    /* 타이머: 2줄 레이아웃 (잘림 방지) */
     .timer {
         display: grid;
-        grid-template-columns: repeat(2, 1fr); /* 2x2 격자로 배치 (숫자 한줄 글자 한줄 효과) */
-        gap: 20px;
-        justify-items: center;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
     }
-    .colon { display: none; } /* 줄바꿈 시 콜론은 가독성을 위해 숨김 */
-    
-    .number { font-size: 3.5rem; } /* 숫자 크기 적정화 */
-    .label { font-size: 1rem; margin-top: 0; }
-    .date { 
-        font-size: 2rem; 
-        margin-top: 2rem;
-        word-break: break-all; 
-        text-align: center;
-    }
+    .colon { display: none; } /* 줄바꿈 시 콜론 숨김 */
+    .number { font-size: 3.5rem; }
+    .label { font-size: 0.9rem; }
+    .date { font-size: 1.8rem; text-align: center; }
 
     /* 공지사항 테이블 (가로 스크롤 방지용 모바일 뷰) */
   .table th, .table td { font-size: 13px; padding: 10px 5px; }
@@ -484,6 +496,7 @@
     .number { font-size: 2.5rem; }
     .date { font-size: 1.8rem; }
 }
+
 
 
 
