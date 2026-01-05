@@ -24,35 +24,9 @@
   </header>
 
   <div class="menu-wrapper"> 
-    <!-- 모바일 전용 메뉴 -->
-<nav class="mobile-nav">
-  <button id="mobile-hamburger">☰</button>
-
-  <ul class="mobile-main">
-    <li>
-      <button class="mobile-btn">INFORMATION</button>
-      <ul class="mobile-sub">
-        <li><a href="notice.html">NOTICE</a></li>
-        <li><a href="festivalmap.html">FESTIVAL MAP</a></li>
-      </ul>
-    </li>
-
-    <li>
-      <button class="mobile-btn">ARTIST</button>
-      <ul class="mobile-sub">
-        <li><a href="lineup.html">LINE-UP</a></li>
-        <li><a href="timetable.html">TIMETABLE</a></li>
-      </ul>
-    </li>
-
-    <li>
-      <button class="mobile-btn">TICKETS</button>
-      <ul class="mobile-sub">
-        <li><a href="ticket.html">TICKET 예매안내</a></li>
-        <li><a href="earlyticket.html">EARLY TICKET</a></li>
-      </ul>
-    </li>
-
+    <li class="nav-item">INFORMATION</li> 
+    <li class="nav-item">ARTIST</li> 
+    <li class="nav-item">TICKETS</li>
     <li><a href="gallery.html" class="mobile-link">GALLERY</a></li>
   </ul>
 </nav>
@@ -255,20 +229,6 @@
   setInterval(tick, 1000);
 })();
 
-const hamburger = document.getElementById('mobile-hamburger');
-const mobileMenu = document.querySelector('.mobile-main');
-const buttons = document.querySelectorAll('.mobile-btn');
-
-hamburger.addEventListener('click', () => {
-  mobileMenu.classList.toggle('show');
-});
-
-buttons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    const sub = btn.nextElementSibling;
-    sub.classList.toggle('show');
-  });
-});
 </script>
 
 
@@ -277,6 +237,7 @@ buttons.forEach(btn => {
 
 
 </html>
+
 
 
 
