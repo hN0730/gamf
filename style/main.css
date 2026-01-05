@@ -495,6 +495,54 @@ background-color: #333 !important;
     }
 }
 
+@media screen and (max-width: 768px) {
+    /* 1. 가로 스크롤 및 흰색 여백 제거 */
+    html, body { overflow-x: hidden !important; width: 100% !important; }
+
+    /* 2. 지도 & 플레이리스트 잘림 해결 */
+    .map-img, .playlist-section iframe {
+        width: 100% !important;
+        height: auto !important; /* 높이를 고정하지 않고 내용에 맞게 */
+        min-height: 300px; /* 최소 높이만 확보 */
+    }
+    .playlist-section iframe { height: 500px !important; } /* 플레이리스트는 적당한 높이 지정 */
+
+    /* 3. 표(Table) 너무 두꺼운 문제 해결 */
+    .table th, .table td {
+        padding: 0.8rem 0.5rem !important; /* 패딩을 줄여서 두께 축소 */
+        font-size: 14px !important; /* 폰트 크기 조정 */
+    }
+
+    /* 4. 2차 메뉴(SUB-NAV) 안 보이는 문제 해결 */
+    .menu-wrapper.open .sub-nav {
+        display: block !important; /* 모바일 메뉴 열릴 때 강제 노출 */
+        max-height: none !important; 
+        opacity: 1 !important;
+        position: static !important; /* PC용 absolute 해제 */
+        padding: 10px 0 !important;
+    }
+    .sub-menu {
+        display: flex !important;
+        flex-direction: column !important; /* 가로 배열을 세로로 변경 */
+        align-items: flex-start !important;
+        padding-left: 20px !important;
+    }
+    .sub-menu-group {
+        align-items: flex-start !important;
+        gap: 0.5rem !important;
+        margin-bottom: 15px !important;
+    }
+    .sub-menu-group a {
+        font-size: 1rem !important;
+        color: #ff8800 !important; /* 2차 메뉴는 주황색으로 구분 */
+    }
+
+    /* 5. 로고 및 타이머 최종 미세 조정 */
+    .header { height: 5rem !important; }
+    .logo { width: 120px !important; }
+    .number { font-size: 3rem !important; }
+}
+
 
 
 
