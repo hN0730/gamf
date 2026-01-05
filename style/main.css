@@ -380,6 +380,167 @@
     margin-bottom: 4rem;
 }
 
+/* ===================== */
+/* 📱 Mobile (≤ 640px) */
+/* ===================== */
+@media (max-width: 640px) {
+
+  /* 헤더 */
+  .header {
+    height: 8rem;
+  }
+
+  .logo {
+    width: 180px;
+  }
+
+  /* 메뉴 */
+  .main-menu {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .nav-item {
+    font-size: 1.4rem;
+  }
+
+  .sub-menu {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .sub-menu-group a {
+    font-size: 1.2rem;
+  }
+
+  /* 히어로 */
+  .hero {
+    height: 700px;
+  }
+
+  .timer {
+    gap: 0.8rem;
+  }
+
+  .number {
+    font-size: 3.5rem;
+  }
+
+  .colon {
+    font-size: 3.5rem;
+  }
+
+  .label {
+    font-size: 1rem;
+  }
+
+  .date {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  /* 영상 */
+  .video-section {
+    padding: 2rem 1rem;
+  }
+
+  .video-wrapper {
+    height: 220px;
+  }
+
+  /* 테이블 */
+  .table th,
+  .table td {
+    font-size: 14px;
+    padding: 0.8rem;
+  }
+
+  /* 라인업 */
+  .lineup-img {
+    border-radius: 15px;
+  }
+
+  /* 지도 & 플레이리스트 */
+  .map-playlist-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .playlist-section iframe {
+    height: 400px;
+  }
+
+  /* 푸터 */
+  .footer-logo {
+    width: 150px;
+  }
+
+  .social img {
+    width: 36px;
+  }
+
+  .footer p {
+    font-size: 0.8rem;
+    text-align: center;
+  }
+}
+
+/* ===================== */
+/* 📱 Tablet (641px ~ 1024px) */
+/* ===================== */
+@media (min-width: 641px) and (max-width: 1024px) {
+
+  /* 메뉴 */
+  .nav-item {
+    font-size: 1.5rem;
+  }
+
+  .sub-menu-group a {
+    font-size: 1.3rem;
+  }
+
+  /* 히어로 */
+  .hero {
+    height: 850px;
+  }
+
+  .number {
+    font-size: 5rem;
+  }
+
+  .colon {
+    font-size: 5rem;
+  }
+
+  .label {
+    font-size: 1.3rem;
+  }
+
+  .date {
+    font-size: 3.5rem;
+  }
+
+  /* 영상 */
+  .video-wrapper {
+    height: 500px;
+  }
+
+  /* 지도 & 플레이리스트 */
+  .map-playlist-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .playlist-section iframe {
+    height: 600px;
+  }
+
+  /* 푸터 */
+  .footer-logo {
+    width: 180px;
+  }
+}
+
+
 
 
 
