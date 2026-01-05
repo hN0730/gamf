@@ -380,140 +380,78 @@
     margin-bottom: 4rem;
 }
 
-html, body {
-  background: #25193C;
-}
-
-.menu-wrapper {
-  position: relative;
-}
-
-.hamburger {
+.mobile-nav {
   display: none;
-  position: absolute;
-  top: 1.2rem;
-  right: 1.2rem;
-  font-size: 2.5rem;
-  color: white;
-  background: none;
-  border: none;
-  z-index: 1000;
 }
 
 @media (max-width: 1024px) {
 
-  .hamburger {
+  /* PC 메뉴 숨김 */
+  .menu-wrapper {
+    display: none;
+  }
+
+  /* 모바일 메뉴 표시 */
+  .mobile-nav {
+    display: block;
+    background: #111;
+    color: white;
+    position: relative;
+  }
+
+  #mobile-hamburger {
+    font-size: 2.5rem;
+    padding: 1rem;
+    background: none;
+    border: none;
+    color: white;
+  }
+
+  .mobile-main {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .mobile-main.show {
     display: block;
   }
 
-  .main-menu {
-    display: none;
-    grid-template-columns: 1fr;
-    background: #111;
+  .mobile-btn {
+    width: 100%;
+    padding: 1.2rem;
+    font-size: 1.4rem;
+    background: none;
+    border: none;
+    color: white;
+    text-align: left;
   }
 
-  .main-menu.show {
-    display: grid;
-  }
-
-  .nav-item {
-    padding: 1.2rem 0;
-    font-size: 1.5rem;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-  }
-
-  /* hover 완전 제거 */
-  .menu-wrapper:hover .sub-nav {
-    all: unset;
-  }
-
-  .sub-nav {
+  .mobile-sub {
     display: none;
     background: #000;
+    padding-left: 1.5rem;
   }
 
-  .sub-nav.show {
+  .mobile-sub a {
+    display: block;
+    padding: 0.8rem 0;
+    color: #ccc;
+    text-decoration: none;
+  }
+
+  .mobile-sub.show {
     display: block;
   }
 
-  .sub-menu {
-    grid-template-columns: 1fr;
-    padding: 1rem 0;
-  }
-
-  .sub-menu-group {
-    display: none;
-    gap: 1rem;
-  }
-
-  .sub-menu-group.active {
-    display: flex;
+  .mobile-link {
+    display: block;
+    padding: 1.2rem;
+    color: white;
+    text-decoration: none;
   }
 }
-
-@media (max-width: 640px) {
-
-  .hero {
-    height: auto;
-    min-height: 100vh;
-    padding: 5rem 1rem;
-  }
-
-  .timer {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .time-box {
-    width: 45%;
-  }
-
-  .colon {
-    display: none;
-  }
-
-  .number {
-    font-size: 3rem;
-  }
-
-  .date {
-    font-size: 2.5rem;
-    text-align: center;
-    line-height: 1.2;
-  }
-}
-
-@media (max-width: 640px) {
-
-  .video-section {
-    padding: 1.5rem 0;
-  }
-
-  .video-section .container {
-    min-width: 100%;
-  }
-
-  .video-wrapper {
-    height: 220px;
-  }
-}
-
-@media (max-width: 640px) {
-
-  .table th,
-  .table td {
-    padding: 0.6rem;
-    font-size: 13px;
-  }
-
-  .table td:nth-child(2) {
-    padding-left: 1rem;
-  }
-}
-
-
-
-
 
 
 
