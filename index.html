@@ -225,19 +225,33 @@
     setInterval(tick, 1000);
     tick();
 
-    // 2. 햄버거 메뉴 기능
-    document.addEventListener('DOMContentLoaded', () => {
-        const hamburger = document.getElementById('hamburger-menu');
-        const menuWrapper = document.querySelector('.menu-wrapper');
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.getElementById('hamburger-menu');
+    const menuWrapper = document.querySelector('.menu-wrapper');
 
-        if (hamburger) {
-            hamburger.onclick = function() {
-                menuWrapper.classList.toggle('open');
-                this.classList.toggle('active');
-            };
-        }
-    });
-})();
+    if (hamburger && menuWrapper) {
+        // 기존의 모든 이벤트를 덮어씌우기 위해 onclick 사용
+        hamburger.onclick = function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // open 클래스가 있으면 제거, 없으면 추가
+            menuWrapper.classList.toggle('open');
+            this.classList.toggle('active');
+        };
+
+        // 메뉴창 내부 클릭 시 닫히지 않게 보호
+        menuWrapper.onclick = function(e) {
+            e.stopPropagation();
+        };
+
+        // 바탕 클릭 시 메뉴 닫기
+        document.onclick = function() {
+            menuWrapper.classList.remove('open');
+            hamburger.classList.remove('active');
+        };
+    }
+});
 </script>
 
 
@@ -246,6 +260,7 @@
 
 
 </html>
+
 
 
 
