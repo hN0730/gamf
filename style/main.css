@@ -392,7 +392,6 @@
         right: -100% !important; /* 무조건 숨김 시작 */
         width: 80% !important;
         height: 100vh !important;
-        background: #111 !important;
         z-index: 9999 !important; /* 어떤 것보다 위 */
         display: flex !important;
         flex-direction: column !important;
@@ -434,6 +433,7 @@
     .video-wrapper { height: 600px !important; }
     #hamburger-menu { display: none !important; } /* PC에선 햄버거 숨김 */
 }
+
 
 
 
