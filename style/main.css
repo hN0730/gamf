@@ -445,6 +445,56 @@ background-color: #333 !important;
     #hamburger-menu { display: none !important; } /* PC에선 햄버거 삭제 */
 }
 
+/* --- 모바일 레이아웃 최종 수술 (768px 이하) --- */
+@media screen and (max-width: 768px) {
+    /* 1. 가로 스크롤 완전 박멸 */
+    html, body {
+        overflow-x: hidden !important;
+        width: 100% !important;
+    }
+
+    /* 2. 헤더 구조 재배치 (로고와 햄버거가 한 줄에 나오게) */
+    .header {
+        height: 6rem !important; /* 헤더 높이 적절히 축소 */
+        padding: 0 20px !important;
+        display: flex !important;
+        justify-content: space-between !important; /* 로고는 왼쪽, 햄버거는 오른쪽 */
+        align-items: center !important;
+        background: rgba(0, 0, 0, 0.9) !important;
+    }
+
+    /* 3. 문제의 로고 크기 대폭 축소 */
+    .logo {
+        width: 140px !important; /* 현재 280px의 절반 수준으로 축소 */
+        height: auto !important;
+    }
+
+    /* 4. 사라진 햄버거 버튼 강제 노출 및 위치 고정 */
+    #hamburger-menu {
+        display: flex !important; /* 숨김 해제 */
+        position: relative !important; /* absolute 대신 배치에 포함 */
+        right: 0 !important;
+        top: 0 !important;
+        transform: none !important;
+        z-index: 10001 !important;
+    }
+
+    /* 5. 타이머와 날짜가 화면 밖으로 나가는 것 방지 */
+    .timer {
+        gap: 5px !important;
+        width: 100% !important;
+        justify-content: center !important;
+    }
+    .number {
+        font-size: 10vw !important; /* 화면 너비에 맞춰 자동 축소 */
+    }
+    .date {
+        font-size: 20px !important; /* 바코드 날짜 축소 */
+        width: 100% !important;
+        text-align: center !important;
+    }
+}
+
 
 
 
