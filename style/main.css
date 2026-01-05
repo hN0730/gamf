@@ -426,13 +426,14 @@
 
 /* --- PC (769px 이상) --- */
 @media screen and (min-width: 769px) {
-    .menu-wrapper { right: 0 !important; visibility: visible !important; position: relative !important; width: auto !important; height: auto !important; background: transparent !important; }
+    .menu-wrapper { right: 0 !important; visibility: visible !important; position: relative !important; width: auto !important; height: auto !important;}
     .number { font-size: 8rem !important; }
     .date { font-size: 5rem !important; }
     .video-section .container { min-width: 65% !important; }
     .video-wrapper { height: 600px !important; }
     #hamburger-menu { display: none !important; } /* PC에선 햄버거 숨김 */
 }
+
 
 
 
