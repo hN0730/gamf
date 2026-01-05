@@ -23,31 +23,67 @@
     </a>
   </header>
 
-  <div class="menu-wrapper">
-    <button id="hamburger-menu" class="hamburger">☰</button>
-    <nav class="main-nav">
-      <ul class="main-menu">
-      <li class="nav-item" data-menu="info">INFORMATION</li>
-      <li class="nav-item" data-menu="artist">ARTIST</li>
-      <li class="nav-item" data-menu="ticket">TICKETS</li>
-      <li class="nav-item"><a href="gallery.html">GALLERY</a></li>
+  <div class="menu-wrapper"> 
+    <!-- 모바일 전용 메뉴 -->
+<nav class="mobile-nav">
+  <button id="mobile-hamburger">☰</button>
+
+  <ul class="mobile-main">
+    <li>
+      <button class="mobile-btn">INFORMATION</button>
+      <ul class="mobile-sub">
+        <li><a href="notice.html">NOTICE</a></li>
+        <li><a href="festivalmap.html">FESTIVAL MAP</a></li>
       </ul>
-    </nav>
+    </li>
 
-    <div class="sub-menu-group" id="info">
-  <a href="notice.html">NOTICE</a>
-  <a href="festivalmap.html">FESTIVAL MAP</a>
-</div>
+    <li>
+      <button class="mobile-btn">ARTIST</button>
+      <ul class="mobile-sub">
+        <li><a href="lineup.html">LINE-UP</a></li>
+        <li><a href="timetable.html">TIMETABLE</a></li>
+      </ul>
+    </li>
 
-<div class="sub-menu-group" id="artist">
-  <a href="lineup.html">LINE-UP</a>
-  <a href="timetable.html">TIMETABLE</a>
-</div>
+    <li>
+      <button class="mobile-btn">TICKETS</button>
+      <ul class="mobile-sub">
+        <li><a href="ticket.html">TICKET 예매안내</a></li>
+        <li><a href="earlyticket.html">EARLY TICKET</a></li>
+      </ul>
+    </li>
 
-<div class="sub-menu-group" id="ticket">
-  <a href="ticket.html">TICKET 예매안내</a>
-  <a href="earlyticket.html">EARLY TICKET</a>
-</div>
+    <li><a href="gallery.html" class="mobile-link">GALLERY</a></li>
+  </ul>
+</nav>
+
+    <nav class="main-nav"> 
+      <ul class="main-menu"> 
+        <li class="nav-item">INFORMATION</li> 
+        <li class="nav-item">ARTIST</li> 
+        <li class="nav-item">TICKETS</li> 
+        <li class="nav-item"><a href="gallery.html">GALLERY</a></li> 
+      </ul> 
+    </nav> 
+    
+    <div class="sub-nav"> 
+      <div class="sub-menu">
+        <div class="sub-menu-group"> 
+          <a href="notice.html">NOTICE</a> 
+          <a href="festivalmap.html">FESTIVAL MAP</a> </div> 
+        
+        <div class="sub-menu-group"> 
+          <a href="lineup.html">LINE-UP</a> 
+          <a href="timetable.html">TIMETABLE</a> </div> 
+        
+        <div class="sub-menu-group"> 
+          <a href="ticket.html">TICKET 예매안내</a> 
+          <a href="earlyticket.html">EARLY TICKET</a> </div> 
+        
+        <div class="sub-menu-group sub-menu-placeholder"></div> 
+      </div> 
+    </div> 
+  </div>
 
   <section class="hero">
     <img src="images/가을 페스티벌.png" alt="배경" class="hero-img">
@@ -219,39 +255,29 @@
   setInterval(tick, 1000);
 })();
 
-const hamburger = document.getElementById('hamburger-menu');
-const mainMenu = document.querySelector('.main-menu');
-const subNav = document.querySelector('.sub-nav');
-const navItems = document.querySelectorAll('.nav-item[data-menu]');
-const subGroups = document.querySelectorAll('.sub-menu-group');
+const hamburger = document.getElementById('mobile-hamburger');
+const mobileMenu = document.querySelector('.mobile-main');
+const buttons = document.querySelectorAll('.mobile-btn');
 
 hamburger.addEventListener('click', () => {
-  mainMenu.classList.toggle('show');
-  subNav.classList.remove('show');
-  subGroups.forEach(g => g.classList.remove('active'));
+  mobileMenu.classList.toggle('show');
 });
 
-navItems.forEach(item => {
-  item.addEventListener('click', () => {
-    const target = item.dataset.menu;
-
-    subNav.classList.add('show');
-
-    subGroups.forEach(group => {
-      group.classList.toggle(
-        'active',
-        group.id === target
-      );
-    });
+buttons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const sub = btn.nextElementSibling;
+    sub.classList.toggle('show');
   });
 });
 </script>
+
 
   
 </body>
 
 
 </html>
+
 
 
 
