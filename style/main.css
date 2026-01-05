@@ -380,6 +380,89 @@
     margin-bottom: 4rem;
 }
 
+/* --- 반응형 최적화 시작 --- */
+
+/* 1. 태블릿 (1024px 이하) */
+@media (max-width: 1024px) {
+    .container {
+        max-width: 95%;
+    }
+
+    /* 타이머 크기 조절 */
+    .number { font-size: 5rem; }
+    .colon { font-size: 5rem; }
+    .label { font-size: 1.2rem; }
+    .date { font-size: 3.5rem; }
+
+    /* 비디오 섹션 높이 조정 */
+    .video-wrapper { height: 500px; }
+    
+    /* 맵 & 플레이리스트 그리드 */
+    .map-playlist-grid {
+        grid-template-columns: 1fr; /* 한 줄로 세우기 */
+        gap: 2rem;
+    }
+}
+
+/* 2. 모바일 (768px 이하) */
+@media (max-width: 768px) {
+    /* 헤더 및 메뉴 */
+    .header { height: 8rem; }
+    .logo { width: 180px; }
+    
+    .nav-item { font-size: 1.2rem; }
+    .main-nav { padding: 1.2rem 0; }
+    
+    /* 서브메뉴 가독성 개선 (모바일에서는 세로 배치) */
+    .sub-menu {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    .sub-menu-group a { font-size: 1.1rem; }
+
+    /* 히로 섹션 & 타이머 */
+    .hero { height: 600px; }
+    .timer { gap: 0.8rem; }
+    .number { font-size: 3.5rem; }
+    .colon { font-size: 3rem; }
+    .label { font-size: 0.9rem; }
+    .date { font-size: 2.2rem; letter-spacing: 1px; }
+
+    /* 공지사항 테이블 (가로 스크롤 방지용 모바일 뷰) */
+    .table th, .table td {
+        padding: 0.8rem 0.5rem;
+        font-size: 14px;
+    }
+    .table td:nth-child(2) { padding-left: 0.5rem; }
+    .title { font-size: 2.2rem; margin-bottom: 2rem; }
+
+    /* 비디오 섹션 패딩 감소 */
+    .video-section { padding: 40px 15px; }
+    .video-wrapper { height: 300px; }
+
+    /* 라인업 이미지 */
+    .lineup-img { border-radius: 15px; }
+
+    /* 플레이리스트 높이 조정 */
+    .playlist-section iframe {
+        height: 500px !important;
+    }
+
+    /* 푸터 */
+    .social img { width: 40px; }
+    .footer-logo { width: 150px; }
+}
+
+/* 3. 초소형 모바일 (480px 이하) */
+@media (max-width: 480px) {
+    .main-menu {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    .number { font-size: 2.5rem; }
+    .date { font-size: 1.8rem; }
+}
+
 
 
 
