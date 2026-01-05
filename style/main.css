@@ -383,47 +383,98 @@
 #hamburger-menu { display: none; cursor: pointer; flex-direction: column; gap: 5px; z-index: 100; }
 #hamburger-menu span { width: 30px; height: 3px; background: white; transition: 0.3s; }
 
-/* =========================================
-   1. 모바일 전용 (768px 이하만 적용)
-   ========================================= */
 @media screen and (max-width: 768px) {
-    /* 햄버거 메뉴창 - 버튼으로만 열리고 닫힘 */
+    /* 1. 가로 스크롤 및 흰색 여백 박멸 */
+    html, body { 
+        overflow-x: hidden !important; 
+        width: 100% !important; 
+    }
+
+    /* 2. 헤더 구조 (로고 축소 & 햄버거 배치) */
+    .header {
+        height: 5rem !important; 
+        padding: 0 20px !important;
+        display: flex !important;
+        justify-content: space-between !important; 
+        align-items: center !important;
+        background: rgba(0, 0, 0, 0.9) !important;
+    }
+    .logo {
+        width: 120px !important; 
+        height: auto !important;
+    }
+    #hamburger-menu {
+        display: flex !important; 
+        position: relative !important; 
+        z-index: 10001 !important;
+    }
+
+    /* 3. 메뉴창 (2차 메뉴 포함 정리) */
     .menu-wrapper {
         position: fixed !important;
         top: 0 !important;
-        right: -100% !important; /* 기본 숨김 */
+        right: -100% !important;
         width: 80% !important;
         height: 100vh !important;
-background-color: #333 !important;
-        z-index: 9999 !important;
-        display: flex !important;
-        flex-direction: column !important;
-        padding: 100px 20px !important;
-        transition: right 0.3s ease-in-out !important;
+        background: #111 !important;
+        transition: right 0.3s ease !important;
+        padding: 80px 20px !important;
+        overflow-y: auto !important; /* 메뉴가 길면 스크롤 가능하게 */
     }
     .menu-wrapper.open { right: 0 !important; }
 
-    /* 메뉴 내부 리스트 (1, 2차 통합 정렬) */
-    .main-nav, .sub-nav, .main-menu, .sub-menu {
+    .sub-nav {
         position: static !important;
         display: block !important;
-        width: 100% !important;
+        max-height: none !important;
         opacity: 1 !important;
-        transform: none !important;
+        padding: 10px 0 !important;
     }
-    .nav-item { font-size: 1.4rem !important; color: #fff !important; padding: 15px 0 !important; border-bottom: 1px solid #333 !important; }
-    .sub-menu-group a { color: #ff8800 !important; font-size: 1.1rem !important; display: block !important; margin: 10px 0 !important; }
+    .sub-menu {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+    }
+    .sub-menu-group {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        padding-left: 15px !important;
+        border-left: 2px solid #ff8800 !important; /* 2차 메뉴임을 표시 */
+    }
+    .sub-menu-group a {
+        font-size: 1rem !important;
+        color: #ff8800 !important;
+        margin: 5px 0 !important;
+    }
 
-    /* 타이머 숫자 지랄 방지 - 화면 너비에 맞춤 */
-    .hero { height: auto !important; min-height: 350px !important; padding: 40px 10px !important; }
-    .timer { gap: 5px !important; justify-content: center !important; display: flex !important; }
-    .number { font-size: 9vw !important; line-height: 1 !important; } /* 숫자가 화면을 안 삐져나가게 함 */
-    .label { font-size: 10px !important; }
-    .date { font-size: 18px !important; margin-top: 15px !important; } /* 날짜 크기 강제 축소 */
+    /* 4. 타이머 & 날짜 (화면 밖으로 나가는 것 방지) */
+    .timer { gap: 5px !important; justify-content: center !important; }
+    .number { font-size: 3rem !important; }
+    .date { 
+        font-size: 18px !important; 
+        width: 100% !important; 
+        text-align: center !important; 
+        letter-spacing: 0 !important;
+    }
 
-    /* 영상 크기 복구 (12프로 화면 꽉 차게) */
-    .video-section .container { min-width: 100% !important; padding: 0 !important; margin: 0 !important; }
-    .video-wrapper { height: 56.25vw !important; width: 100% !important; } /* 16:9 비율로 가로 꽉 차게 */
+    /* 5. 지도 & 플레이리스트 (절대 안 잘리게) */
+    .map-img, .map-section img, .playlist-section iframe {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        display: block !important;
+    }
+    .playlist-section iframe { height: 450px !important; }
+
+    /* 6. 표 (두께 최소화 & 자동 줄바꿈) */
+    .notice .container { padding: 0 !important; }
+    .table { table-layout: fixed !important; }
+    .table th, .table td {
+        padding: 10px 5px !important;
+        font-size: 12px !important;
+        word-break: break-all !important;
+    }
 }
 
 /* =========================================
@@ -445,103 +496,7 @@ background-color: #333 !important;
     #hamburger-menu { display: none !important; } /* PC에선 햄버거 삭제 */
 }
 
-/* --- 모바일 레이아웃 최종 수술 (768px 이하) --- */
-@media screen and (max-width: 768px) {
-    /* 1. 가로 스크롤 완전 박멸 */
-    html, body {
-        overflow-x: hidden !important;
-        width: 100% !important;
-    }
 
-    /* 2. 헤더 구조 재배치 (로고와 햄버거가 한 줄에 나오게) */
-    .header {
-        height: 6rem !important; /* 헤더 높이 적절히 축소 */
-        padding: 0 20px !important;
-        display: flex !important;
-        justify-content: space-between !important; /* 로고는 왼쪽, 햄버거는 오른쪽 */
-        align-items: center !important;
-        background: rgba(0, 0, 0, 0.9) !important;
-    }
-
-    /* 3. 문제의 로고 크기 대폭 축소 */
-    .logo {
-        width: 140px !important; /* 현재 280px의 절반 수준으로 축소 */
-        height: auto !important;
-    }
-
-    /* 4. 사라진 햄버거 버튼 강제 노출 및 위치 고정 */
-    #hamburger-menu {
-        display: flex !important; /* 숨김 해제 */
-        position: relative !important; /* absolute 대신 배치에 포함 */
-        right: 0 !important;
-        top: 0 !important;
-        transform: none !important;
-        z-index: 10001 !important;
-    }
-
-    /* 5. 타이머와 날짜가 화면 밖으로 나가는 것 방지 */
-    .timer {
-        gap: 5px !important;
-        width: 100% !important;
-        justify-content: center !important;
-    }
-    .number {
-        font-size: 10vw !important; /* 화면 너비에 맞춰 자동 축소 */
-    }
-    .date {
-        font-size: 20px !important; /* 바코드 날짜 축소 */
-        width: 100% !important;
-        text-align: center !important;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    /* 1. 가로 스크롤 및 흰색 여백 제거 */
-    html, body { overflow-x: hidden !important; width: 100% !important; }
-
-    /* 2. 지도 & 플레이리스트 잘림 해결 */
-    .map-img, .playlist-section iframe {
-        width: 100% !important;
-        height: auto !important; /* 높이를 고정하지 않고 내용에 맞게 */
-        min-height: 300px; /* 최소 높이만 확보 */
-    }
-    .playlist-section iframe { height: 500px !important; } /* 플레이리스트는 적당한 높이 지정 */
-
-    /* 3. 표(Table) 너무 두꺼운 문제 해결 */
-    .table th, .table td {
-        padding: 0.8rem 0.5rem !important; /* 패딩을 줄여서 두께 축소 */
-        font-size: 14px !important; /* 폰트 크기 조정 */
-    }
-
-    /* 4. 2차 메뉴(SUB-NAV) 안 보이는 문제 해결 */
-    .menu-wrapper.open .sub-nav {
-        display: block !important; /* 모바일 메뉴 열릴 때 강제 노출 */
-        max-height: none !important; 
-        opacity: 1 !important;
-        position: static !important; /* PC용 absolute 해제 */
-        padding: 10px 0 !important;
-    }
-    .sub-menu {
-        display: flex !important;
-        flex-direction: column !important; /* 가로 배열을 세로로 변경 */
-        align-items: flex-start !important;
-        padding-left: 20px !important;
-    }
-    .sub-menu-group {
-        align-items: flex-start !important;
-        gap: 0.5rem !important;
-        margin-bottom: 15px !important;
-    }
-    .sub-menu-group a {
-        font-size: 1rem !important;
-        color: #ff8800 !important; /* 2차 메뉴는 주황색으로 구분 */
-    }
-
-    /* 5. 로고 및 타이머 최종 미세 조정 */
-    .header { height: 5rem !important; }
-    .logo { width: 120px !important; }
-    .number { font-size: 3rem !important; }
-}
 
 
 
