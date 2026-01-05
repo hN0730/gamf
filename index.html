@@ -196,35 +196,18 @@
   </footer>
 
  <script>
-(function () {
-    // 1. 타이머: 현재 시점보다 과거면 무조건 00:00:00:00 고정
-    const target = new Date("2025-11-22T00:00:00+09:00").getTime();
-    
-    function tick() {
-        const now = Date.now();
-        let diff = target - now;
-        
-        const $d = document.getElementById("days");
-        const $h = document.getElementById("hours");
-        const $m = document.getElementById("minutes");
-        const $s = document.getElementById("seconds");
-
-        if (diff <= 0) {
-            $d.textContent = "0";
-            $h.textContent = "00";
-            $m.textContent = "00";
-            $s.textContent = "00";
-            return;
-        }
-
-        $d.textContent = Math.floor(diff / (1000*60*60*24));
-        $h.textContent = String(Math.floor((diff / (1000*60*60)) % 24)).padStart(2, "0");
-        $m.textContent = String(Math.floor((diff / (1000*60)) % 60)).padStart(2, "0");
-        $s.textContent = String(Math.floor((diff / 1000) % 60)).padStart(2, "0");
-    }
-    setInterval(tick, 1000);
-    tick();
-
+(function () { const target = new Date("2025-11-22T00:00:00+09:00") .getTime(); 
+              const $d = document.getElementById("days"); const $h = document.getElementById("hours"); 
+              const $m = document.getElementById("minutes"); const $s = document.getElementById("seconds"); 
+              function pad2(n){ return String(n).padStart(2,"0"); } 
+              function tick() { const now = Date.now(); let diff = Math.max(0, target - now); 
+                               const days = Math.floor(diff / (1000*60*60*24)); diff %= (1000*60*60*24); 
+                               const hours = Math.floor(diff / (1000*60*60)); diff %= (1000*60*60); 
+                               const minutes = Math.floor(diff / (1000*60)); diff %= (1000*60); 
+                               const seconds = Math.floor(diff / 1000); $d.textContent = days; 
+                               $h.textContent = pad2(hours); $m.textContent = pad2(minutes); $s.textContent = pad2(seconds); } 
+              tick(); setInterval(tick, 1000); })();
+   
 window.onload = function() {
     const btn = document.getElementById('hamburger-menu');
     const menu = document.querySelector('.menu-wrapper');
@@ -252,6 +235,7 @@ window.onload = function() {
 
 
 </html>
+
 
 
 
