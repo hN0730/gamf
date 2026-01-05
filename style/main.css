@@ -380,9 +380,6 @@
     margin-bottom: 4rem;
 }
 
-#hamburger-menu { display: none; cursor: pointer; flex-direction: column; gap: 5px; z-index: 100; }
-#hamburger-menu span { width: 30px; height: 3px; background: white; transition: 0.3s; }
-
 /* --- 모바일 반응형 (768px 이하) --- */
 @media (max-width: 768px) {
     /* Hero 영역 높이 최적화 */
@@ -431,24 +428,7 @@
         align-items: center;
     }
 }
-/* =========================================
-   2. PC 전용 (769px 이상만 적용)
-   ========================================= */
-@media screen and (min-width: 769px) {
-    .menu-wrapper { position: relative !important; right: 0 !important; width: 100% !important; height: auto !important; background-color: #333 !important; display: block !important; }
-    .nav-item { display: inline-block !important; margin-right: 20px; }
-    
-    /* 타이머 크기 웅장하게 복구 */
-    .number { font-size: 8rem !important; }
-    .date { font-size: 5rem !important; }
-    .hero { height: 800px !important; }
 
-    /* 영상 크기 웅장하게 복구 */
-    .video-section .container { min-width: 65% !important; }
-    .video-wrapper { height: 600px !important; }
-    
-    #hamburger-menu { display: none !important; } /* PC에선 햄버거 삭제 */
-}
 
 
 
