@@ -204,7 +204,6 @@
         const now = Date.now();
         let diff = target - now;
         
-        // 날짜가 지났으면(diff <= 0) 모두 0으로 설정
         if (diff <= 0) {
             document.getElementById("days").textContent = "0";
             document.getElementById("hours").textContent = "00";
@@ -214,12 +213,9 @@
         }
 
         const days = Math.floor(diff / (1000*60*60*24));
-        diff %= (1000*60*60*24);
-        const hours = Math.floor(diff / (1000*60*60));
-        diff %= (1000*60*60);
-        const minutes = Math.floor(diff / (1000*60));
-        diff %= (1000*60);
-        const seconds = Math.floor(diff / 1000);
+        const hours = Math.floor((diff / (1000*60*60)) % 24);
+        const minutes = Math.floor((diff / (1000*60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
 
         document.getElementById("days").textContent = days;
         document.getElementById("hours").textContent = String(hours).padStart(2, "0");
@@ -229,36 +225,46 @@
     setInterval(tick, 1000);
     tick();
 
+    // 2. 메뉴 관련 로직 (DOM 로드 후 실행)
     document.addEventListener('DOMContentLoaded', () => {
-    const hamburger = document.getElementById('hamburger-menu');
-    const menuWrapper = document.querySelector('.menu-wrapper');
-    const navItems = document.querySelectorAll('.nav-item');
-    const subNav = document.querySelector('.sub-nav');
+        const hamburger = document.getElementById('hamburger-menu');
+        const menuWrapper = document.querySelector('.menu-wrapper');
+        const navItems = document.querySelectorAll('.nav-item');
+        const subNav = document.querySelector('.sub-nav');
 
-    // 1. 햄버거 메뉴 열기/닫기
-    if (hamburger) {
-        hamburger.addEventListener('click', () => {
-            menuWrapper.classList.toggle('open');
-            hamburger.classList.toggle('active');
-        });
-    }
+        if (hamburger && menuWrapper) {
+            hamburger.addEventListener('click', (e) => {
+                e.stopPropagation(); // 이벤트 전파 방지
+                menuWrapper.classList.toggle('open');
+                hamburger.classList.toggle('active');
+            });
+        }
 
-    // 2. 모바일에서 1차 메뉴 클릭 시 2차 메뉴 토글
-    navItems.forEach((item) => {
-        item.addEventListener('click', () => {
-            if (window.innerWidth <= 768) {
-                // 클릭한 메뉴 강조색 추가
-                navItems.forEach(i => i.classList.remove('active-item'));
-                item.classList.add('active-item');
+        navItems.forEach((item) => {
+            item.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    // a 태그 클릭 시에는 토글 방지
+                    if(e.target.tagName === 'A') return;
 
-                // 2차 메뉴 보이기/숨기기
-                if (subNav) {
-                    subNav.classList.toggle('show');
+                    navItems.forEach(i => i.classList.remove('active-item'));
+                    item.classList.add('active-item');
+
+                    if (subNav) {
+                        subNav.classList.toggle('show');
+                    }
                 }
+            });
+        });
+        
+        // 메뉴 바깥 클릭 시 닫기 (선택 사항)
+        document.addEventListener('click', () => {
+            if (menuWrapper.classList.contains('open')) {
+                menuWrapper.classList.remove('open');
+                hamburger.classList.remove('active');
             }
         });
     });
-});
+})();
 </script>
 
 
@@ -267,6 +273,7 @@
 
 
 </html>
+
 
 
 
