@@ -274,14 +274,11 @@ hamburger.addEventListener('click', () => {
   mobileNav.classList.toggle('open'); // 메뉴 열기/닫기
 });
 
-// 각 모바일 링크 클릭 시 서브 메뉴 열기/닫기
 mobileLinks.forEach(link => {
-  link.addEventListener('click', (e) => {
-    const parentItem = link.parentElement;
-    const subMenu = parentItem.querySelector('.mobile-sub');
-    if(subMenu) {
-      subMenu.classList.toggle('open');
-    }
+  link.addEventListener('click', () => {
+    const parent = link.parentElement;
+    const sub = parent.querySelector('.mobile-sub');
+    if(sub) sub.classList.toggle('open');
   });
 });
   
@@ -290,6 +287,7 @@ mobileLinks.forEach(link => {
 </body>
 
 </html>
+
 
 
 
