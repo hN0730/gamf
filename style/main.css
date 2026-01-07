@@ -480,7 +480,7 @@ html, body {
 .mobile-nav-bar {
     width: 100%;
     height: 60px;
-    backgroud: #333;
+    background: #333;
     display: flex;
     align-items: center;
     justify-content: flex-end; /* 햄버거 오른쪽 배치 */
@@ -491,7 +491,7 @@ html, body {
 .hamburger {
   font-size: 2.5rem;  
   color: white;       
-  background: #333;    
+  background: none;    
   border: none;       
   padding: 0;   
 }
@@ -519,6 +519,7 @@ html, body {
 .playlist-section iframe {
     height: 800px;
   }
+
 
 
 
