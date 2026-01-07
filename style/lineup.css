@@ -421,7 +421,7 @@ body {
   }
 
 .kr-title {
-    font-size: 2rem; 
+    font-size: 1.7rem; 
   }
 
 .subtitle {
@@ -429,6 +429,17 @@ body {
     margin-bottom: 3rem;
   }
 
+  .day {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .card {
+    width: 100%;
+    max-width: none;   
+  }
+    
 #floatingWidget {
     padding: 12px 0;
     gap: 8px;
@@ -449,6 +460,7 @@ body {
     margin-bottom: 3rem;
 }
     
+
 
 
 
