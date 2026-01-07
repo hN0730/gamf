@@ -549,6 +549,15 @@ html, body {
     height: 400px;
   }
 
+.mobile-nav, .hamburger {
+  outline: 2px solid red; /* 위치 확인용 */
+}
+
+.hamburger span {
+  background: red !important; /* 버튼이 화면에 있는지 확인 */
+}
+
+
 
 
 
