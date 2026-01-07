@@ -21,6 +21,48 @@
     <img src="https://api.builder.io/api/v1/image/assets/TEMP/5a57b55d432386da29cbea621e4567c229063947?width=712" alt="ACC Music Festa Logo" class="logo">
   </a>
 </header>
+
+  <!-- MOBILE NAV -->
+<nav class="mobile-nav">
+  <div class="mobile-nav-bar">
+    <button class="hamburger" aria-label="menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <ul class="mobile-menu">
+    <li class="mobile-item">
+      <button class="mobile-link">INFORMATION</button>
+      <ul class="mobile-sub">
+        <li><a href="notice.html">NOTICE</a></li>
+        <li><a href="festivalmap.html">FESTIVAL MAP</a></li>
+      </ul>
+    </li>
+
+    <li class="mobile-item">
+      <button class="mobile-link">ARTIST</button>
+      <ul class="mobile-sub">
+        <li><a href="lineup.html">LINE-UP</a></li>
+        <li><a href="timetable.html">TIMETABLE</a></li>
+      </ul>
+    </li>
+
+    <li class="mobile-item">
+      <button class="mobile-link">TICKETS</button>
+      <ul class="mobile-sub">
+        <li><a href="ticket.html">TICKET 안내</a></li>
+        <li><a href="earlyticket.html">EARLY TICKET</a></li>
+      </ul>
+    </li>
+
+    <li class="mobile-item">
+      <a href="gallery.html" class="mobile-link single">GALLERY</a>
+    </li>
+  </ul>
+</nav>
+
   
   <div class="menu-wrapper"> 
     <nav class="main-nav"> 
@@ -222,10 +264,32 @@
   tick();
   setInterval(tick, 1000);
 })();
+
+  document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.querySelector(".hamburger");
+  const mobileMenu = document.querySelector(".mobile-menu");
+  const mobileLinks = document.querySelectorAll(".mobile-link");
+
+  // 햄버거 토글
+  hamburger.addEventListener("click", () => {
+    mobileMenu.classList.toggle("open");
+  });
+
+  // 2차 메뉴 토글
+  mobileLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      const sub = link.nextElementSibling;
+      if (sub && sub.classList.contains("mobile-sub")) {
+        sub.classList.toggle("open");
+      }
+    });
+  });
+});
 </script>
 </body>
 
 </html>
+
 
 
 
