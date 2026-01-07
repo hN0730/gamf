@@ -275,10 +275,11 @@ hamburger.addEventListener('click', () => {
 });
 
 mobileLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    const parent = link.parentElement;
-    const sub = parent.querySelector('.mobile-sub');
-    if(sub) sub.classList.toggle('open');
+  link.addEventListener("click", (e) => {
+    const subMenu = link.nextElementSibling; // 바로 아래 ul.mobile-sub
+    if(subMenu) {
+      subMenu.classList.toggle("open");
+    }
   });
 });
   
@@ -287,6 +288,7 @@ mobileLinks.forEach(link => {
 </body>
 
 </html>
+
 
 
 
