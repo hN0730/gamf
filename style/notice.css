@@ -487,24 +487,24 @@ body {
   }
 
   .en-title {
-    font-size: 2.5rem; /* 대폭 축소 */
+    font-size: 2.5rem; 
     margin-bottom: 2rem;
     margin-right: 0;
   }
 
   .kr-title {
-    font-size: 2rem; /* 축소 */
+    font-size: 2rem; 
   }
 
   .subtitle {
-    font-size: 1.1rem; /* 축소 */
+    font-size: 0.9rem; 
     margin-bottom: 3rem;
   }
 
   .table th,
   .table td {
-    padding: 0.8rem 0.5rem; /* 패딩 축소 */
-    font-size: 13px; /* 폰트 작게 */
+    padding: 0.8rem 0.5rem;
+    font-size: 15px; 
   }
 
   .table th:nth-child(1),
@@ -548,7 +548,11 @@ body {
     font-size: 14px;
     margin-top: 0;
   }
-
+    
+#floatingWidget {
+    padding: 12px 0;
+    gap: 8px;
+}
  .chat-icon {
     width: 36px;
   }
@@ -561,9 +565,10 @@ body {
     font-family: 'EliceDigitalBaeum_Regular', sans-serif;
     color: whitesmoke;
     font-size: 15px;
-    margin-left: 1rem;
-    margin-bottom: 2rem;
+    margin-left: 3rem;
+    margin-bottom: 3rem;
 }
+
 
 
 
