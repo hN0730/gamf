@@ -421,22 +421,25 @@ body {
     display: none;
   }
 
- .en-title {
+.en-title {
     font-size: 2.5rem; 
     margin-bottom: 2rem;
     margin-right: 0;
   }
 
   .kr-title {
-    font-size: 1.5rem; 
+    font-size: 2rem; 
   }
 
   .subtitle {
-    font-size: 1.3rem; 
-    margin-bottom: 3rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
-  }    
+    font-size: 0.9rem; 
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  .subtitle span {
+    display: block;
+  }   
 
   .timetable-img {
     width: 90%;          
@@ -463,6 +466,7 @@ body {
     margin-left: 3rem;
     margin-bottom: 3rem;
 }
+
 
 
 
