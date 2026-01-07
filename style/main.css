@@ -472,7 +472,14 @@ html, body {
 .mobile-sub a:hover {
   color: #ff8800;
 }
-
+    
+.mobile-nav-bar {
+    position: fixed;
+    top: 1rem;   /* 상단 위치 */
+    left: 1rem;  /* 좌측 위치 */
+    z-index: 10000;
+}
+    
 .hamburger {
     display: flex;
     flex-direction: column;
@@ -500,6 +507,7 @@ html, body {
 .playlist-section iframe {
     height: 800px;
   }
+
 
 
 
