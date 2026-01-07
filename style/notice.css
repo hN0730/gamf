@@ -474,7 +474,94 @@ body {
 .menu-wrapper {
     display: none;
   }
-    
+
+
+  .notice {
+    padding: 40px 20px; /* 패딩 축소 */
+    min-height: auto;
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 0 1rem;
+    text-align: center;
+  }
+
+  .en-title {
+    font-size: 2.5rem; /* 대폭 축소 */
+    margin-bottom: 2rem;
+    margin-right: 0;
+  }
+
+  .kr-title {
+    font-size: 2rem; /* 축소 */
+  }
+
+  .subtitle {
+    font-size: 1.1rem; /* 축소 */
+    margin-bottom: 3rem;
+  }
+
+  .table th,
+  .table td {
+    padding: 0.8rem 0.5rem; /* 패딩 축소 */
+    font-size: 13px; /* 폰트 작게 */
+  }
+
+  .table th:nth-child(1),
+  .table td:nth-child(1) {
+    width: 15%;
+  }
+
+  .table th:nth-child(3),
+  .table td:nth-child(3) {
+    width: 20%;
+  }
+
+  .pagination {
+    gap: 0.3rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .page-btn {
+    padding: 0.3rem 0.7rem;
+    font-size: 12px;
+    border-radius: 20px;
+  }
+
+  .search-box {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .search-select,
+  .search-input {
+    width: 100%;
+    font-size: 14px;
+    margin-top: 0;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .search-btn {
+    width: 100%;
+    padding: 0.5rem 0;
+    font-size: 14px;
+    margin-top: 0;
+  }
+
+  #floatingWidget {
+    top: auto;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    padding: 12px 0;
+  }
+
+  .chat-icon {
+    width: 36px;
+  }
+
 .footer-logo {
     margin-top: -4rem;
     width: 200px;
@@ -487,6 +574,7 @@ body {
     margin-left: 1rem;
     margin-bottom: 2rem;
 }
+
 
 
 
