@@ -491,7 +491,7 @@ html, body {
 .hamburger {
   font-size: 2.5rem;  
   color: white;       
-  background: none;    
+  background: #333;    
   border: none;       
   padding: 0;   
 }
@@ -519,6 +519,7 @@ html, body {
 .playlist-section iframe {
     height: 800px;
   }
+
 
 
 
