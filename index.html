@@ -264,16 +264,23 @@
 })();
 
 const hamburger = document.querySelector('.hamburger');
+const closeBtn = document.querySelector('.mobile-close'); // X 버튼
 const mobileNav = document.querySelector('.mobile-nav');
 const mobileLinks = document.querySelectorAll('.mobile-link');
 
-hamburger.addEventListener('click', () => {
-  mobileNav.classList.toggle('open'); // 메뉴 열기/닫기
-});
+function toggleMobileNav() {
+  mobileNav.classList.toggle('open');
+}
 
+// 햄버거 클릭 → 메뉴 열기
+hamburger.addEventListener('click', toggleMobileNav);
+// X 버튼 클릭 → 메뉴 닫기
+if (closeBtn) closeBtn.addEventListener('click', toggleMobileNav);
+
+// 서브 메뉴 열기/닫기
 mobileLinks.forEach(link => {
   link.addEventListener("click", (e) => {
-    const subMenu = link.nextElementSibling; // 바로 아래 ul.mobile-sub
+    const subMenu = link.nextElementSibling;
     if(subMenu) {
       subMenu.classList.toggle("open");
     }
@@ -285,6 +292,7 @@ mobileLinks.forEach(link => {
 </body>
 
 </html>
+
 
 
 
