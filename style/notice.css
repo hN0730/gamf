@@ -527,6 +527,7 @@ body {
     padding: 0.3rem 0.7rem;
     font-size: 12px;
     border-radius: 20px;
+    margin-bottom: 1rem;
   }
 
   .search-box {
@@ -568,6 +569,7 @@ body {
     margin-left: 3rem;
     margin-bottom: 3rem;
 }
+
 
 
 
