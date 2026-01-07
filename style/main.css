@@ -598,8 +598,11 @@ html, body {
 
   .table {
     display: block;
-    overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 0.5rem;
+    overflow: hidden;
   }
 
   .table th:first-child,
@@ -652,6 +655,7 @@ html, body {
     margin-left: 1rem;
     margin-bottom: 2rem;
 }
+
 
 
 
