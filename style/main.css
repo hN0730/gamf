@@ -474,28 +474,28 @@ html, body {
 }
     
 .mobile-nav-bar {
-    position: fixed;
-    top: 1rem;   /* 상단 위치 */
-    left: 1rem;  /* 좌측 위치 */
-    z-index: 10000;
+    width: 100%;
+    height: 60px;
+    backgroud: #333;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* 햄버거 오른쪽 배치 */
+    padding: 0 1rem;
+    box-sizing: border-box;
 }
     
 .hamburger {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 22px;
+    gap: 5px;
     background: none;
     border: none;
-    cursor: pointer;
     padding: 0;
 }
 
 .hamburger span {
-    display: block;
+    width: 25px;
     height: 3px;
-    width: 100%;
     background: white;
     border-radius: 2px;
 }
@@ -507,6 +507,7 @@ html, body {
 .playlist-section iframe {
     height: 800px;
   }
+
 
 
 
