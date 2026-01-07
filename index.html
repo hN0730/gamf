@@ -234,6 +234,7 @@
 
 <script> 
 <script>
+<script>
 (() => {
   const target = new Date("2025-11-22T00:00:00+09:00").getTime();
   const $d = document.getElementById("days");
@@ -241,48 +242,53 @@
   const $m = document.getElementById("minutes");
   const $s = document.getElementById("seconds");
 
-  function pad2(n){ return String(n).padStart(2,"0"); }
+  function pad2(n) {
+    return String(n).padStart(2, "0");
+  }
 
   function tick() {
     const now = Date.now();
     let diff = Math.max(0, target - now);
 
-    const days = Math.floor(diff / (1000*60*60*24));
-    diff %= (1000*60*60*24);
-    const hours = Math.floor(diff / (1000*60*60));
-    diff %= (1000*60*60);
-    const minutes = Math.floor(diff / (1000*60));
-    diff %= (1000*60);
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    diff %= (1000 * 60 * 60 * 24);
+    const hours = Math.floor(diff / (1000 * 60 * 60));
+    diff %= (1000 * 60 * 60);
+    const minutes = Math.floor(diff / (1000 * 60));
+    diff %= (1000 * 60);
     const seconds = Math.floor(diff / 1000);
 
-    $d.textContent = days;
-    $h.textContent = pad2(hours);
-    $m.textContent = pad2(minutes);
-    $s.textContent = pad2(seconds);
+    if ($d) $d.textContent = days;
+    if ($h) $h.textContent = pad2(hours);
+    if ($m) $m.textContent = pad2(minutes);
+    if ($s) $s.textContent = pad2(seconds);
   }
 
   tick();
   setInterval(tick, 1000);
 })();
 
-document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("DOMContentLoaded", () => {
   const hamburger = document.querySelector(".hamburger");
   const mobileMenu = document.querySelector(".mobile-menu");
 
   if (!hamburger || !mobileMenu) {
-    console.error("모바일 메뉴 요소 못 찾음");
+    console.error("햄버거 또는 모바일 메뉴 못 찾음");
     return;
   }
 
   hamburger.addEventListener("click", () => {
     mobileMenu.classList.toggle("open");
+    console.log("햄버거 클릭됨");
   });
 });
-
+  
 </script>
+  
 </body>
 
 </html>
+
 
 
 
