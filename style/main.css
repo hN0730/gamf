@@ -494,6 +494,15 @@ html, body {
   }
 }
 
+  .map-playlist-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .playlist-section iframe {
+    height: 400px;
+  }
+
+
 
 
 
