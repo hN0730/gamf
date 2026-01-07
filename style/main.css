@@ -380,6 +380,107 @@
     margin-bottom: 4rem;
 }
 
+/* =====================
+   MOBILE NAV
+===================== */
+
+.mobile-nav {
+  display: none;
+}
+
+/* 모바일 전용 */
+@media (max-width: 768px) {
+  .menu-wrapper {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: block;
+    background: rgba(0,0,0,0.95);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+
+  .mobile-nav-bar {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+  }
+
+  /* 햄버거 */
+  .hamburger {
+    width: 30px;
+    height: 22px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .hamburger span {
+    height: 3px;
+    width: 100%;
+    background: white;
+    border-radius: 2px;
+  }
+
+  /* 메뉴 패널 */
+  .mobile-menu {
+    display: none;
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .mobile-menu.open {
+    display: flex;
+  }
+
+  .mobile-item {
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .mobile-link {
+    width: 100%;
+    padding: 1rem 0;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .mobile-link.single {
+    display: block;
+    text-decoration: none;
+  }
+
+  /* 2차 메뉴 */
+  .mobile-sub {
+    display: none;
+    flex-direction: column;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .mobile-sub a {
+    color: #ccc;
+    text-decoration: none;
+    padding: 0.5rem 0;
+    font-size: 1.2rem;
+  }
+
+  .mobile-sub.open {
+    display: flex;
+  }
+}
+
+
 
 
 
