@@ -6,6 +6,12 @@
     font-family: EliceDigitalBaeum_Regular;
     src: url('../font/EliceDigitalBaeum_Regular.ttf') format('truetype');
 }
+.mobile-nav,
+.mobile-nav-bar,
+.hamburger {
+  position: relative;
+  z-index: 99999 !important;
+}
 
 html, body {
   overflow-x: hidden;
@@ -501,6 +507,7 @@ html, body {
   .playlist-section iframe {
     height: 400px;
   }
+
 
 
 
