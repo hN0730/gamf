@@ -417,13 +417,7 @@ html, body {
         height: 100%;
         background: rgba(0,0,0,0.95);
         z-index: 9999;
-        transform: translateX(-100%); /* 기본은 화면 밖 */
-        transition: transform 0.3s ease;
     }
-
-.mobile-nav.open {
-  transform: translateX(0); /* 메뉴 열기 */
-}
 
 .mobile-menu {
   list-style: none;
@@ -454,6 +448,16 @@ html, body {
 
 .mobile-sub.open {
   max-height: 500px;
+}
+
+    .mobile-sub li {
+  margin: 0.8rem 0;
+}
+
+.mobile-sub a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.4rem;
 }
 
   .map-playlist-grid {
