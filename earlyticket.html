@@ -23,6 +23,45 @@
         </a>
     </header>
 
+
+ <div class="mobile-nav-bar">
+    <button class="hamburger">☰</button>
+  </div>
+
+  <nav class = "mobile-nav">
+    <button class="close-menu">✕</button>
+    
+  <ul class="mobile-menu">
+    <li class="mobile-item">
+      <button class="mobile-link">INFORMATION</button>
+      <ul class="mobile-sub">
+        <li><a href="notice.html">NOTICE</a></li>
+        <li><a href="festivalmap.html">FESTIVAL MAP</a></li>
+      </ul>
+    </li>
+
+    <li class="mobile-item">
+      <button class="mobile-link">ARTIST</button>
+      <ul class="mobile-sub">
+        <li><a href="lineup.html">LINE-UP</a></li>
+        <li><a href="timetable.html">TIMETABLE</a></li>
+      </ul>
+    </li>
+
+    <li class="mobile-item">
+      <button class="mobile-link">TICKETS</button>
+      <ul class="mobile-sub">
+        <li><a href="ticket.html">TICKET 안내</a></li>
+        <li><a href="earlyticket.html">EARLY TICKET</a></li>
+      </ul>
+    </li>
+
+    <li class="mobile-item">
+      <a href="gallery.html" class="mobile-link single">GALLERY</a>
+    </li>
+  </ul>
+</nav>
+    
     <div class="menu-wrapper">
         <nav class="main-nav">
             <ul class="main-menu">
@@ -109,10 +148,35 @@
 
             requestAnimationFrame(updateWidget);
         });
+
+const hamburger = document.querySelector('.hamburger');
+const closeBtn = document.querySelector('.close-menu'); 
+const mobileNav = document.querySelector('.mobile-nav');
+const mobileLinks = document.querySelectorAll('.mobile-link');
+
+function toggleMobileNav() {
+  mobileNav.classList.toggle('open');
+}
+
+// 햄버거 클릭 → 메뉴 열기
+hamburger.addEventListener('click', toggleMobileNav);
+// X 버튼 클릭 → 메뉴 닫기
+if (closeBtn) closeBtn.addEventListener('click', toggleMobileNav);
+
+// 서브 메뉴 열기/닫기
+mobileLinks.forEach(link => {
+  link.addEventListener("click", (e) => {
+    const subMenu = link.nextElementSibling;
+    if(subMenu) {
+      subMenu.classList.toggle("open");
+    }
+  });
+});
     </script>
 </body>
 
 </html>
+
 
 
 
