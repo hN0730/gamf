@@ -473,6 +473,22 @@ body {
 .menu-wrapper {
     display: none;
   }
+
+.en-title {
+    font-size: 2.5rem; 
+    margin-bottom: 2rem;
+    margin-right: 0;
+  }
+
+.kr-title {
+    font-size: 2rem; 
+  }
+
+.subtitle {
+    font-size: 0.9rem; 
+    margin-bottom: 3rem;
+  }
+    
 #floatingWidget {
     padding: 12px 0;
     gap: 8px;
@@ -492,6 +508,7 @@ body {
     margin-left: 3rem;
     margin-bottom: 3rem;
 }
+
 
 
 
