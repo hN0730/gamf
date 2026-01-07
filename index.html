@@ -189,53 +189,23 @@
 
   </footer>
 
- <script>
-(function () { const target = new Date("2025-11-22T00:00:00+09:00") .getTime(); 
-              const $d = document.getElementById("days"); const $h = document.getElementById("hours"); 
-              const $m = document.getElementById("minutes"); const $s = document.getElementById("seconds"); 
-              function pad2(n){ return String(n).padStart(2,"0"); } 
-              function tick() { const now = Date.now(); let diff = Math.max(0, target - now); 
-                               const days = Math.floor(diff / (1000*60*60*24)); diff %= (1000*60*60*24); 
-                               const hours = Math.floor(diff / (1000*60*60)); diff %= (1000*60*60); 
-                               const minutes = Math.floor(diff / (1000*60)); diff %= (1000*60); 
-                               const seconds = Math.floor(diff / 1000); $d.textContent = days; 
-                               $h.textContent = pad2(hours); $m.textContent = pad2(minutes); $s.textContent = pad2(seconds); } 
-              tick(); setInterval(tick, 1000); })();
-   
-document.addEventListener('DOMContentLoaded', () => {
-    const navItems = document.querySelectorAll('.nav-item');
-    const subNav = document.querySelector('.sub-nav');
-    const subGroups = document.querySelectorAll('.sub-menu-group');
-
-    navItems.forEach((item, index) => {
-        item.addEventListener('click', () => {
-            // 모바일 너비에서만 작동
-            if (window.innerWidth <= 768) {
-                const targetGroup = subGroups[index];
-
-                // 1. 이미 열려있는 메뉴를 다시 클릭하면 닫기
-                if (targetGroup && targetGroup.classList.contains('active')) {
-                    subNav.classList.remove('active');
-                    targetGroup.classList.remove('active');
-                } 
-                // 2. 새로운 메뉴 클릭 시
-                else {
-                    // 모든 기존 active 제거
-                    subGroups.forEach(g => g.classList.remove('active'));
-                    
-                    if (targetGroup && !targetGroup.classList.contains('sub-menu-placeholder')) {
-                        subNav.classList.add('active');
-                        targetGroup.classList.add('active');
-                    } else {
-                        // 하위 메뉴가 없는 경우(GALLERY 등) 닫기
-                        subNav.classList.remove('active');
-                    }
-                }
-            }
-        });
-    });
-});
-
+<script> 
+  (function () { const target = new Date("2025-11-22T00:00:00+09:00").getTime(); 
+                const $d = document.getElementById("days"); 
+                const $h = document.getElementB yId("hours"); 
+                const $m = document.getElementById("minutes"); 
+                const $s = document.getElementById("seconds");
+                function pad2(n){ return String(n).padStart(2,"0"); } 
+   function tick() { const now = Date.now(); let diff = Math.max(0, target - now); 
+                    const days = Math.floor(diff / (1000*60*60*24)); 
+                    diff %= (1000*60*60*24); const hours = Math.floor(diff / (1000*60*60)); 
+                    diff %= (1000*60*60); const minutes = Math.floor(diff / (1000*60)); 
+                    diff %= (1000*60); const seconds = Math.floor(diff / 1000); 
+   $d.textContent = days; $h.textContent = pad2(hours); $m.textContent = pad2(minutes); $s.textContent = pad2(seconds); } 
+                tick(); setInterval(tick, 1000); })(); 
+  const hamburger = document.getElementById('hamburger-menu'); 
+  const menu = document.querySelector('.main-menu'); 
+  hamburger.addEventListener('click', () => { menu.classList.toggle('show'); }); 
 </script>
 
 
@@ -244,6 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 </html>
+
 
 
 
