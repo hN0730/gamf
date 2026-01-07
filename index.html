@@ -265,30 +265,25 @@
   setInterval(tick, 1000);
 })();
 
-  document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
   const hamburger = document.querySelector(".hamburger");
   const mobileMenu = document.querySelector(".mobile-menu");
-  const mobileLinks = document.querySelectorAll(".mobile-link");
 
-  // 햄버거 토글
+  if (!hamburger || !mobileMenu) {
+    console.error("모바일 메뉴 요소 못 찾음");
+    return;
+  }
+
   hamburger.addEventListener("click", () => {
     mobileMenu.classList.toggle("open");
   });
-
-  // 2차 메뉴 토글
-  mobileLinks.forEach(link => {
-    link.addEventListener("click", () => {
-      const sub = link.nextElementSibling;
-      if (sub && sub.classList.contains("mobile-sub")) {
-        sub.classList.toggle("open");
-      }
-    });
-  });
 });
+
 </script>
 </body>
 
 </html>
+
 
 
 
