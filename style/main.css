@@ -384,6 +384,10 @@ html, body {
     margin-bottom: 4rem;
 }
 
+.mobile-nav-bar{
+    display: none;
+}
+
 /* =====================
    MOBILE NAV
 ===================== */
@@ -496,7 +500,7 @@ html, body {
 .hamburger span {
     width: 25px;
     height: 3px;
-    background: white;
+    background: #333;
     border-radius: 2px;
 }
    
@@ -507,6 +511,7 @@ html, body {
 .playlist-section iframe {
     height: 800px;
   }
+
 
 
 
