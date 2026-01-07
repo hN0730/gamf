@@ -522,17 +522,28 @@ html, body {
 }
 
 .timer {
-    flex-wrap: wrap; 
-    gap: 1rem;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
+    text-align: center;
   }
 
-.time-block {
-    width: 45%;
-    margin-bottom: 0.5rem;
+ .time-box,
+ .colon {
+    flex: 0 0 auto;
   }
 
-.number {
+  .time-box {
+    width: 40%;
+  }
+
+ .colon {
+    width: 5%;
+    text-align: center;
+  }
+
+  .number {
     font-size: 3rem;
   }
 
@@ -540,12 +551,13 @@ html, body {
     font-size: 1rem;
   }
 
-.colon {
-    font-size: 3rem;
-  }
     
-.date {
-    font-size: 3rem;
+ .date {
+    text-align: center;
+  }
+
+ .date span {
+    display: block;
   }
     
 .menu-wrapper {
@@ -556,7 +568,7 @@ html, body {
     padding: 40px 20px;
 }
 .video-wrapper {
-    max-height: 400px;
+    max-height: 600px;
   }    
 .map-playlist-grid {
     grid-template-columns: 1fr;
@@ -578,6 +590,7 @@ html, body {
     margin-left: 1rem;
     margin-bottom: 2rem;
 }
+
 
 
 
