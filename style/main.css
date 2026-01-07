@@ -7,7 +7,7 @@
     src: url('../font/EliceDigitalBaeum_Regular.ttf') format('truetype');
 }
 
-body {
+html, body {
   overflow-x: hidden;
 }
 
@@ -500,6 +500,7 @@ body {
 .playlist-section iframe {
     height: 800px;
   }
+
 
 
 
