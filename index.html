@@ -25,12 +25,11 @@
   <!-- MOBILE NAV -->
 <nav class="mobile-nav">
   <div class="mobile-nav-bar">
-<button class="hamburger" onclick="alert('clicked')">
+<button class="hamburger">
   <span></span>
   <span></span>
   <span></span>
 </button>
-
   </div>
 
   <ul class="mobile-menu">
@@ -234,8 +233,6 @@
   </footer>
 
 <script> 
-<script>
-<script>
 (() => {
   const target = new Date("2025-11-22T00:00:00+09:00").getTime();
   const $d = document.getElementById("days");
@@ -269,18 +266,22 @@
   setInterval(tick, 1000);
 })();
 
-  document.addEventListener("DOMContentLoaded", () => {
-  const hamburger = document.querySelector(".hamburger");
-  const mobileMenu = document.querySelector(".mobile-menu");
+const hamburger = document.querySelector('.hamburger');
+const mobileNav = document.querySelector('.mobile-nav');
+const mobileLinks = document.querySelectorAll('.mobile-link');
 
-  if (!hamburger || !mobileMenu) {
-    console.error("햄버거 또는 모바일 메뉴 못 찾음");
-    return;
-  }
+hamburger.addEventListener('click', () => {
+  mobileNav.classList.toggle('open'); // 메뉴 열기/닫기
+});
 
-  hamburger.addEventListener("click", () => {
-    mobileMenu.classList.toggle("open");
-    console.log("햄버거 클릭됨");
+// 각 모바일 링크 클릭 시 서브 메뉴 열기/닫기
+mobileLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
+    const parentItem = link.parentElement;
+    const subMenu = parentItem.querySelector('.mobile-sub');
+    if(subMenu) {
+      subMenu.classList.toggle('open');
+    }
   });
 });
   
@@ -289,6 +290,7 @@
 </body>
 
 </html>
+
 
 
 
