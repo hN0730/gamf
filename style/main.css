@@ -580,6 +580,48 @@ html, body {
 .video-wrapper {
     height: 800px;
   }    
+
+ .table th,
+  .table td {
+    padding: 0.6rem 0.4rem; /* 패딩 축소 */
+    font-size: 13px;        /* 폰트 작게 */
+  }
+
+  .table td:nth-child(2) {
+    padding-left: 1rem; /* 왼쪽 패딩 조금만 */
+  }
+
+  /* 테이블 전체 폭이 좁으면 가로 스크롤 가능 */
+  .table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* 첫 번째, 마지막 컬럼 너비 축소 */
+  .table th:first-child,
+  .table td:first-child,
+  .table th:last-child,
+  .table td:last-child {
+    width: 10%;
+  }
+
+  /* 두 번째 컬럼(제목) 최대 폭 확보 */
+  .table th:nth-child(2),
+  .table td:nth-child(2) {
+    width: 80%;
+  }
+
+  /* 테이블 폰트 무게 조절 */
+  .table td {
+    font-weight: 400;
+  }
+
+  /* 테이블 헤더 폰트도 조금 축소 */
+  .table th {
+    font-size: 14px;
+  }
+
 .map-playlist-grid {
     grid-template-columns: 1fr;
   }
@@ -600,6 +642,7 @@ html, body {
     margin-left: 1rem;
     margin-bottom: 2rem;
 }
+
 
 
 
