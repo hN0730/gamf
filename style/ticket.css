@@ -173,6 +173,10 @@ body {
     margin: 1.5rem 0 3rem 0;
 }
 
+.subtitle span {
+  display: inline;
+}
+
 .ticket-img {
   display: flex;
   justify-content: center;
@@ -395,9 +399,20 @@ body {
 
   .subtitle {
     font-size: 0.9rem; 
-    margin-bottom: 3rem;
-  }    
+    text-align: center;
+    line-height: 1.4;
+  }
 
+  .subtitle span {
+    display: block;
+  }
+
+  .ticket-img img {
+    transform: none;    
+    width: 90%;
+    max-width: 360px;
+  }
+    
 #floatingWidget {
     padding: 12px 0;
     gap: 8px;
@@ -417,6 +432,7 @@ body {
     margin-left: 3rem;
     margin-bottom: 3rem;
 }
+
 
 
 
