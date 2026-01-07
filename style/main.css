@@ -7,53 +7,6 @@
     src: url('../font/EliceDigitalBaeum_Regular.ttf') format('truetype');
 }
 
-.mobile-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.95);
-  transform: translateX(-100%); /* 초기 상태: 화면 왼쪽 밖 */
-  transition: transform 0.3s ease;
-  z-index: 9999;
-}
-
-.mobile-nav.open {
-  transform: translateX(0); /* 메뉴 열기 */
-}
-
-.mobile-menu {
-  list-style: none;
-  padding: 5rem 2rem;
-}
-
-.mobile-item {
-  margin-bottom: 1.5rem;
-}
-
-.mobile-link {
-  color: white;
-  font-size: 1.6rem;
-  font-weight: bold;
-  background: none;
-  border: none;
-  cursor: pointer;
-  text-align: left;
-}
-
-.mobile-sub {
-  list-style: none;
-  padding-left: 1rem;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
-}
-
-.mobile-sub.open {
-  max-height: 500px;
-}
-
 html, body {
   overflow-x: hidden;
 }
@@ -456,89 +409,50 @@ html, body {
   }
 
   .mobile-nav {
-    display: block;
-    background: rgba(0,0,0,0.95);
-    position: sticky;
-    top: 0;
-    z-index: 999;
-  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.95);
+  transform: translateX(-100%); /* 초기 상태: 화면 왼쪽 밖 */
+  transition: transform 0.3s ease;
+  z-index: 9999;
+}
 
-  .mobile-nav-bar {
-    height: 60px;
-    display: flex;
-    align-items: center;
-    padding: 0 1rem;
-  }
+.mobile-nav.open {
+  transform: translateX(0); /* 메뉴 열기 */
+}
 
-  /* 햄버거 */
-  .hamburger {
-    width: 30px;
-    height: 22px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
+.mobile-menu {
+  list-style: none;
+  padding: 5rem 2rem;
+}
 
-  .hamburger span {
-    height: 3px;
-    width: 100%;
-    background: white;
-    border-radius: 2px;
-  }
+.mobile-item {
+  margin-bottom: 1.5rem;
+}
 
-  /* 메뉴 패널 */
-  .mobile-menu {
-    display: none;
-    flex-direction: column;
-    padding: 1rem;
-  }
+.mobile-link {
+  color: white;
+  font-size: 1.6rem;
+  font-weight: bold;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
 
-  .mobile-menu.open {
-    display: flex;
-  }
+.mobile-sub {
+  list-style: none;
+  padding-left: 1rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
 
-  .mobile-item {
-    border-bottom: 1px solid rgba(255,255,255,0.2);
-  }
-
-  .mobile-link {
-    width: 100%;
-    padding: 1rem 0;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.4rem;
-    font-weight: 700;
-    text-align: left;
-    cursor: pointer;
-  }
-
-  .mobile-link.single {
-    display: block;
-    text-decoration: none;
-  }
-
-  /* 2차 메뉴 */
-  .mobile-sub {
-    display: none;
-    flex-direction: column;
-    padding-left: 1rem;
-    padding-bottom: 1rem;
-  }
-
-  .mobile-sub a {
-    color: #ccc;
-    text-decoration: none;
-    padding: 0.5rem 0;
-    font-size: 1.2rem;
-  }
-
-  .mobile-sub.open {
-    display: flex;
-  }
+.mobile-sub.open {
+  max-height: 500px;
 }
 
   .map-playlist-grid {
@@ -546,16 +460,10 @@ html, body {
   }
 
   .playlist-section iframe {
-    height: 400px;
+    height: 800px;
   }
 
-.mobile-nav, .hamburger {
-  outline: 2px solid red; /* 위치 확인용 */
-}
 
-.hamburger span {
-  background: red !important; /* 버튼이 화면에 있는지 확인 */
-}
 
 
 
