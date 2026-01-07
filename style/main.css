@@ -7,7 +7,7 @@
     src: url('../font/EliceDigitalBaeum_Regular.ttf') format('truetype');
 }
 
-html, body {
+body {
   overflow-x: hidden;
 }
 
@@ -409,7 +409,7 @@ html, body {
   }
 
 .mobile-nav {
-    display: block; /* << 추가 */
+    display: block;
     position: fixed;
     top: 0;
     left: 0;
@@ -417,6 +417,12 @@ html, body {
     height: 100%;
     background: rgba(0,0,0,0.95);
     z-index: 9999;
+    transform: translateX(-100%); /* 기본 숨김 */
+    transition: transform 0.3s ease; /* 슬라이드 애니메이션 */
+}
+
+    .mobile-nav.open {
+    transform: translateX(0); /* 햄버거 클릭 시 화면 안으로 */
 }
 
 .mobile-menu {
@@ -435,7 +441,6 @@ html, body {
   font-weight: bold;
   background: none;
   border: none;
-  cursor: pointer;
   text-align: left;
 }
 
@@ -444,17 +449,10 @@ html, body {
 }
     
 .mobile-sub {
-  display: none;
-  position: relative;
-  top: 100%; /* 바로 아래 */
-  left: 0;
-  width: 100%;
-  background: rgba(0,0,0,0.95);
-  overflow: hidden;
-  max-height: 0;
-  opacity: 0;
-  transition: max-height 0.3s ease, opacity 0.3s ease;
-  z-index: 10;
+  display: none; /* 기본 숨김 */
+  list-style: none;
+  padding-left: 1rem;
+  margin-top: 0.5rem;
 }
 
 .mobile-sub.open {
@@ -474,6 +472,26 @@ html, body {
 .mobile-sub a:hover {
   color: #ff8800;
 }
+
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.hamburger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: white;
+    border-radius: 2px;
+}
    
 .map-playlist-grid {
     grid-template-columns: 1fr;
@@ -482,6 +500,7 @@ html, body {
 .playlist-section iframe {
     height: 800px;
   }
+
 
 
 
