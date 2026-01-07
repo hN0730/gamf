@@ -588,7 +588,7 @@ html, body {
     
  .table th,
  .table td {
-    padding: 0.6rem 0.4rem; 
+    padding: 1rem 0.8rem; 
     font-size: 17px;        
   }
 
@@ -608,20 +608,16 @@ html, body {
   .table td:first-child,
   .table th:last-child,
   .table td:last-child {
-    width: 70%;
+    width: 15%;
   }
 
   .table th:nth-child(2),
   .table td:nth-child(2) {
-    width: 100%;
+    width: 70%;
   }
 
   .table td {
     font-weight: 400;
-  }
-
-  .table th {
-    font-size: 20px;
   }
 
 .lineup {
@@ -644,7 +640,7 @@ html, body {
 
 .footer {
   background: linear-gradient(to bottom, #593863, #25193C);
-  padding: 3rem 1rem;
+  padding: 2rem 1rem;
 }
     
 .footer-logo {
@@ -659,6 +655,7 @@ html, body {
     margin-left: 1rem;
     margin-bottom: 2rem;
 }
+
 
 
 
