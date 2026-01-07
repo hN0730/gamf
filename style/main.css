@@ -492,7 +492,7 @@ html, body {
     display: flex;
     flex-direction: column;
     gap: 5px;
-    background: none;
+    background: #333;
     border: none;
     padding: 0;
 }
@@ -511,6 +511,7 @@ html, body {
 .playlist-section iframe {
     height: 800px;
   }
+
 
 
 
