@@ -404,8 +404,13 @@ body {
 
   .subtitle {
     font-size: 0.9rem; 
-    margin-bottom: 3rem;
+    text-align: center;
+    line-height: 1.4;
   }
+
+  .subtitle span {
+    display: block;
+  }  
 
  .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -431,6 +436,7 @@ body {
     margin-left: 3rem;
     margin-bottom: 3rem;
 }
+
 
 
 
