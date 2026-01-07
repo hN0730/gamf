@@ -643,6 +643,11 @@ html, body {
     height: 800px;
   }
 
+.footer {
+  background: linear-gradient(to bottom, #593863, #25193C);
+  padding: 3rem 1rem;
+}
+    
 .footer-logo {
     margin-top: -4rem;
     width: 200px;
@@ -655,6 +660,7 @@ html, body {
     margin-left: 1rem;
     margin-bottom: 2rem;
 }
+
 
 
 
