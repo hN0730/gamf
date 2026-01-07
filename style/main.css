@@ -489,21 +489,29 @@ html, body {
 }
     
 .hamburger {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    background: #333;
-    border: none;
-    padding: 0;
+  font-size: 2.5rem;  
+  color: white;       
+  background: none;    
+  border: none;       
+  padding: 0;   
 }
 
-.hamburger span {
-    width: 25px;
-    height: 3px;
-    background: #333;
-    border-radius: 2px;
+.close-menu {
+  position: fixed;  
+  top: 20px;
+  right: 20px;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  z-index: 10000;  
+  display: none;  
 }
-   
+
+.mobile-nav.open .close-menu {
+  display: block;  
+}
+    
 .map-playlist-grid {
     grid-template-columns: 1fr;
   }
@@ -511,6 +519,7 @@ html, body {
 .playlist-section iframe {
     height: 800px;
   }
+
 
 
 
