@@ -512,7 +512,7 @@ html, body {
 }
 
 .hero {
-    min-height: 60vh;
+    max-height: 60vh;
   }
     
 .hero-img{
@@ -567,6 +567,7 @@ html, body {
   }
 
 .footer-logo {
+    margin-top: -2rem;
     width: 150px;
 }
     
@@ -574,8 +575,10 @@ html, body {
     font-family: 'EliceDigitalBaeum_Regular', sans-serif;
     color: whitesmoke;
     font-size: 15px;
+    margin-left: 1rem;
     margin-bottom: 2rem;
 }
+
 
 
 
