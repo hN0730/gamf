@@ -395,8 +395,20 @@ body {
 
   .subtitle {
     font-size: 0.9rem; 
-    margin-bottom: 3rem;
-  }    
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  .subtitle span {
+    display: block;
+  }
+
+.earlyticket-img img {
+    transform: none;    
+    width: 90%;
+    max-width: 360px;
+}
+    
 #floatingWidget {
     padding: 12px 0;
     gap: 8px;
@@ -416,6 +428,7 @@ body {
     margin-left: 3rem;
     margin-bottom: 3rem;
 }
+
 
 
 
