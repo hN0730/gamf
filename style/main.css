@@ -513,6 +513,8 @@ html, body {
 }
 
 .hero {
+    height: 60vh;
+    align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -524,7 +526,13 @@ html, body {
 }
 
 .timer {
-    margin:0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    gap: 0.5rem;
+    width: 100%;
+    max-width: 400px;
   }
 
  .time-box,
@@ -534,11 +542,13 @@ html, body {
 
   .time-box {
     width: 40%;
+    text-align:center;
   }
 
  .colon {
     width: 5%;
     text-align: center;
+    font-size: 3rem;
   }
 
   .number {
@@ -553,6 +563,7 @@ html, body {
  .date {
     text-align: center;
     font-size: 3rem;
+    margin-top: 1rem;
   }
 
  .date span {
