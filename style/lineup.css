@@ -220,6 +220,73 @@ body {
     transform: translateY(-6px);
 }
 
+#floatingWidget {
+    position: absolute;
+    right: 10px;
+    top: 300px;
+    width: 70px;
+    background: white;
+    border-radius: 50px;
+    padding: 16px 0;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    z-index: 1000;
+    transition: transform 0.25s ease-out;
+}
+
+.chat-icon {
+    width: 48px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.chat-icon:hover {
+    transform: scale(1.1);
+}
+
+.footer {
+    background: #281d33de;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.footer-logo {
+    margin-top: 2rem;
+    width: 200px;
+    height: auto;
+}
+
+.social {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.social a {
+    transition: opacity 0.3s;
+}
+
+.social a:hover {
+    opacity: 0.8;
+}
+
+.social img {
+    width: 50px;
+    height: auto;
+}
+
+.footer p {
+    font-family: 'EliceDigitalBaeum_Regular', sans-serif;
+    color: whitesmoke;
+    margin-bottom: 4rem;
+}
+
 .mobile-nav {
   display: none;
 }
@@ -382,6 +449,7 @@ body {
     margin-bottom: 3rem;
 }
     
+
 
 
 
