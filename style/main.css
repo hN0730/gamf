@@ -444,7 +444,8 @@ html, body {
 }
     
 .mobile-sub {
-  position: absolute;
+  display: none;
+  position: relative;
   top: 100%; /* 바로 아래 */
   left: 0;
   width: 100%;
@@ -457,8 +458,7 @@ html, body {
 }
 
 .mobile-sub.open {
-    max-height: 500px;
-    opacity: 1;
+    display: block;
 }
 
 .mobile-sub li {
@@ -482,6 +482,7 @@ html, body {
 .playlist-section iframe {
     height: 800px;
   }
+
 
 
 
